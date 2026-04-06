@@ -207,7 +207,8 @@
                 <div class="form-group form-group-full">
                   <label for="propPhotos">Fotografias (1 a 10)</label>
                   <input id="propPhotos" name="propPhotos" type="file" accept="image/*" multiple required />
-                  <small id="photoHelp" class="form-help">Selecciona entre 1 y 10 imagenes.</small>
+                  <small id="photoHelp" class="form-help">Selecciona entre 1 y 10 imagenes. Puedes agregar más fotos haciendo clic nuevamente.</small>
+                  <ul id="photoList" style="margin-top: 0.5rem; padding-left: 1.2rem; font-size: 0.9rem; color: #475569;"></ul>
                 </div>
               </div>
 
@@ -378,8 +379,11 @@
       const mapPreview = document.getElementById("propertyMapPreview");
       const photosInput = document.getElementById("propPhotos");
       const photoHelp = document.getElementById("photoHelp");
+      const photoList = document.getElementById("photoList");
       const form = document.getElementById("propertyForm");
       const message = document.getElementById("propertyFormMessage");
+      
+      let selectedFiles = [];
 
       if (!form) return;
 
@@ -409,14 +413,43 @@
         mapPreview.src = "https://www.google.com/maps?q=" + query + "&output=embed";
       }
 
+      function updatePhotosList() {
+        photoList.innerHTML = "";
+        selectedFiles.forEach(function (fileName, index) {
+          const li = document.createElement("li");
+          li.textContent = (index + 1) + ". " + fileName + " ";
+          
+          const removeBtn = document.createElement("button");
+          removeBtn.type = "button";
+          removeBtn.textContent = "✕";
+          removeBtn.style.marginLeft = "0.25rem";
+          removeBtn.style.color = "#dc2626";
+          removeBtn.style.cursor = "pointer";
+          removeBtn.style.background = "none";
+          removeBtn.style.border = "none";
+          removeBtn.style.padding = "0";
+          removeBtn.title = "Eliminar esta foto";
+          removeBtn.onclick = function (e) {
+            e.preventDefault();
+            selectedFiles.splice(index, 1);
+            updatePhotosList();
+            validatePhotosCount();
+            return false;
+          };
+          
+          li.appendChild(removeBtn);
+          photoList.appendChild(li);
+        });
+      }
+
       function validatePhotosCount() {
-        const count = photosInput.files.length;
+        const count = selectedFiles.length;
         const valid = count >= 1 && count <= 10;
 
         if (count === 0) {
-          photoHelp.textContent = "Selecciona entre 1 y 10 imagenes.";
+          photoHelp.textContent = "Selecciona entre 1 y 10 imagenes. Puedes agregar más fotos haciendo clic nuevamente.";
         } else {
-          photoHelp.textContent = "Has seleccionado " + count + " imagen(es).";
+          photoHelp.textContent = "Has seleccionado " + count + " imagen(es) - Haz clic en el campo para agregar más.";
         }
 
         if (!valid) {
@@ -435,8 +468,26 @@
       if (sectorInput) {
         sectorInput.addEventListener("input", updateMap);
       }
-      photosInput.addEventListener("change", validatePhotosCount);
-
+      
+      photosInput.addEventListener("change", function () {
+        if (selectedFiles.length >= 10) {
+          alert("Ya has seleccionado 10 fotos (máximo permitido)");
+          photosInput.value = "";
+          return;
+        }
+        
+        const newFiles = Array.from(photosInput.files);
+        const remainingSlots = 10 - selectedFiles.length;
+        const filesToAdd = newFiles.slice(0, remainingSlots);
+        
+        filesToAdd.forEach(function (file) {
+          selectedFiles.push(file.name);
+        });
+        
+        updatePhotosList();
+        validatePhotosCount();
+        photosInput.value = "";
+      });
       form.addEventListener("submit", function (event) {
         validatePhotosCount();
 
