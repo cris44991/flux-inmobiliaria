@@ -373,6 +373,7 @@
 
       const provinceSelect = document.getElementById("propProvince");
       const comunaSelect = document.getElementById("propComuna");
+      const sectorInput = document.getElementById("propSector");
       const addressInput = document.getElementById("propAddress");
       const mapPreview = document.getElementById("propertyMapPreview");
       const photosInput = document.getElementById("propPhotos");
@@ -396,7 +397,15 @@
       }
 
       function updateMap() {
-        const query = encodeURIComponent(addressInput.value.trim() || "La Serena Chile");
+        const parts = [
+          addressInput.value.trim(),
+          sectorInput ? sectorInput.value.trim() : "",
+          comunaSelect.value ? comunaSelect.options[comunaSelect.selectedIndex].textContent : "",
+          provinceSelect.value ? provinceSelect.options[provinceSelect.selectedIndex].textContent : "",
+          "Chile"
+        ].filter(Boolean);
+
+        const query = encodeURIComponent(parts.join(", ") || "La Serena, Chile");
         mapPreview.src = "https://www.google.com/maps?q=" + query + "&output=embed";
       }
 
@@ -417,8 +426,15 @@
         }
       }
 
-      provinceSelect.addEventListener("change", fillComunas);
-      addressInput.addEventListener("change", updateMap);
+      provinceSelect.addEventListener("change", function () {
+        fillComunas();
+        updateMap();
+      });
+      comunaSelect.addEventListener("change", updateMap);
+      addressInput.addEventListener("input", updateMap);
+      if (sectorInput) {
+        sectorInput.addEventListener("input", updateMap);
+      }
       photosInput.addEventListener("change", validatePhotosCount);
 
       form.addEventListener("submit", function (event) {
