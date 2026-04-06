@@ -1,0 +1,204 @@
+/* === Estilos para formulario de registro de Gestor Inmobiliario === */
+:root {
+  --gestor-primary: #1a365d; /* Azul oscuro profesional */
+  --gestor-secondary: #2d3748; /* Gris oscuro */
+  --gestor-accent: #4a5568; /* Gris medio */
+  --gestor-light: #f7fafc; /* Blanco grisáceo */
+  --gestor-border: #e2e8f0;
+  --gestor-shadow: 0 20px 40px rgba(26, 54, 93, 0.15);
+  --gestor-radius: 12px;
+}
+
+.gestor-form-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--gestor-light) 0%, #edf2f7 100%);
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.gestor-form-header {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+}
+
+.brand-gestor {
+  color: var(--gestor-primary);
+  font-weight: 800;
+  font-size: 1.3rem;
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.gestor-form-main {
+  width: min(720px, 100%);
+}
+
+.gestor-form-card {
+  background: #ffffff;
+  border: 2px solid var(--gestor-border);
+  border-radius: var(--gestor-radius);
+  box-shadow: var(--gestor-shadow);
+  padding: 2.5rem;
+  position: relative;
+}
+
+.gestor-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.gestor-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gestor-primary);
+  margin: 0 0 0.5rem;
+}
+
+.gestor-description {
+  font-size: 1.1rem;
+  color: var(--gestor-accent);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.gestor-form-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--gestor-secondary);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  border: 1px solid var(--gestor-border);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  background: #ffffff;
+  color: var(--gestor-secondary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--gestor-primary);
+  box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  color: var(--gestor-accent);
+  margin-top: 0.2rem;
+}
+
+.btn-gestor {
+  width: 100%;
+  background: linear-gradient(135deg, var(--gestor-primary), var(--gestor-secondary));
+  color: #ffffff;
+  border: none;
+  border-radius: var(--gestor-radius);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.btn-gestor:hover,
+.btn-gestor:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(26, 54, 93, 0.25);
+}
+
+.gestor-login-link {
+  text-align: center;
+  margin: 0;
+}
+
+.gestor-login-link a {
+  color: var(--gestor-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.gestor-login-link a:hover,
+.gestor-login-link a:focus-visible {
+  text-decoration: underline;
+}
+
+.gestor-form-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--gestor-accent);
+  font-size: 0.9rem;
+}
+
+.estado-postulacion {
+  margin: 0.75rem 0 0;
+  font-weight: 600;
+}
+
+.gestor-flow,
+.gestor-owner-upload {
+  margin-top: 1.75rem;
+  border-top: 1px solid var(--gestor-border);
+  padding-top: 1.5rem;
+}
+
+.gestor-flow h2,
+.gestor-owner-upload h2 {
+  margin: 0 0 0.75rem;
+  color: var(--gestor-primary);
+  font-size: 1.2rem;
+}
+
+.gestor-flow ol {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+  color: var(--gestor-secondary);
+  line-height: 1.55;
+}
+
+.gestor-note {
+  margin: 0;
+  color: var(--gestor-accent);
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gestor-form-card {
+    padding: 1.5rem;
+  }
+
+  .gestor-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .gestor-description {
+    font-size: 1rem;
+  }
+
+  .gestor-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

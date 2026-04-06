@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flux Inmobiliaria | Gestión de Propiedades</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="../css/propiedades.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <div class="sidebar-header">
+        <h2>Flux Admin</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <span class="nav-icon">📊</span>
+          Dashboard
+        </a>
+        <a href="usuarios.html" class="nav-item">
+          <span class="nav-icon">👥</span>
+          Usuarios
+        </a>
+        <a href="propiedades.html" class="nav-item active" aria-current="page">
+          <span class="nav-icon">🏠</span>
+          Propiedades
+        </a>
+        <a href="publicaciones.html" class="nav-item">
+          <span class="nav-icon">📢</span>
+          Publicaciones
+        </a>
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1>Gestión de Propiedades</h1>
+        </div>
+        <div class="topbar-right">
+          <span class="user-info">Bienvenido, Admin</span>
+          <button class="logout-btn">Cerrar sesión</button>
+        </div>
+      </header>
+
+      <main class="dashboard-main">
+        <div class="page-header">
+          <div class="page-title-wrap">
+            <h2>Lista de Propiedades</h2>
+            <p class="page-subtitle">Administra, revisa y actualiza tu inventario inmobiliario.</p>
+          </div>
+          <div class="admin-controls">
+            <button class="btn-highlight">✅ Aprobar Publicaciones</button>
+            <button class="btn-highlight">⚡ Venta Rápida</button>
+            <button class="btn-highlight">📤 Exportar CSV</button>
+            <button class="btn-primary add-property-btn">
+              <span class="btn-icon">➕</span>
+              Agregar Propiedad
+            </button>
+          </div>
+        </div>
+
+        <div class="properties-filters">
+          <label for="statusFilter">Filtrar por estado:</label>
+          <select id="statusFilter" class="form-select">
+            <option value="all">Todas</option>
+            <option value="available">Disponible</option>
+            <option value="rented">Arrendada</option>
+            <option value="sold">Vendida</option>
+          </select>
+
+          <label for="typeFilter">Tipo de propiedad:</label>
+          <select id="typeFilter" class="form-select">
+            <option value="all">Todos</option>
+            <option value="house">Casa</option>
+            <option value="apartment">Departamento</option>
+            <option value="land">Terreno</option>
+            <option value="office">Oficina</option>
+          </select>
+
+          <button class="btn-success" onclick="alert('Filtro aplicado (mock)')">Aplicar Filtro</button>
+        </div>
+
+        <section class="property-register" aria-labelledby="register-property-title">
+          <h2 id="register-property-title">Registro de Propiedad</h2>
+          <p>Formulario rápido para agregar propiedades al inventario administrativo.</p>
+
+          <form class="property-form" action="#" method="post" novalidate id="propertyForm" enctype="multipart/form-data">
+            <fieldset>
+              <legend class="sr-only">Formulario de registro de propiedad</legend>
+              <p class="form-note">Esta publicación puede ser gestionada por usuario Propietario o Administrador.</p>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="publisherType">Publicado por</label>
+                  <select id="publisherType" name="publisherType" required>
+                    <option value="">Selecciona tipo de usuario</option>
+                    <option value="Propietario">Propietario</option>
+                    <option value="Administrador">Administrador</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="propTitle">Título de la propiedad</label>
+                  <input id="propTitle" name="propTitle" type="text" placeholder="Casa 4D / 3B centro" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="propType">Tipo de Propiedad</label>
+                  <select id="propType" name="propType" required>
+                    <option value="">Selecciona tipo</option>
+                    <option value="Casa">Casa</option>
+                    <option value="Departamento">Departamento</option>
+                    <option value="Terreno">Terreno</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="propDescription">Descripción</label>
+                  <textarea id="propDescription" name="propDescription" rows="3" placeholder="Describe las principales características de la propiedad" required></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="propBedrooms">Dormitorios</label>
+                  <input id="propBedrooms" name="propBedrooms" type="number" min="0" placeholder="4" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="propBathrooms">Baños</label>
+                  <input id="propBathrooms" name="propBathrooms" type="number" min="0" placeholder="3" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="propBuiltArea">Área Construida (m²)</label>
+                  <input id="propBuiltArea" name="propBuiltArea" type="number" min="0" step="0.1" placeholder="180" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="propLandArea">Área Total del Terreno (m²)</label>
+                  <input id="propLandArea" name="propLandArea" type="number" min="0" step="0.1" placeholder="228" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="propUfPrice">Precio en UF</label>
+                  <input id="propUfPrice" name="propUfPrice" type="number" min="0" step="0.01" placeholder="7200" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="propPrice">Precio en $</label>
+                  <input id="propPrice" name="propPrice" type="number" min="0" placeholder="285000000" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="publicationDate">Fecha de Publicación</label>
+                  <input id="publicationDate" name="publicationDate" type="date" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="propProvince">Provincia</label>
+                  <select id="propProvince" name="propProvince" required>
+                    <option value="">Selecciona provincia</option>
+                    <option value="elqui">Elqui</option>
+                    <option value="limari">Limari</option>
+                    <option value="choapa">Choapa</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="propComuna">Comuna</label>
+                  <select id="propComuna" name="propComuna" required>
+                    <option value="">Selecciona comuna</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="propSector">Sector</label>
+                  <input id="propSector" name="propSector" type="text" placeholder="Ej. El Milagro, Centro" required />
+                </div>
+
+                <div class="form-group form-group-full">
+                  <label for="propAddress">Direccion o referencia para mapa</label>
+                  <input id="propAddress" name="propAddress" type="text" placeholder="Ej. Av. del Mar 1200, La Serena" required />
+                </div>
+
+                <div class="form-group form-group-full map-preview-wrap">
+                  <label>Ubicacion (Google Maps)</label>
+                  <iframe
+                    id="propertyMapPreview"
+                    title="Vista previa del mapa"
+                    src="https://www.google.com/maps?q=La+Serena+Chile&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                  </iframe>
+                </div>
+
+                <div class="form-group form-group-full check-row">
+                  <label class="check-item"><input type="checkbox" id="hasVisitOption" name="hasVisitOption" checked /> Opcion de solicitar visita</label>
+                  <label class="check-item"><input type="checkbox" id="hasStorage" name="hasStorage" /> Bodega</label>
+                  <label class="check-item"><input type="checkbox" id="hasParking" name="hasParking" /> Estacionamiento</label>
+                  <label class="check-item"><input type="checkbox" id="hasFurnishedKitchen" name="hasFurnishedKitchen" /> Cocina amoblada</label>
+                  <label class="check-item"><input type="checkbox" id="hasFrontYard" name="hasFrontYard" /> Antejardin</label>
+                  <label class="check-item"><input type="checkbox" id="hasLoggia" name="hasLoggia" /> Logia</label>
+                  <label class="check-item"><input type="checkbox" id="hasBackyard" name="hasBackyard" /> Patio trasero</label>
+                  <label class="check-item"><input type="checkbox" id="hasPool" name="hasPool" /> Piscina</label>
+                </div>
+
+                <div class="form-group form-group-full">
+                  <label for="propPhotos">Fotografias (1 a 10)</label>
+                  <input id="propPhotos" name="propPhotos" type="file" accept="image/*" multiple required />
+                  <small id="photoHelp" class="form-help">Selecciona entre 1 y 10 imagenes.</small>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">Guardar propiedad</button>
+              <p id="propertyFormMessage" class="form-help" style="display: none;"></p>
+            </fieldset>
+          </form>
+        </section>
+
+        <div class="properties-grid">
+          <div class="property-card">
+            <div class="property-image">
+              <img src="../img/propiedades/casalascondes.jpg" alt="Casa en Las Condes" />
+              <span class="property-status available">Disponible</span>
+            </div>
+            <div class="property-content">
+              <h3>Casa en Las Condes</h3>
+              <p class="property-location">🏠 Las Condes, Santiago</p>
+              <p class="property-price">$285.000.000 CLP</p>
+              <div class="property-actions">
+                <button class="btn-edit" title="Editar propiedad">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-delete" title="Eliminar propiedad">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="property-image">
+              <img src="../img/propiedades/departamentoviñadelmar.jpg" alt="Departamento en Viña del Mar" />
+              <span class="property-status rented">Arrendada</span>
+            </div>
+            <div class="property-content">
+              <h3>Departamento 3D / 2B</h3>
+              <p class="property-location">🏙️ Viña del Mar, Valparaíso</p>
+              <p class="property-price">$165.000.000 CLP</p>
+              <div class="property-actions">
+                <button class="btn-edit" title="Editar propiedad">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-delete" title="Eliminar propiedad">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="property-image">
+              <img src="../img/propiedades/terreno.jpg" alt="Terreno en Concepción" />
+              <span class="property-status sold">Vendida</span>
+            </div>
+            <div class="property-content">
+              <h3>Terreno 720 m²</h3>
+              <p class="property-location">🌳 Concepción, Biobío</p>
+              <p class="property-price">$95.000.000 CLP</p>
+              <div class="property-actions">
+                <button class="btn-edit" title="Editar propiedad">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-delete" title="Eliminar propiedad">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="property-image">
+              <img src="../img/propiedades/casaprovidencia.jpg" alt="Casa en Providencia" />
+              <span class="property-status available">Disponible</span>
+            </div>
+            <div class="property-content">
+              <h3>Casa 5D / 4B</h3>
+              <p class="property-location">🏠 Providencia, Santiago</p>
+              <p class="property-price">$420.000.000 CLP</p>
+              <div class="property-actions">
+                <button class="btn-edit" title="Editar propiedad">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-delete" title="Eliminar propiedad">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="property-image">
+              <img src="../img/propiedades/oficina.jpg" alt="Oficina en Centro" />
+              <span class="property-status available">Disponible</span>
+            </div>
+            <div class="property-content">
+              <h3>Oficina 200 m²</h3>
+              <p class="property-location">🏢 Centro, Santiago</p>
+              <p class="property-price">$180.000.000 CLP</p>
+              <div class="property-actions">
+                <button class="btn-edit" title="Editar propiedad">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-delete" title="Eliminar propiedad">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="property-card">
+            <div class="property-image">
+              <img src="../img/propiedades/localcomercial2.jpg" alt="Local comercial en Temuco" />
+              <span class="property-status rented">Arrendado</span>
+            </div>
+            <div class="property-content">
+              <h3>Local Comercial 150 m²</h3>
+              <p class="property-location">🏪 Temuco, La Araucanía</p>
+              <p class="property-price">$250.000.000 CLP</p>
+              <div class="property-actions">
+                <button class="btn-edit" title="Editar propiedad">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-delete" title="Eliminar propiedad">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-footer">
+          <p>Mostrando 6 de 1,247 propiedades</p>
+          <div class="pagination">
+            <button class="pagination-btn" disabled>Anterior</button>
+            <span class="pagination-info">Página 1 de 208</span>
+            <button class="pagination-btn">Siguiente</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const provinceComunas = {
+        elqui: ["La Serena", "Coquimbo", "Vicuña", "Paihuano"],
+        limari: ["Ovalle", "Monte Patria", "Combarbala", "Punitaqui"],
+        choapa: ["Illapel", "Salamanca", "Los Vilos", "Canela"]
+      };
+
+      const provinceSelect = document.getElementById("propProvince");
+      const comunaSelect = document.getElementById("propComuna");
+      const addressInput = document.getElementById("propAddress");
+      const mapPreview = document.getElementById("propertyMapPreview");
+      const photosInput = document.getElementById("propPhotos");
+      const photoHelp = document.getElementById("photoHelp");
+      const form = document.getElementById("propertyForm");
+      const message = document.getElementById("propertyFormMessage");
+
+      if (!form) return;
+
+      function fillComunas() {
+        const key = provinceSelect.value;
+        const comunas = provinceComunas[key] || [];
+        comunaSelect.innerHTML = '<option value="">Selecciona comuna</option>';
+
+        comunas.forEach(function (comuna) {
+          const option = document.createElement("option");
+          option.value = comuna.toLowerCase().replace(/\s+/g, "-");
+          option.textContent = comuna;
+          comunaSelect.appendChild(option);
+        });
+      }
+
+      function updateMap() {
+        const query = encodeURIComponent(addressInput.value.trim() || "La Serena Chile");
+        mapPreview.src = "https://www.google.com/maps?q=" + query + "&output=embed";
+      }
+
+      function validatePhotosCount() {
+        const count = photosInput.files.length;
+        const valid = count >= 1 && count <= 10;
+
+        if (count === 0) {
+          photoHelp.textContent = "Selecciona entre 1 y 10 imagenes.";
+        } else {
+          photoHelp.textContent = "Has seleccionado " + count + " imagen(es).";
+        }
+
+        if (!valid) {
+          photosInput.setCustomValidity("Debes cargar entre 1 y 10 fotografias.");
+        } else {
+          photosInput.setCustomValidity("");
+        }
+      }
+
+      provinceSelect.addEventListener("change", fillComunas);
+      addressInput.addEventListener("change", updateMap);
+      photosInput.addEventListener("change", validatePhotosCount);
+
+      form.addEventListener("submit", function (event) {
+        validatePhotosCount();
+
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          form.reportValidity();
+          return;
+        }
+
+        event.preventDefault();
+        message.style.display = "block";
+        message.style.color = "#065f46";
+        message.textContent = "Publicacion registrada con exito con todos los antecedentes del inmueble.";
+      });
+
+      fillComunas();
+      updateMap();
+    })();
+  </script>
+</body>
+</html>

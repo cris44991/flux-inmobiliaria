@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flux Inmobiliaria | Dashboard Administrativo</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <div class="sidebar-header">
+        <h2>Flux Admin</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item active" aria-current="page">
+          <span class="nav-icon">📊</span>
+          Dashboard
+        </a>
+        <a href="usuarios.html" class="nav-item">
+          <span class="nav-icon">👥</span>
+          Usuarios
+        </a>
+        <a href="propiedades.html" class="nav-item">
+          <span class="nav-icon">🏠</span>
+          Propiedades
+        </a>
+        <a href="publicaciones.html" class="nav-item">
+          <span class="nav-icon">📢</span>
+          Publicaciones
+        </a>
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1>🏢 Flux Inmobiliaria - Panel Administrativo</h1>
+        </div>
+        <div class="topbar-right">
+          <span class="user-info">
+            <span class="user-avatar">👤</span>
+            Administrador
+          </span>
+          <button class="logout-btn" title="Cerrar sesión">
+            <span class="btn-icon">🚪</span>
+            Salir
+          </button>
+        </div>
+      </header>
+
+      <main class="dashboard-main">
+        <!-- Sección de Bienvenida -->
+        <section class="welcome-section" aria-labelledby="welcome-title">
+          <div class="welcome-content">
+            <div class="welcome-text">
+              <h1 id="welcome-title" class="welcome-title">
+                ¡Bienvenido de vuelta, Administrador! 👋
+              </h1>
+              <p class="welcome-subtitle">
+                Gestiona eficientemente tu portafolio inmobiliario: usuarios, propiedades y publicaciones desde un solo lugar.
+              </p>
+              <div class="welcome-stats">
+                <div class="stat-item">
+                  <span class="stat-number">1,247</span>
+                  <span class="stat-label">Propiedades activas</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">3,892</span>
+                  <span class="stat-label">Usuarios registrados</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">567</span>
+                  <span class="stat-label">Publicaciones</span>
+                </div>
+              </div>
+            </div>
+            <div class="welcome-visual">
+              <div class="welcome-icon">🏢</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tarjetas de Resumen -->
+          <div class="card">
+            <div class="card-icon">🏠</div>
+            <div class="card-content">
+              <h3>Total Propiedades</h3>
+              <p class="card-number">1,247</p>
+              <span class="card-change positive">+12% este mes</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">👥</div>
+            <div class="card-content">
+              <h3>Usuarios Activos</h3>
+              <p class="card-number">3,892</p>
+              <span class="card-change positive">+8% esta semana</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📢</div>
+            <div class="card-content">
+              <h3>Publicaciones</h3>
+              <p class="card-number">567</p>
+              <span class="card-change neutral">Sin cambios</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">💰</div>
+            <div class="card-content">
+              <h3>Ingresos Mensuales</h3>
+              <p class="card-number">$2.4M</p>
+              <span class="card-change positive">+15% vs mes anterior</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="recent-activity">
+          <h2>Actividad Reciente</h2>
+          <div class="activity-list">
+            <div class="activity-item">
+              <div class="activity-icon">🏠</div>
+              <div class="activity-content">
+                <p>Nueva propiedad publicada en Las Condes</p>
+                <span class="activity-time">Hace 2 horas</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">👤</div>
+              <div class="activity-content">
+                <p>Nuevo usuario registrado: María González</p>
+                <span class="activity-time">Hace 4 horas</span>
+              </div>
+            </div>
+            <div class="activity-item">
+              <div class="activity-icon">📢</div>
+              <div class="activity-content">
+                <p>Publicación actualizada en Viña del Mar</p>
+                <span class="activity-time">Hace 6 horas</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propiedades en Venta | Flux Inmobiliaria</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/listado.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" aria-label="Flux Inmobiliaria">
+        <span class="brand-logo">🟦</span>
+        <span class="brand-text">Flux Inmobiliaria</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="../index.html">Inicio</a>
+        <a href="../login/login.html">Login</a>
+        <a href="listado.html" class="active">Propiedades</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="properties-listing">
+    <section class="hero-section">
+      <div class="container">
+        <h1>Propiedades en Venta</h1>
+        <p>Descubre las mejores propiedades disponibles en las mejores ubicaciones de Chile</p>
+      </div>
+    </section>
+
+    <section class="filters-section">
+      <div class="container">
+        <div class="filters-grid">
+          <div class="filter-group">
+            <label for="tipo">Tipo de Propiedad</label>
+            <select id="tipo">
+              <option value="">Todos los tipos</option>
+              <option value="casa">Casa</option>
+              <option value="departamento">Departamento</option>
+              <option value="terreno">Terreno</option>
+              <option value="oficina">Oficina</option>
+              <option value="local">Local Comercial</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="provincia">Provincia</label>
+            <select id="provincia">
+              <option value="">Todas las provincias</option>
+              <option value="santiago">Santiago</option>
+              <option value="valparaiso">Valparaiso</option>
+              <option value="biobio">Biobio</option>
+              <option value="araucania">Araucania</option>
+              <option value="coquimbo">Coquimbo</option>
+              <option value="los-lagos">Los Lagos</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="comuna">Comuna</label>
+            <select id="comuna">
+              <option value="">Todas las comunas</option>
+              <option value="las-condes">Las Condes</option>
+              <option value="vina-del-mar">Vina del Mar</option>
+              <option value="concepcion">Concepcion</option>
+              <option value="providencia">Providencia</option>
+              <option value="santiago-centro">Santiago Centro</option>
+              <option value="temuco">Temuco</option>
+              <option value="nunoa">Nunoa</option>
+              <option value="la-serena">La Serena</option>
+              <option value="puerto-montt">Puerto Montt</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="sector">Sector</label>
+            <input id="sector" type="text" placeholder="Ej. Centro, El Milagro" />
+          </div>
+          <div class="filter-group">
+            <label for="precio">Rango de Precio</label>
+            <select id="precio">
+              <option value="">Todos los precios</option>
+              <option value="0-100">Hasta $100M</option>
+              <option value="100-300">$100M - $300M</option>
+              <option value="300-500">$300M - $500M</option>
+              <option value="500+">Más de $500M</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="dormitorios">Dormitorios</label>
+            <select id="dormitorios">
+              <option value="">Cualquiera</option>
+              <option value="1">1+</option>
+              <option value="2">2+</option>
+              <option value="3">3+</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="properties-section">
+      <div class="container">
+        <div class="properties-header">
+          <h2>Propiedades Destacadas</h2>
+          <p>Encontramos <span class="properties-count">24</span> propiedades para ti</p>
+        </div>
+
+        <div class="properties-grid">
+          <article class="property-card" data-tipo="casa" data-provincia="santiago" data-comuna="las-condes" data-sector="manquehue" data-precio="285" data-dormitorios="4">
+            <div class="property-image">
+              <img src="../img/propiedades/casalascondes.jpg" alt="Casa en Las Condes" loading="lazy" />
+              <div class="property-badge">Destacada</div>
+            </div>
+            <div class="property-content">
+              <h3>Casa en Las Condes</h3>
+              <p class="property-price">$285.000.000 <span class="price-uf">≈ 7.200 UF</span></p>
+              <p class="property-location">
+                <span class="location-icon">🏠</span>
+                Las Condes, Santiago
+              </p>
+              <div class="property-features">
+                <span>4 🛏️</span>
+                <span>3 🚿</span>
+                <span>228 m² 📐</span>
+              </div>
+              <a href="detalle.html" class="btn-view-more">Quiero saber más</a>
+            </div>
+          </article>
+
+          <article class="property-card" data-tipo="departamento" data-provincia="valparaiso" data-comuna="vina-del-mar" data-sector="san-martin" data-precio="138" data-dormitorios="3">
+            <div class="property-image">
+              <img src="../img/propiedades/departamentoviñadelmar.jpg" alt="Departamento en Viña del Mar" loading="lazy" />
+              <div class="property-badge">Nueva</div>
+            </div>
+            <div class="property-content">
+              <h3>Departamento Viña del Mar</h3>
+              <p class="property-price">$138.000.000 <span class="price-uf">≈ 3.520 UF</span></p>
+              <p class="property-location">
+                <span class="location-icon">🏙️</span>
+                Viña del Mar, Valparaíso
+              </p>
+              <div class="property-features">
+                <span>3 🛏️</span>
+                <span>2 🚿</span>
+                <span>79 m² 📐</span>
+              </div>
+              <a href="detalle.html" class="btn-view-more">Quiero saber más</a>
+            </div>
+          </article>
+
+          <article class="property-card" data-tipo="terreno" data-provincia="biobio" data-comuna="concepcion" data-sector="centro" data-precio="95" data-dormitorios="0">
+            <div class="property-image">
+              <img src="../img/propiedades/terreno.jpg" alt="Terreno en Concepción" loading="lazy" />
+            </div>
+            <div class="property-content">
+              <h3>Terreno 720 m²</h3>
+              <p class="property-price">$95.000.000 <span class="price-uf">≈ 2.400 UF</span></p>
+              <p class="property-location">
+                <span class="location-icon">🌳</span>
+                Concepción, Biobío
+              </p>
+              <div class="property-features">
+                <span>720 m² 📐</span>
+                <span>Plano 📋</span>
+              </div>
+              <a href="detalle.html" class="btn-view-more">Quiero saber más</a>
+            </div>
+          </article>
+
+          <article class="property-card" data-tipo="casa" data-provincia="santiago" data-comuna="providencia" data-sector="pedro-de-valdivia" data-precio="420" data-dormitorios="5">
+            <div class="property-image">
+              <img src="../img/propiedades/casaprovidencia.jpg" alt="Casa en Providencia" loading="lazy" />
+              <div class="property-badge">Destacada</div>
+            </div>
+            <div class="property-content">
+              <h3>Casa 5D / 4B</h3>
+              <p class="property-price">$420.000.000 <span class="price-uf">≈ 10.600 UF</span></p>
+              <p class="property-location">
+                <span class="location-icon">🏠</span>
+                Providencia, Santiago
+              </p>
+              <div class="property-features">
+                <span>5 🛏️</span>
+                <span>4 🚿</span>
+                <span>320 m² 📐</span>
+              </div>
+              <a href="detalle.html" class="btn-view-more">Quiero saber más</a>
+            </div>
+          </article>
+
+          <article class="property-card" data-tipo="oficina" data-provincia="santiago" data-comuna="santiago-centro" data-sector="centro" data-precio="180" data-dormitorios="0">
+            <div class="property-image">
+              <img src="../img/propiedades/oficina.jpg" alt="Oficina en Centro" loading="lazy" />
+            </div>
+            <div class="property-content">
+              <h3>Oficina 200 m²</h3>
+              <p class="property-price">$180.000.000 <span class="price-uf">≈ 4.500 UF</span></p>
+              <p class="property-location">
+                <span class="location-icon">🏢</span>
+                Centro, Santiago
+              </p>
+              <div class="property-features">
+                <span>200 m² 📐</span>
+                <span>2 pisos 🏢</span>
+              </div>
+              <a href="detalle.html" class="btn-view-more">Quiero saber más</a>
+            </div>
+          </article>
+
+          <article class="property-card" data-tipo="local" data-provincia="araucania" data-comuna="temuco" data-sector="centro" data-precio="250" data-dormitorios="0">
+            <div class="property-image">
+              <img src="../img/propiedades/localcomercial2.jpg" alt="Local comercial en Temuco" loading="lazy" />
+              <div class="property-badge">Nueva</div>
+            </div>
+            <div class="property-content">
+              <h3>Local Comercial 150 m²</h3>
+              <p class="property-price">$250.000.000 <span class="price-uf">≈ 6.300 UF</span></p>
+              <p class="property-location">
+                <span class="location-icon">🏪</span>
+                Temuco, La Araucanía
+              </p>
+              <div class="property-features">
+                <span>150 m² 📐</span>
+                <span>Vitrinado 🛍️</span>
+              </div>
+              <a href="detalle.html" class="btn-view-more">Quiero saber más</a>
+            </div>
+          </article>
+
+          <article class="property-card" data-tipo="casa" data-provincia="santiago" data-comuna="nunoa" data-sector="plaza-nunoa" data-precio="195" data-dormitorios="3">
+            <div class="property-image">
+              <img src="../img/propiedades/casañuñoa.jpg" alt="Casa en Ñuñoa" loading="lazy" />
+            </div>
+            <div class="property-content">
+              <h3>Casa 3D / 2B</h3>
+              <p class="property-price">$195.000.000 <span class="price-uf">≈ 4.900 UF</span></p>
+              <p class="property-location">
+                <span class="location-icon">🏠</span>
+                Ñuñoa, Santiago
+              </p>
+              <div class="property-features">
+                <span>3 🛏️</span>
+                <span>2 🚿</span>
+                <span>160 m² 📐</span>
+              </div>
+              <a href="detalle.html" class="btn-view-more">Quiero saber más</a>
+            </div>
+          </article>
+
+          <article class="property-card" data-tipo="departamento" data-provincia="coquimbo" data-comuna="la-serena" data-sector="el-milagro" data-precio="85" data-dormitorios="2">
+            <div class="property-image">
+              <img src="../img/propiedades/departamento2d.jpg" alt="Departamento en La Serena" loading="lazy" />
+            </div>
+            <div class="property-content">
+              <h3>Departamento 2D / 1B</h3>
+              <p class="property-price">$85.000.000 <span class="price-uf">≈ 2.100 UF</span></p>
+              <p class="property-location">
+                <span class="location-icon">🏙️</span>
+                La Serena, Coquimbo
+              </p>
+              <div class="property-features">
+                <span>2 🛏️</span>
+                <span>1 🚿</span>
+                <span>65 m² 📐</span>
+              </div>
+              <a href="detalle.html" class="btn-view-more">Quiero saber más</a>
+            </div>
+          </article>
+
+          <article class="property-card" data-tipo="terreno" data-provincia="los-lagos" data-comuna="puerto-montt" data-sector="costanera" data-precio="120" data-dormitorios="0">
+            <div class="property-image">
+              <img src="../img/propiedades/terreno.puerto.jpg" alt="Terreno en Puerto Montt" loading="lazy" />
+              <div class="property-badge">Destacada</div>
+            </div>
+            <div class="property-content">
+              <h3>Terreno 1.200 m²</h3>
+              <p class="property-price">$120.000.000 <span class="price-uf">≈ 3.000 UF</span></p>
+              <p class="property-location">
+                <span class="location-icon">🌳</span>
+                Puerto Montt, Los Lagos
+              </p>
+              <div class="property-features">
+                <span>1.200 m² 📐</span>
+                <span>Vista al mar 🌊</span>
+              </div>
+              <a href="detalle.html" class="btn-view-more">Quiero saber más</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="load-more-section">
+          <button class="btn-load-more">
+            <span class="btn-icon">🔄</span>
+            Cargar más propiedades
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Flux Inmobiliaria</h3>
+        <p>
+          Agencia inmobiliaria con cobertura nacional. Asesoría profesional en compra, venta y arrendamiento.
+        </p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>Email: contacto@fluxinmobiliaria.cl</p>
+        <p>Teléfono: +56 9 1234 5678</p>
+        <p>Dirección: Av. Providencia 2500, Santiago</p>
+      </div>
+      <div>
+        <h4>Redes</h4>
+        <p>Facebook | Instagram | LinkedIn</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Flux Inmobiliaria - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const tipo = document.getElementById("tipo");
+      const provincia = document.getElementById("provincia");
+      const comuna = document.getElementById("comuna");
+      const sector = document.getElementById("sector");
+      const precio = document.getElementById("precio");
+      const dormitorios = document.getElementById("dormitorios");
+      const cards = Array.from(document.querySelectorAll(".property-card"));
+      const count = document.querySelector(".properties-count");
+      const loadMoreBtn = document.querySelector(".btn-load-more");
+      const initialBatch = 6;
+      const loadStep = 3;
+      let visibleLimit = initialBatch;
+
+      function normalizeText(value) {
+        return (value || "")
+          .toString()
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .trim()
+          .replace(/[-_]+/g, " ")
+          .replace(/\s+/g, " ");
+      }
+
+      function matchesPrecio(cardPrice) {
+        const val = precio.value;
+        if (!val) return true;
+
+        const n = Number(cardPrice);
+        if (val === "0-100") return n <= 100;
+        if (val === "100-300") return n >= 100 && n <= 300;
+        if (val === "300-500") return n >= 300 && n <= 500;
+        if (val === "500+") return n > 500;
+        return true;
+      }
+
+      function applyFilters() {
+        const filteredCards = [];
+
+        cards.forEach(function (card) {
+          const sectorQuery = normalizeText(sector.value);
+          const cardSector = normalizeText(card.dataset.sector || "");
+          const cardComuna = normalizeText(card.dataset.comuna || "");
+          const cardProvincia = normalizeText(card.dataset.provincia || "");
+          const okTipo = !tipo.value || card.dataset.tipo === tipo.value;
+          const okProvincia = !provincia.value || card.dataset.provincia === provincia.value;
+          const okComuna = !comuna.value || card.dataset.comuna === comuna.value;
+          const okSector =
+            !sectorQuery ||
+            cardSector.indexOf(sectorQuery) !== -1 ||
+            cardComuna.indexOf(sectorQuery) !== -1 ||
+            cardProvincia.indexOf(sectorQuery) !== -1;
+          const okPrecio = matchesPrecio(card.dataset.precio || "0");
+          const minDorm = dormitorios.value ? Number(dormitorios.value) : 0;
+          const cardDorm = Number(card.dataset.dormitorios || "0");
+          const okDorm = !dormitorios.value || cardDorm >= minDorm;
+
+          const show = okTipo && okProvincia && okComuna && okSector && okPrecio && okDorm;
+          card.classList.toggle("hidden-card", !show);
+          if (show) filteredCards.push(card);
+        });
+
+        filteredCards.forEach(function (card, index) {
+          card.classList.toggle("hidden-card", index >= visibleLimit);
+        });
+
+        if (loadMoreBtn) {
+          if (filteredCards.length <= visibleLimit) {
+            loadMoreBtn.disabled = true;
+            loadMoreBtn.style.opacity = "0.6";
+            loadMoreBtn.style.cursor = "not-allowed";
+            loadMoreBtn.textContent = filteredCards.length === 0 ? "No hay propiedades" : "No hay más propiedades";
+          } else {
+            loadMoreBtn.disabled = false;
+            loadMoreBtn.style.opacity = "1";
+            loadMoreBtn.style.cursor = "pointer";
+            loadMoreBtn.innerHTML = '<span class="btn-icon">🔄</span>Cargar más propiedades';
+          }
+        }
+
+        count.textContent = String(filteredCards.length);
+      }
+
+      function resetAndApply() {
+        visibleLimit = initialBatch;
+        applyFilters();
+      }
+
+      [tipo, provincia, comuna, precio, dormitorios].forEach(function (el) {
+        el.addEventListener("change", resetAndApply);
+      });
+
+      sector.addEventListener("input", resetAndApply);
+
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener("click", function () {
+          visibleLimit += loadStep;
+          applyFilters();
+        });
+      }
+
+      resetAndApply();
+    })();
+  </script>
+</body>
+</html>

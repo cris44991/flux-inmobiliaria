@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flux Inmobiliaria | Gestión de Publicaciones</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="../css/publicaciones.css" />
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar" aria-label="Navegación principal">
+      <div class="sidebar-header">
+        <h2>Flux Admin</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="nav-item">
+          <span class="nav-icon">📊</span>
+          Dashboard
+        </a>
+        <a href="usuarios.html" class="nav-item">
+          <span class="nav-icon">👥</span>
+          Usuarios
+        </a>
+        <a href="propiedades.html" class="nav-item">
+          <span class="nav-icon">🏠</span>
+          Propiedades
+        </a>
+        <a href="publicaciones.html" class="nav-item active" aria-current="page">
+          <span class="nav-icon">📢</span>
+          Publicaciones
+        </a>
+      </nav>
+    </aside>
+
+    <div class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1>Gestión de Publicaciones</h1>
+        </div>
+        <div class="topbar-right">
+          <span class="user-info">Bienvenido, Admin</span>
+          <button class="logout-btn">Cerrar sesión</button>
+        </div>
+      </header>
+
+      <main class="dashboard-main">
+        <div class="page-header">
+          <h2>Publicaciones Activas</h2>
+          <button class="btn-primary add-publication-btn">
+            <span class="btn-icon">➕</span>
+            Nueva Publicación
+          </button>
+        </div>
+
+        <div class="publications-grid">
+          <div class="publication-card">
+            <div class="publication-image">
+              <img src="../img/propiedades/casalascondes.jpg" alt="Casa en Las Condes" />
+              <span class="publication-status active">Activa</span>
+            </div>
+            <div class="publication-content">
+              <h3>Casa en Las Condes</h3>
+              <p class="publication-price">$285.000.000 CLP</p>
+              <p class="publication-location">🏠 Las Condes, Santiago</p>
+              <div class="publication-meta">
+                <span class="meta-item">👁️ 1,247 vistas</span>
+                <span class="meta-item">❤️ 23 interesados</span>
+                <span class="meta-item">📅 15/03/2026</span>
+              </div>
+              <div class="publication-actions">
+                <button class="btn-edit" title="Editar publicación">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-toggle" title="Desactivar publicación">
+                  <span class="btn-icon">⏸️</span>
+                  Pausar
+                </button>
+                <button class="btn-delete" title="Eliminar publicación">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="publication-card">
+            <div class="publication-image">
+              <img src="../img/propiedades/departamentoviñadelmar.jpg" alt="Departamento en Viña del Mar" />
+              <span class="publication-status pending">Pendiente</span>
+            </div>
+            <div class="publication-content">
+              <h3>Departamento 3D / 2B en Viña del Mar</h3>
+              <p class="publication-price">$165.000.000 CLP</p>
+              <p class="publication-location">🏙️ Viña del Mar, Valparaíso</p>
+              <div class="publication-meta">
+                <span class="meta-item">👁️ 892 vistas</span>
+                <span class="meta-item">❤️ 15 interesados</span>
+                <span class="meta-item">📅 22/03/2026</span>
+              </div>
+              <div class="publication-actions">
+                <button class="btn-edit" title="Editar publicación">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-activate" title="Activar publicación">
+                  <span class="btn-icon">▶️</span>
+                  Activar
+                </button>
+                <button class="btn-delete" title="Eliminar publicación">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="publication-card">
+            <div class="publication-image">
+              <img src="../img/propiedades/terreno.jpg" alt="Terreno en Concepción" />
+              <span class="publication-status active">Activa</span>
+            </div>
+            <div class="publication-content">
+              <h3>Terreno 720 m² en Concepción</h3>
+              <p class="publication-price">$95.000.000 CLP</p>
+              <p class="publication-location">🌳 Concepción, Biobío</p>
+              <div class="publication-meta">
+                <span class="meta-item">👁️ 654 vistas</span>
+                <span class="meta-item">❤️ 8 interesados</span>
+                <span class="meta-item">📅 10/03/2026</span>
+              </div>
+              <div class="publication-actions">
+                <button class="btn-edit" title="Editar publicación">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-toggle" title="Desactivar publicación">
+                  <span class="btn-icon">⏸️</span>
+                  Pausar
+                </button>
+                <button class="btn-delete" title="Eliminar publicación">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="publication-card">
+            <div class="publication-image">
+              <img src="../img/propiedades/casaprovidencia.jpg" alt="Casa en Providencia" />
+              <span class="publication-status inactive">Inactiva</span>
+            </div>
+            <div class="publication-content">
+              <h3>Casa 5D / 4B en Providencia</h3>
+              <p class="publication-price">$420.000.000 CLP</p>
+              <p class="publication-location">🏠 Providencia, Santiago</p>
+              <div class="publication-meta">
+                <span class="meta-item">👁️ 2,134 vistas</span>
+                <span class="meta-item">❤️ 45 interesados</span>
+                <span class="meta-item">📅 05/03/2026</span>
+              </div>
+              <div class="publication-actions">
+                <button class="btn-edit" title="Editar publicación">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-activate" title="Activar publicación">
+                  <span class="btn-icon">▶️</span>
+                  Activar
+                </button>
+                <button class="btn-delete" title="Eliminar publicación">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="publication-card">
+            <div class="publication-image">
+              <img src="../img/propiedades/oficina.jpg" alt="Oficina en Centro" />
+              <span class="publication-status active">Activa</span>
+            </div>
+            <div class="publication-content">
+              <h3>Oficina 200 m² en Centro</h3>
+              <p class="publication-price">$180.000.000 CLP</p>
+              <p class="publication-location">🏢 Centro, Santiago</p>
+              <div class="publication-meta">
+                <span class="meta-item">👁️ 1,567 vistas</span>
+                <span class="meta-item">❤️ 32 interesados</span>
+                <span class="meta-item">📅 18/03/2026</span>
+              </div>
+              <div class="publication-actions">
+                <button class="btn-edit" title="Editar publicación">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-toggle" title="Desactivar publicación">
+                  <span class="btn-icon">⏸️</span>
+                  Pausar
+                </button>
+                <button class="btn-delete" title="Eliminar publicación">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="publication-card">
+            <div class="publication-image">
+              <img src="../img/propiedades/localcomercial2.jpg" alt="Local comercial en Temuco" />
+              <span class="publication-status pending">Pendiente</span>
+            </div>
+            <div class="publication-content">
+              <h3>Local Comercial 150 m² en Temuco</h3>
+              <p class="publication-price">$250.000.000 CLP</p>
+              <p class="publication-location">🏪 Temuco, La Araucanía</p>
+              <div class="publication-meta">
+                <span class="meta-item">👁️ 423 vistas</span>
+                <span class="meta-item">❤️ 12 interesados</span>
+                <span class="meta-item">📅 25/03/2026</span>
+              </div>
+              <div class="publication-actions">
+                <button class="btn-edit" title="Editar publicación">
+                  <span class="btn-icon">✏️</span>
+                  Editar
+                </button>
+                <button class="btn-activate" title="Activar publicación">
+                  <span class="btn-icon">▶️</span>
+                  Activar
+                </button>
+                <button class="btn-delete" title="Eliminar publicación">
+                  <span class="btn-icon">🗑️</span>
+                  Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-footer">
+          <p>Mostrando 6 de 247 publicaciones</p>
+          <div class="pagination">
+            <button class="pagination-btn" disabled>Anterior</button>
+            <span class="pagination-info">Página 1 de 42</span>
+            <button class="pagination-btn">Siguiente</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Registro de gestor inmobiliario en Flux Inmobiliaria: únete al equipo, gestiona propiedades y gana comisiones en todo Chile." />
+  <title>Flux Inmobiliaria | Registro Gestor Inmobiliario</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/gestor.css" />
+</head>
+<body>
+  <div class="gestor-form-page">
+    <header class="gestor-form-header">
+      <a href="../index.html" class="brand-gestor" aria-label="Volver al inicio">🏢 Flux Inmobiliaria</a>
+      <nav aria-label="Navegación secundaria gestor">
+        <a href="../index.html">Inicio</a>
+        <a href="../login/login.html">Login</a>
+        <a href="gestorinmobiliario.html" aria-current="page">Registro Gestor</a>
+      </nav>
+    </header>
+
+    <main class="gestor-form-main" aria-labelledby="gestor-title">
+      <section class="gestor-form-card" aria-label="Registro de gestor inmobiliario">
+        <div class="gestor-header">
+          <h1 id="gestor-title">Registro Gestor Inmobiliario</h1>
+          <p class="gestor-description">
+            Únete a nuestro equipo profesional y genera ingresos gestionando propiedades de alta calidad.
+            Accede a herramientas exclusivas para corredores inmobiliarios certificados.
+          </p>
+        </div>
+
+        <form action="#" method="post" enctype="multipart/form-data" novalidate id="registroGestorForm">
+          <div class="gestor-form-grid">
+            <div class="form-group">
+              <label for="rut">📋 RUT</label>
+              <input id="rut" name="rut" type="text" placeholder="12.345.678-9" required pattern="^[0-9]{1,2}\.[0-9]{3}\.[0-9]{3}-[0-9Kk]$" />
+            </div>
+
+            <div class="form-group">
+              <label for="nombre">👤 Nombre completo</label>
+              <input id="nombre" name="nombre" type="text" placeholder="María López Pérez" required />
+            </div>
+
+            <div class="form-group">
+              <label for="fecha">📅 Fecha de nacimiento</label>
+              <input id="fecha" name="fecha" type="date" required />
+            </div>
+
+            <div class="form-group">
+              <label for="correo">📧 Correo electrónico</label>
+              <input id="correo" name="correo" type="email" placeholder="gestor@ejemplo.cl" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contrasena">🔒 Contraseña</label>
+              <input id="contrasena" name="contrasena" type="password" placeholder="Mínimo 8 caracteres" required minlength="8" />
+            </div>
+
+            <div class="form-group">
+              <label for="sexo">⚖️ Sexo</label>
+              <select id="sexo" name="sexo" required>
+                <option value="">Selecciona...</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+                <option value="prefiero-no-decir">Prefiero no decir</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">📞 Teléfono móvil</label>
+              <input id="telefono" name="telefono" type="tel" placeholder="+56 9 1234 5678" required pattern="[0-9+\s-]{8,20}" />
+            </div>
+
+            <div class="form-group">
+              <label for="antecedentes">📄 Certificado de antecedentes</label>
+              <input id="antecedentes" name="antecedentes" type="file" accept=".pdf,.jpg,.jpeg,.png" required />
+              <small class="form-hint">Sube un archivo PDF o imagen (máx. 5MB)</small>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-gestor">Registrarme como GESTOR INMOBILIARIO FREE</button>
+          <p id="estadoPostulacion" class="form-hint estado-postulacion" style="display: none;"></p>
+          <p class="gestor-login-link">
+            <a href="../login/login.html">¿Ya eres gestor? Inicia sesión</a>
+          </p>
+        </form>
+
+        <section class="gestor-flow" aria-label="Flujo de activación gestor">
+          <h2>¿Cómo empezar a generar ingresos adicionales?</h2>
+          <ol>
+            <li>Regístrate como Gestor Inmobiliario Free.</li>
+            <li>Capta una propiedad para la comunidad.</li>
+            <li>Si eres aceptado, recibirás un PENKA_ID para ofertar inmuebles de la plataforma y optar a comisión por ventas gestionadas.</li>
+          </ol>
+          <p class="gestor-note">Una vez activa tu cuenta, podrás subir antecedentes de propietarios y ofrecer inmuebles disponibles en la plataforma.</p>
+        </section>
+
+        <section class="gestor-owner-upload" aria-label="Carga de antecedentes de propietario">
+          <h2>Cargar Antecedentes de Propietario</h2>
+          <p id="ownerUploadHint" class="form-hint">Esta acción se habilita al activar tu cuenta de Gestor Inmobiliario Free.</p>
+          <form id="ownerUploadForm" action="#" method="post" novalidate>
+            <div class="gestor-form-grid">
+              <div class="form-group">
+                <label for="propietarioNombre">Nombre del propietario</label>
+                <input id="propietarioNombre" name="propietarioNombre" type="text" placeholder="Nombre completo" required />
+              </div>
+              <div class="form-group">
+                <label for="propietarioRut">RUT del propietario</label>
+                <input id="propietarioRut" name="propietarioRut" type="text" placeholder="12.345.678-9" required />
+              </div>
+              <div class="form-group">
+                <label for="propietarioDocumento">Antecedente adjunto</label>
+                <input id="propietarioDocumento" name="propietarioDocumento" type="file" accept=".pdf,.jpg,.jpeg,.png" required />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-gestor" id="ownerUploadBtn" disabled>Subir Antecedentes</button>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <footer class="gestor-form-footer">
+      <p>© 2026 Flux Inmobiliaria - Plataforma profesional para gestores</p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const registroForm = document.getElementById("registroGestorForm");
+      const estadoPostulacion = document.getElementById("estadoPostulacion");
+      const ownerUploadForm = document.getElementById("ownerUploadForm");
+      const ownerUploadBtn = document.getElementById("ownerUploadBtn");
+      const ownerUploadHint = document.getElementById("ownerUploadHint");
+      const pendingGestorKey = "flux_pending_gestors";
+      const activeGestorKey = "flux_active_gestors";
+      const localGestorKey = "flux_current_gestor";
+
+      function isCurrentGestorActive() {
+        const current = JSON.parse(localStorage.getItem(localGestorKey) || "null");
+        if (!current) return false;
+
+        const activeList = JSON.parse(localStorage.getItem(activeGestorKey) || "[]");
+        return activeList.some(function (g) { return g.id === current.id; });
+      }
+
+      function refreshOwnerUploadAvailability() {
+        const isActive = isCurrentGestorActive();
+        ownerUploadBtn.disabled = !isActive;
+        ownerUploadHint.textContent = isActive
+          ? "Tu cuenta está activa. Puedes subir antecedentes de propietarios."
+          : "Esta acción se habilita al activar tu cuenta de Gestor Inmobiliario Free.";
+      }
+
+      if (registroForm && estadoPostulacion) {
+        registroForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          if (!registroForm.checkValidity()) {
+            registroForm.reportValidity();
+            return;
+          }
+
+          const candidato = {
+            id: "gestor_" + Date.now(),
+            rut: document.getElementById("rut").value.trim(),
+            nombre: document.getElementById("nombre").value.trim(),
+            fechaNacimiento: document.getElementById("fecha").value,
+            correo: document.getElementById("correo").value.trim(),
+            contrasena: document.getElementById("contrasena").value,
+            sexo: document.getElementById("sexo").value,
+            telefono: document.getElementById("telefono").value.trim(),
+            certificadoAntecedentes: document.getElementById("antecedentes").files.length ? document.getElementById("antecedentes").files[0].name : "Adjunto",
+            tipoUsuario: "Gestor Inmobiliario Free",
+            estado: "pending",
+            fechaRegistro: new Date().toLocaleDateString("es-CL")
+          };
+
+          const pending = JSON.parse(localStorage.getItem(pendingGestorKey) || "[]");
+          pending.push(candidato);
+          localStorage.setItem(pendingGestorKey, JSON.stringify(pending));
+          localStorage.setItem(localGestorKey, JSON.stringify({ id: candidato.id, correo: candidato.correo }));
+
+          estadoPostulacion.style.display = "block";
+          estadoPostulacion.style.color = "#92400e";
+          estadoPostulacion.textContent = "Postulación enviada. Tu cuenta quedó PENDIENTE hasta validación del Administrador. Cuando se active, recibirás correo con tu PENKA_ID.";
+
+          registroForm.reset();
+          refreshOwnerUploadAvailability();
+        });
+      }
+
+      if (ownerUploadForm) {
+        ownerUploadForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          if (ownerUploadBtn.disabled) {
+            alert("Tu cuenta aún no está activa. Debes esperar la aprobación del Administrador.");
+            return;
+          }
+
+          if (!ownerUploadForm.checkValidity()) {
+            ownerUploadForm.reportValidity();
+            return;
+          }
+
+          alert("Antecedentes del propietario cargados correctamente. Ahora puedes ofertar inmuebles disponibles en la plataforma.");
+          ownerUploadForm.reset();
+        });
+      }
+
+      refreshOwnerUploadAvailability();
+    })();
+  </script>
+</body>
+</html>

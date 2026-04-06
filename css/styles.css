@@ -1,0 +1,714 @@
+:root {
+  --bg: #f7f8fb;
+  --card: #ffffff;
+  --primary: #1f3d7a;
+  --primary-light: #2f5ea6;
+  --secondary: #ff6a00;
+  --text: #1d1d2b;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+  --container-w: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: min(100% - 2rem, var(--container-w));
+  margin: 0 auto;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.brand-logo {
+  font-size: 1.4rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.site-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: rgba(31, 61, 122, 0.1);
+  color: var(--primary);
+}
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.hero {
+  position: relative;
+  min-height: 62vh;
+  background: linear-gradient(180deg, rgba(31, 61, 122, 0.52), rgba(31, 61, 122, 0.52)),
+    url("../img/banner/banner1.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: #fcfcff;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(12, 17, 46, 0.3), rgba(12, 17, 46, 0.6));
+}
+
+.hero-content {
+  position: relative;
+  max-width: 680px;
+  z-index: 1;
+  padding: 3rem 0;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  margin: 0 0 1.4rem;
+  color: #ecf1ff;
+  font-weight: 500;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--primary), #224c94);
+  color: #fff;
+  padding: 0.75rem 1.35rem;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(31, 61, 122, 0.3);
+}
+
+.btn-secondary {
+  background: #ffffff;
+  color: var(--primary);
+  padding: 0.65rem 1.25rem;
+  box-shadow: 0 5px 14px rgba(29, 29, 43, 0.12);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus-visible {
+  background: #f4f8ff;
+}
+
+.btn-card {
+  display: inline-block;
+  margin-top: 0.8rem;
+  background: var(--secondary);
+  color: #fff;
+  padding: 0.55rem 0.95rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.btn-card:hover,
+.btn-card:focus-visible {
+  background: #d65600;
+}
+
+.search-section {
+  padding: 2.5rem 0;
+  background: #fff;
+}
+
+.search-section h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.search-form {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: end;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  background: #fff;
+  color: #1d1d2b;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(31, 61, 122, 0.12);
+}
+
+.featured-properties {
+  padding: 2.7rem 0 3rem;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+.section-header p {
+  margin: 0.35rem 0 1.4rem;
+  color: var(--muted);
+}
+
+.cards-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #1d2a4f;
+}
+
+.price {
+  margin: 0.45rem 0;
+  font-size: 1.05rem;
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+.more-btn-wrapper {
+  margin-top: 1.4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.site-footer {
+  background: linear-gradient(180deg, #0c1645, #141f67);
+  color: #d7dff2;
+  padding: 2rem 0 1rem;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  padding-bottom: 1.2rem;
+}
+
+.footer-grid h3,
+.footer-grid h4 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #bfc9e4;
+}
+
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .search-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .site-nav {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+  }
+
+  .hero {
+    min-height: 55vh;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content {
+    padding: 2rem 0;
+  }
+
+  .site-footer {
+    padding: 1.5rem 0 0.8rem;
+  }
+}
+
+
+/* === Estilos para página de login Flux Inmobiliaria === */
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #edf2f8 0%, #dce6f5 100%);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.login-header {
+  position: absolute;
+  top: 1rem;
+  left: 1.2rem;
+}
+
+.brand-login {
+  color: #1f3d7a;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+}
+
+.login-main {
+  width: min(420px, 100%);
+}
+
+.login-box {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #dae3ef;
+  border-radius: 16px;
+  box-shadow: 0 16px 30px rgba(22, 35, 74, 0.15);
+  padding: 2rem;
+}
+
+.login-box h1 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.7rem;
+  color: #14274a;
+}
+
+.login-box p {
+  margin: 0 0 1.2rem;
+  color: #5f6f8e;
+  font-size: 0.97rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #2a3d6e;
+}
+
+.form-group input {
+  border: 1px solid #c8d2e3;
+  border-radius: 10px;
+  padding: 0.72rem 0.85rem;
+  font-size: 0.97rem;
+  color: #1f2a45;
+  background: #ffffff;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #1f3d7a;
+  box-shadow: 0 0 0 4px rgba(31, 61, 122, 0.14);
+}
+
+.btn-full {
+  width: 100%;
+  padding: 0.78rem 0.9rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.forgot-text {
+  margin-top: 0.8rem;
+  text-align: right;
+}
+
+.forgot-text a {
+  color: #1f3d7a;
+  text-decoration: none;
+  font-size: 0.94rem;
+}
+
+.forgot-text a:hover,
+.forgot-text a:focus-visible {
+  text-decoration: underline;
+}
+
+.login-header .brand-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  padding: 0.7rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-header .brand-login:hover,
+.login-header .brand-login:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(59, 130, 246, 0.35);
+}
+
+.login-footer {
+  margin-top: 1.2rem;
+  text-align: center;
+  color: #5e6d8f;
+  font-size: 0.92rem;
+}
+
+.login-footer a {
+  color: #1f3d7a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-footer a:hover,
+.login-footer a:focus-visible {
+  text-decoration: underline;
+}
+
+/* adaptaciones móviles */
+@media (max-width: 600px) {
+  .login-header {
+    top: 0.8rem;
+    left: 0.8rem;
+  }
+
+  .login-box {
+    padding: 1.6rem;
+  }
+}
+
+.login-page.recuperar {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f5f8ff 0%, #e9eefc 100%);
+}
+
+.login-box {
+  width: min(440px, 100%);
+  margin: 0 auto;
+  border: 1px solid #d4dee9;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 14px 28px rgba(13, 38, 92, 0.12);
+}
+
+.login-box h1 {
+  margin-bottom: 0.5rem;
+  color: #1d2f5e;
+}
+
+.login-box p {
+  color: #536586;
+  margin-bottom: 1.2rem;
+}
+
+.btn-full {
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.8rem;
+}
+
+
+.form-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #edf2fc 0%, #e4edfa 100%);
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.form-header {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d7e0ed;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.form-header .brand-login {
+  font-weight: 700;
+  color: #1f3d7a;
+  text-decoration: none;
+  font-size: 1.35rem;
+}
+
+.registro-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-nav {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #1f3d7a;
+  background: #e2e8f0;
+  border: 1px solid transparent;
+  box-shadow: 0 5px 14px rgba(31, 61, 122, 0.1);
+  transition: all 0.2s ease;
+}
+
+.btn-nav:hover,
+.btn-nav:focus-visible {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-nav.active {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: #ffffff;
+  border-color: #1d4ed8;
+  box-shadow: 0 8px 22px rgba(37, 99, 235, 0.45);
+}
+
+
+.form-main {
+  width: min(680px, 100%);
+}
+
+.form-box {
+  background: #fff;
+  border: 1px solid #d7e0ed;
+  border-radius: 14px;
+  box-shadow: 0 16px 32px rgba(20, 40, 86, 0.14);
+  padding: 2rem;
+}
+
+.form-box h1 {
+  margin: 0 0 0.35rem;
+  color: #152a57;
+}
+.form-box p {
+  margin: 0 0 1.2rem;
+  color: #587092;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-box button {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.95rem;
+}
+
+.form-box {
+  border: 1px solid #cbd5e1;
+  background: linear-gradient(145deg, #ffffff, #f4f7fb);
+}
+
+.form-box h1 {
+  font-size: 2rem;
+}
+
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  border: 1px solid #c3d1e2;
+  border-radius: 10px;
+  padding: 0.72rem 0.85rem;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #1f3d7a;
+  box-shadow: 0 0 0 4px rgba(31, 61, 122, 0.14);
+}
+
+.btn-full {
+  width: 100%;
+  padding: 0.85rem;
+  font-weight: 700;
+}
+
+.forgot-text {
+  margin-top: 0.8rem;
+  text-align: right;
+}
+.forgot-text a {
+  color: #1f3d7a;
+}

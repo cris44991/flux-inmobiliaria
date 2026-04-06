@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Registro de propietario en Flux Inmobiliaria. Ingresa tus datos para gestionar tus propiedades y publicar en el portal." />
+  <title>Flux Inmobiliaria | Registro Propietario</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <div class="form-page">
+    <header class="form-header">
+      <a href="../login/index.html" class="brand-login" aria-label="Volver al inicio">Flux Inmobiliaria</a>
+      <nav aria-label="Navegación de registro" class="registro-nav">
+        <a href="../login/index.html" class="btn-nav">Inicio</a>
+        <a href="../login/login.html" class="btn-nav">Login</a>
+        <a href="propietario.html" class="btn-nav active" aria-current="page">Registro Propietario</a>
+      </nav>
+    </header>
+
+    <main class="form-main" aria-labelledby="registro-title">
+      <section class="form-box" aria-label="Registro de propietario">
+        <h1 id="registro-title">Registro de Propietario</h1>
+        <p>Completa los datos para darte de alta y gestionar tus propiedades.</p>
+
+        <form action="#" method="post" novalidate id="registroPropietarioForm">
+          <fieldset>
+            <legend class="sr-only">Datos del propietario</legend>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="rut">RUT <span aria-hidden="true">*</span></label>
+                <input id="rut" name="rut" type="text" placeholder="12.345.678-9" required pattern="^[0-9]{1,2}\.[0-9]{3}\.[0-9]{3}-[0-9Kk]$" aria-required="true" />
+                <small class="form-hint">Formato: 12.345.678-9</small>
+              </div>
+
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input id="nombre" name="nombre" type="text" placeholder="Juan Pérez González" required />
+            </div>
+
+            <div class="form-group">
+              <label for="fecha">Fecha de nacimiento</label>
+              <input id="fecha" name="fecha" type="date" required />
+            </div>
+
+            <div class="form-group">
+              <label for="correo">Correo electrónico</label>
+              <input id="correo" name="correo" type="email" placeholder="nombre@ejemplo.cl" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contrasena">Contraseña</label>
+              <input id="contrasena" name="contrasena" type="password" placeholder="Mínimo 8 caracteres" required minlength="8" />
+            </div>
+
+            <div class="form-group">
+              <label for="sexo">Sexo</label>
+              <select id="sexo" name="sexo" required>
+                <option value="">Selecciona...</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+                <option value="pre_fiero_no_decir">Prefiero no decir</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Teléfono móvil</label>
+              <input id="telefono" name="telefono" type="tel" placeholder="+56 9 1234 5678" required pattern="[0-9+\\s-]{8,20}" />
+            </div>
+
+            <div class="form-group">
+              <label for="numpropiedad">N° de propiedad (Bienes Raíces)</label>
+              <input id="numpropiedad" name="numpropiedad" type="text" placeholder="Ej. 009762" required />
+            </div>
+          </div>
+
+          <div class="form-group form-check">
+            <input id="acepto" name="acepto" type="checkbox" required aria-required="true" />
+            <label for="acepto">Acepto términos y condiciones <span aria-hidden="true">*</span></label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Registrarme como PROPIETARIO</button>
+          <p id="registroEstado" class="form-hint" style="display: none; margin-top: 0.75rem;"></p>
+          <p class="forgot-text">
+            <a href="../login/login.html">¿Ya tienes cuenta? Inicia sesión</a>
+          </p>
+        </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer class="login-footer">
+      <p>© 2026 Flux Inmobiliaria</p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const form = document.getElementById("registroPropietarioForm");
+      const estado = document.getElementById("registroEstado");
+
+      if (!form || !estado) return;
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const payload = {
+          id: "owner_" + Date.now(),
+          rut: document.getElementById("rut").value.trim(),
+          nombre: document.getElementById("nombre").value.trim(),
+          fechaNacimiento: document.getElementById("fecha").value,
+          correo: document.getElementById("correo").value.trim(),
+          contrasena: document.getElementById("contrasena").value,
+          sexo: document.getElementById("sexo").value,
+          telefono: document.getElementById("telefono").value.trim(),
+          numeroPropiedad: document.getElementById("numpropiedad").value.trim(),
+          tipoUsuario: "Propietario",
+          estado: "pending",
+          fechaRegistro: new Date().toLocaleDateString("es-CL"),
+          ultimaActividad: "Ahora"
+        };
+
+        const pendientes = JSON.parse(localStorage.getItem("flux_pending_owners") || "[]");
+        pendientes.push(payload);
+        localStorage.setItem("flux_pending_owners", JSON.stringify(pendientes));
+
+        estado.style.display = "block";
+        estado.style.color = "#92400e";
+        estado.textContent = "Registro enviado. Tu cuenta quedó en estado PENDIENTE hasta validación del Administrador. Al activarse, recibirás la notificación de activación por correo electrónico.";
+
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>

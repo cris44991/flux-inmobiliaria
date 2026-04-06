@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Flux Inmobiliaria: encuentra los mejores inmuebles en Chile, con gestión profesional de propiedades, usuarios y publicaciones." />
+  <title>Flux Inmobiliaria | Inicio</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand" aria-label="Flux Inmobiliaria">
+          <span class="brand-logo">🟦</span>
+          <span class="brand-text">Flux Inmobiliaria</span>
+        </a>
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="index.html">Inicio</a>
+          <a href="../login/login.html">Login</a>
+          <a href="../RegistroPropietario/propietario.html">Registro Propietario</a>
+          <a href="../RegistroPropietario/gestorinmobiliario.html">Registro Gestor</a>
+          <a href="../propiedades/listado.html">Propiedades</a>
+        </nav>
+      </div>
+    </header>
+
+    <main aria-label="Contenido principal">
+      <section class="hero" aria-label="Banner principal">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+          <h1>Bienvenido a Flux Inmobiliaria</h1>
+          <p>
+            Tu portal para encontrar la mejor vivienda en Chile. Encuentra casas, departamentos y terrenos en
+            las mejores comunas.
+          </p>
+          <a href="#buscador" class="btn btn-primary">Buscar Propiedades</a>
+        </div>
+      </section>
+
+      <section id="buscador" class="search-section">
+        <div class="container">
+          <h2>Buscador por ubicación</h2>
+          <form class="search-form" aria-label="Formulario de búsqueda de propiedades">
+            <div class="form-group">
+              <label for="provincia">Provincia</label>
+              <select id="provincia" name="provincia" required>
+                <option value="">Seleccione Provincia</option>
+                <option value="santiago">Santiago</option>
+                <option value="valparaiso">Valparaíso</option>
+                <option value="biobio">Biobío</option>
+                <option value="araucania">La Araucanía</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="comuna">Comuna</label>
+              <select id="comuna" name="comuna" required>
+                <option value="">Seleccione Comuna</option>
+                <option value="las-condes">Las Condes</option>
+                <option value="vina-del-mar">Viña del Mar</option>
+                <option value="concepcion">Concepción</option>
+                <option value="temuco">Temuco</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="sector">Sector</label>
+              <input
+                type="text"
+                id="sector"
+                name="sector"
+                placeholder="Ej.Centro, Barón, San Martín..."
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-secondary">Buscar</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="featured-properties">
+        <div class="container">
+          <div class="section-header">
+            <h2>Propiedades destacadas</h2>
+            <p>Seleccionadas especialmente para ti</p>
+          </div>
+          <div class="cards-grid">
+            <article class="card">
+              <img
+                src="../img/propiedades/casalascondes.jpg"
+                alt="Departamento moderno en Las Condes"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>Departamento 3D / 2B</h3>
+                <p class="price">$ 165.000.000 CLP</p>
+                <p>Las Condes, Santiago</p>
+                <a href="../propiedades/detalle.html" class="btn btn-card">Ver detalle</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="../img/propiedades/departamentoviñadelmar.jpg"
+                alt="Casa con patio en Viña del Mar"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>Casa 4D / 3B</h3>
+                <p class="price">$ 285.000.000 CLP</p>
+                <p>Viña del Mar, Valparaíso</p>
+                <a href="../propiedades/detalle.html" class="btn btn-card">Ver detalle</a>
+              </div>
+            </article>
+
+            <article class="card">
+              <img
+                src="../img/propiedades/terreno.jpg"
+                alt="Terreno amplio en Concepción"
+                loading="lazy"
+              />
+              <div class="card-body">
+                <h3>Terreno 720 m²</h3>
+                <p class="price">$ 95.000.000 CLP</p>
+                <p>Concepción, Biobío</p>
+                <a href="../propiedades/detalle.html" class="btn btn-card">Ver detalle</a>
+              </div>
+            </article>
+          </div>
+          <div class="more-btn-wrapper">
+            <a href="../propiedades/listado.html" class="btn btn-primary">Ver más propiedades</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Flux Inmobiliaria</h3>
+          <p>
+            Agencia inmobiliaria con cobertura nacional. Asesoría profesional en compra, venta y arrendamiento.
+          </p>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <p>Email: contacto@fluxinmobiliaria.cl</p>
+          <p>Teléfono: +56 9 1234 5678</p>
+          <p>Dirección: Av. Providencia 2500, Santiago</p>
+        </div>
+        <div>
+          <h4>Redes</h4>
+          <p>Facebook | Instagram | LinkedIn</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Flux Inmobiliaria - Todos los derechos reservados</p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

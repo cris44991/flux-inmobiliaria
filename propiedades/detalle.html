@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa 4D / 3B en Las Condes | Flux Inmobiliaria</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/detalle.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" aria-label="Flux Inmobiliaria">
+        <span class="brand-logo">🟦</span>
+        <span class="brand-text">Flux Inmobiliaria</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="../index.html">Inicio</a>
+        <a href="../login/login.html">Login</a>
+        <a href="../propiedades/listado.html">Propiedades</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="property-detail">
+    <div class="container">
+      <div class="property-header">
+        <h1>Casa 4 Dormitorios / 3 Baños en Las Condes</h1>
+        <p class="property-location">🏠 Av. Manquehue Norte 1234, Las Condes, Santiago</p>
+      </div>
+
+      <div class="property-gallery">
+        <div class="main-image">
+          <img src="../img/propiedades/vistaprincipal.jpg" alt="Vista principal de la casa" id="mainImage" />
+        </div>
+        <div class="thumbnail-grid">
+          <img src="../img/propiedades/vistafrontal.jpg" alt="Vista frontal" class="thumbnail active" onclick="changeImage(this, event)" />
+          <img src="../img/propiedades/livin2.jpg" alt="Sala de estar" class="thumbnail" onclick="changeImage(this, event)" />
+          <img src="../img/propiedades/cocina.jpg" alt="Cocina" class="thumbnail" onclick="changeImage(this, event)" />
+          <img src="../img/propiedades/dormitorio.jpg" alt="Dormitorio principal" class="thumbnail" onclick="changeImage(this, event)" />
+          <img src="../img/propiedades/baño.jpg" alt="Baño principal" class="thumbnail" onclick="changeImage(this, event)" />
+        </div>
+      </div>
+
+      <div class="property-content">
+        <div class="property-info">
+          <div class="price-section">
+            <div class="price-primary">
+              <span class="price-clp">$285.000.000 CLP</span>
+              <span class="price-uf">≈ 7.200 UF</span>
+            </div>
+            <div class="price-secondary">
+              <span class="price-per-m2">$1.250.000/m²</span>
+            </div>
+          </div>
+
+          <div class="property-details">
+            <div class="detail-item">
+              <span class="detail-icon">🛏️</span>
+              <span class="detail-label">Dormitorios</span>
+              <span class="detail-value">4</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🚿</span>
+              <span class="detail-label">Baños</span>
+              <span class="detail-value">3</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">📐</span>
+              <span class="detail-label">Área Construida</span>
+              <span class="detail-value">180 m²</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">🌳</span>
+              <span class="detail-label">Área Total del Terreno</span>
+              <span class="detail-value">228 m²</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-icon">📅</span>
+              <span class="detail-label">Fecha de Publicación</span>
+              <span class="detail-value">15/03/2026</span>
+            </div>
+          </div>
+
+          <div class="property-features">
+            <h3>Características</h3>
+            <div class="features-grid">
+              <div class="feature-item">
+                <span class="feature-icon">🏊‍♂️</span>
+                <span>Piscina</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🚗</span>
+                <span>Estacionamiento</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">📦</span>
+                <span>Bodega</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🌳</span>
+                <span>Antejardín</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🔥</span>
+                <span>Cocina amoblada</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🛡️</span>
+                <span>Logia</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🏡</span>
+                <span>Patio trasero</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🌿</span>
+                <span>Jardín</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🔥</span>
+                <span>Calefacción central</span>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🛡️</span>
+                <span>Seguridad 24/7</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <section class="property-location-section">
+          <h3>Ubicación de la propiedad</h3>
+          <div class="map-wrapper">
+            <iframe
+              title="Mapa de ubicación"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.5425813915266!2d-70.58308458480197!3d-33.41614378078027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5588086e645%3A0x3a1d488170c0032e!2sLas%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </section>
+
+        <section class="share-section">
+          <h3>Compartir</h3>
+          <p>Comparte esta propiedad con tus clientes usando el siguiente enlace:</p>
+          <div class="share-actions">
+            <input id="propertyLink" class="share-input" readonly value="https://fluxinmobiliaria.cl/propiedades/detalle.html" />
+            <button class="btn-share" onclick="copiarLink()">Copiar enlace</button>
+            <a class="btn-share secondary" href="#" onclick="alert('Enlace copiado. Pegar en redes sociales.'); return false;">Compartir propiedad</a>
+          </div>
+        </section>
+
+        <div class="property-description">
+          <h3>Descripción</h3>
+          <p>
+            Hermosa casa familiar ubicada en una de las mejores zonas de Las Condes. Esta propiedad ofrece
+            un diseño moderno con acabados de alta calidad, perfecta para familias que buscan comodidad y
+            exclusividad.
+          </p>
+          <p>
+            La casa cuenta con 4 amplios dormitorios, incluyendo un dormitorio principal con baño en suite
+            y vestidor. La sala de estar es espaciosa con grandes ventanales que permiten la entrada de luz
+            natural, y la cocina está equipada con electrodomésticos de primera línea.
+          </p>
+          <p>
+            Disfrute de áreas verdes privadas, piscina y zona de parrilla en el jardín. El barrio ofrece
+            excelente conectividad con centros comerciales, colegios y transporte público.
+          </p>
+
+          <div class="contact-section">
+            <button class="btn-visit" onclick="solicitarVisita()">
+              <span class="btn-icon">📅</span>
+              Solicitar Visita
+            </button>
+            <div class="contact-info">
+              <p><strong>Agente:</strong> María González</p>
+              <p><strong>Teléfono:</strong> +56 9 1234 5678</p>
+              <p><strong>Email:</strong> maria.gonzalez@flux.cl</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Flux Inmobiliaria</h3>
+        <p>
+          Agencia inmobiliaria con cobertura nacional. Asesoría profesional en compra, venta y arrendamiento.
+        </p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <p>Email: contacto@fluxinmobiliaria.cl</p>
+        <p>Teléfono: +56 9 1234 5678</p>
+        <p>Dirección: Av. Providencia 2500, Santiago</p>
+      </div>
+      <div>
+        <h4>Redes</h4>
+        <p>Facebook | Instagram | LinkedIn</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Flux Inmobiliaria - Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script>
+    function changeImage(element, event) {
+      const src = element.src;
+      const mainImage = document.getElementById('mainImage');
+      mainImage.src = src;
+
+      document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+      element.classList.add('active');
+
+      if (event && event.preventDefault) {
+        event.preventDefault();
+      }
+    }
+
+    function solicitarVisita() {
+      alert('¡Gracias por tu interés! Un agente se pondrá en contacto contigo pronto.');
+    }
+
+    function copiarLink() {
+      const linkInput = document.getElementById('propertyLink');
+      linkInput.select();
+      linkInput.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+      alert('Enlace copiado al portapapeles.');
+    }
+  </script>
+</body>
+</html>
