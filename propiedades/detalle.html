@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Casa 4D / 3B en Las Condes | Flux Inmobiliaria</title>
+  <title>Detalle de Propiedad | Flux Inmobiliaria</title>
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="../css/detalle.css" />
 </head>
@@ -25,15 +25,15 @@
   <main class="property-detail">
     <div class="container">
       <div class="property-header">
-        <h1>Casa 4 Dormitorios / 3 Baños en Las Condes</h1>
-        <p class="property-location">🏠 Av. Manquehue Norte 1234, Las Condes, Santiago</p>
+        <h1 id="detailTitle">Casa 4 Dormitorios / 3 Baños en Las Condes</h1>
+        <p class="property-location" id="detailLocation">🏠 Av. Manquehue Norte 1234, Las Condes, Santiago</p>
       </div>
 
       <div class="property-gallery">
         <div class="main-image">
           <img src="../img/propiedades/lascondesdefi.jpg" alt="Vista principal de la casa" id="mainImage" />
         </div>
-        <div class="thumbnail-grid">
+        <div class="thumbnail-grid" id="thumbnailGrid">
           <img src="../img/propiedades/lascondesdefi.jpg" alt="Vista frontal" class="thumbnail active" onclick="changeImage(this, event)" />
           <img src="../img/propiedades/livin2.jpg" alt="Sala de estar" class="thumbnail" onclick="changeImage(this, event)" />
           <img src="../img/propiedades/cocina.jpg" alt="Cocina" class="thumbnail" onclick="changeImage(this, event)" />
@@ -46,11 +46,11 @@
         <div class="property-info">
           <div class="price-section">
             <div class="price-primary">
-              <span class="price-clp">$285.000.000 CLP</span>
-              <span class="price-uf">≈ 7.200 UF</span>
+              <span class="price-clp" id="priceClp">$285.000.000 CLP</span>
+              <span class="price-uf" id="priceUf">≈ 7.200 UF</span>
             </div>
             <div class="price-secondary">
-              <span class="price-per-m2">$1.250.000/m²</span>
+              <span class="price-per-m2" id="priceM2">$1.250.000/m²</span>
             </div>
           </div>
 
@@ -58,27 +58,27 @@
             <div class="detail-item">
               <span class="detail-icon">🛏️</span>
               <span class="detail-label">Dormitorios</span>
-              <span class="detail-value">4</span>
+              <span class="detail-value" id="detailBedrooms">4</span>
             </div>
             <div class="detail-item">
               <span class="detail-icon">🚿</span>
               <span class="detail-label">Baños</span>
-              <span class="detail-value">3</span>
+              <span class="detail-value" id="detailBathrooms">3</span>
             </div>
             <div class="detail-item">
               <span class="detail-icon">📐</span>
               <span class="detail-label">Área Construida</span>
-              <span class="detail-value">180 m²</span>
+              <span class="detail-value" id="detailBuiltArea">180 m²</span>
             </div>
             <div class="detail-item">
               <span class="detail-icon">🌳</span>
               <span class="detail-label">Área Total del Terreno</span>
-              <span class="detail-value">228 m²</span>
+              <span class="detail-value" id="detailLandArea">228 m²</span>
             </div>
             <div class="detail-item">
               <span class="detail-icon">📅</span>
               <span class="detail-label">Fecha de Publicación</span>
-              <span class="detail-value">15/03/2026</span>
+              <span class="detail-value" id="detailDate">15/03/2026</span>
             </div>
           </div>
 
@@ -133,6 +133,7 @@
           <h3>Ubicación de la propiedad</h3>
           <div class="map-wrapper">
             <iframe
+              id="mapFrame"
               title="Mapa de ubicación"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.5425813915266!2d-70.58308458480197!3d-33.41614378078027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5588086e645%3A0x3a1d488170c0032e!2sLas%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl"
               allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
@@ -144,7 +145,7 @@
           <h3>Compartir</h3>
           <p>Comparte esta propiedad con tus clientes usando el siguiente enlace:</p>
           <div class="share-actions">
-            <input id="propertyLink" class="share-input" readonly value="https://fluxinmobiliaria.cl/propiedades/detalle.html" />
+            <input id="propertyLink" class="share-input" readonly value="" />
             <button class="btn-share" onclick="copiarLink()">Copiar enlace</button>
             <a class="btn-share secondary" href="#" onclick="alert('Enlace copiado. Pegar en redes sociales.'); return false;">Compartir propiedad</a>
           </div>
@@ -208,12 +209,239 @@
   </footer>
 
   <script>
+    const propertyData = {
+      "las-condes-casa": {
+        title: "Casa 4 Dormitorios / 3 Baños en Las Condes",
+        location: "🏠 Av. Manquehue Norte 1234, Las Condes, Santiago",
+        priceClp: "$285.000.000 CLP",
+        priceUf: "≈ 7.200 UF",
+        priceM2: "$1.250.000/m²",
+        bedrooms: "4",
+        bathrooms: "3",
+        builtArea: "180 m²",
+        landArea: "228 m²",
+        date: "15/03/2026",
+        mapQuery: "Av. Manquehue Norte 1234, Las Condes, Santiago, Chile",
+        images: [
+          "../img/propiedades/lascondesdefi.jpg",
+          "../img/propiedades/livin2.jpg",
+          "../img/propiedades/cocina.jpg",
+          "../img/propiedades/dormitorio.jpg",
+          "../img/propiedades/baño.jpg"
+        ]
+      },
+      "depa-vina": {
+        title: "Departamento 3 Dormitorios / 2 Baños en Viña del Mar",
+        location: "🏙️ San Martín, Viña del Mar, Valparaíso",
+        priceClp: "$138.000.000 CLP",
+        priceUf: "≈ 3.520 UF",
+        priceM2: "$1.746.000/m²",
+        bedrooms: "3",
+        bathrooms: "2",
+        builtArea: "79 m²",
+        landArea: "79 m²",
+        date: "18/03/2026",
+        mapQuery: "San Martín, Viña del Mar, Valparaíso, Chile",
+        images: [
+          "../img/propiedades/departamentojak.jpg",
+          "../img/propiedades/nueva1.jpg",
+          "../img/propiedades/nueva2.jpg",
+          "../img/propiedades/nueva3.jpg"
+        ]
+      },
+      "terreno-concepcion": {
+        title: "Terreno 720 m² en Concepción",
+        location: "🌳 Centro, Concepción, Biobío",
+        priceClp: "$95.000.000 CLP",
+        priceUf: "≈ 2.400 UF",
+        priceM2: "$131.900/m²",
+        bedrooms: "0",
+        bathrooms: "0",
+        builtArea: "0 m²",
+        landArea: "720 m²",
+        date: "20/03/2026",
+        mapQuery: "Centro, Concepción, Biobío, Chile",
+        images: [
+          "../img/propiedades/terreno.jpg",
+          "../img/propiedades/terrenoja.jpg"
+        ]
+      },
+      "casa-providencia": {
+        title: "Casa 5 Dormitorios / 4 Baños en Providencia",
+        location: "🏠 Pedro de Valdivia, Providencia, Santiago",
+        priceClp: "$420.000.000 CLP",
+        priceUf: "≈ 10.600 UF",
+        priceM2: "$1.312.500/m²",
+        bedrooms: "5",
+        bathrooms: "4",
+        builtArea: "320 m²",
+        landArea: "380 m²",
+        date: "10/03/2026",
+        mapQuery: "Pedro de Valdivia, Providencia, Santiago, Chile",
+        images: [
+          "../img/propiedades/providencia1.jpg",
+          "../img/propiedades/nueva1.jpg",
+          "../img/propiedades/nueva2.jpg",
+          "../img/propiedades/nueva3.jpg"
+        ]
+      },
+      "oficina-centro": {
+        title: "Oficina 200 m² en Santiago Centro",
+        location: "🏢 Centro, Santiago",
+        priceClp: "$180.000.000 CLP",
+        priceUf: "≈ 4.500 UF",
+        priceM2: "$900.000/m²",
+        bedrooms: "0",
+        bathrooms: "2",
+        builtArea: "200 m²",
+        landArea: "200 m²",
+        date: "22/03/2026",
+        mapQuery: "Santiago Centro, Santiago, Chile",
+        images: [
+          "../img/propiedades/oficina.jpg",
+          "../img/propiedades/oficina1.jpg",
+          "../img/propiedades/oficina2.jpg",
+          "../img/propiedades/oficina3.jpg"
+        ]
+      },
+      "local-temuco": {
+        title: "Local Comercial 150 m² en Temuco",
+        location: "🏪 Centro, Temuco, La Araucanía",
+        priceClp: "$250.000.000 CLP",
+        priceUf: "≈ 6.300 UF",
+        priceM2: "$1.666.000/m²",
+        bedrooms: "0",
+        bathrooms: "2",
+        builtArea: "150 m²",
+        landArea: "150 m²",
+        date: "12/03/2026",
+        mapQuery: "Centro, Temuco, La Araucanía, Chile",
+        images: [
+          "../img/propiedades/localcomercial2.jpg",
+          "../img/propiedades/new.jpg",
+          "../img/propiedades/new2.jpg"
+        ]
+      },
+      "casa-nunoa": {
+        title: "Casa 3 Dormitorios / 2 Baños en Ñuñoa",
+        location: "🏠 Plaza Ñuñoa, Santiago",
+        priceClp: "$195.000.000 CLP",
+        priceUf: "≈ 4.900 UF",
+        priceM2: "$1.218.000/m²",
+        bedrooms: "3",
+        bathrooms: "2",
+        builtArea: "160 m²",
+        landArea: "200 m²",
+        date: "25/03/2026",
+        mapQuery: "Plaza Ñuñoa, Santiago, Chile",
+        images: [
+          "../img/propiedades/casañuñoa.jpg",
+          "../img/propiedades/livin2.jpg",
+          "../img/propiedades/cocina.jpg",
+          "../img/propiedades/dormitorio.jpg",
+          "../img/propiedades/baño.jpg"
+        ]
+      },
+      "depa-serena": {
+        title: "Departamento 2 Dormitorios / 1 Baño en La Serena",
+        location: "🏙️ El Milagro, La Serena, Coquimbo",
+        priceClp: "$85.000.000 CLP",
+        priceUf: "≈ 2.100 UF",
+        priceM2: "$1.307.000/m²",
+        bedrooms: "2",
+        bathrooms: "1",
+        builtArea: "65 m²",
+        landArea: "65 m²",
+        date: "28/03/2026",
+        mapQuery: "El Milagro, La Serena, Coquimbo, Chile",
+        images: [
+          "../img/propiedades/departamento2d.jpg",
+          "../img/propiedades/depa.jpg",
+          "../img/propiedades/saladeestar.jpg",
+          "../img/propiedades/cocina.jpg",
+          "../img/propiedades/baño.jpg"
+        ]
+      },
+      "terreno-puerto": {
+        title: "Terreno 1.200 m² en Puerto Montt",
+        location: "🌳 Costanera, Puerto Montt, Los Lagos",
+        priceClp: "$120.000.000 CLP",
+        priceUf: "≈ 3.000 UF",
+        priceM2: "$100.000/m²",
+        bedrooms: "0",
+        bathrooms: "0",
+        builtArea: "0 m²",
+        landArea: "1.200 m²",
+        date: "30/03/2026",
+        mapQuery: "Costanera, Puerto Montt, Los Lagos, Chile",
+        images: [
+          "../img/propiedades/terreno.puerto.jpg",
+          "../img/propiedades/terreno.puerto.jpg",
+          "../img/propiedades/terreno.puerto.jpg",
+          "../img/propiedades/terreno.puerto.jpg",
+          "../img/propiedades/terreno.puerto.jpg"
+        ]
+      }
+    };
+
+    function getPropertyFromQuery() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id") || "las-condes-casa";
+      return propertyData[id] || propertyData["las-condes-casa"];
+    }
+
+    function renderThumbnails(images) {
+      const grid = document.getElementById("thumbnailGrid");
+      const mainImage = document.getElementById("mainImage");
+      if (!grid || !mainImage || !images || !images.length) return;
+
+      mainImage.src = images[0];
+      grid.innerHTML = "";
+
+      images.forEach(function (imgSrc, index) {
+        const img = document.createElement("img");
+        img.src = imgSrc;
+        img.alt = "Vista " + (index + 1);
+        img.className = "thumbnail" + (index === 0 ? " active" : "");
+        img.onclick = function (event) {
+          changeImage(img, event);
+        };
+        grid.appendChild(img);
+      });
+    }
+
+    function renderProperty() {
+      const property = getPropertyFromQuery();
+
+      document.getElementById("detailTitle").textContent = property.title;
+      document.getElementById("detailLocation").textContent = property.location;
+      document.getElementById("priceClp").textContent = property.priceClp;
+      document.getElementById("priceUf").textContent = property.priceUf;
+      document.getElementById("priceM2").textContent = property.priceM2;
+      document.getElementById("detailBedrooms").textContent = property.bedrooms;
+      document.getElementById("detailBathrooms").textContent = property.bathrooms;
+      document.getElementById("detailBuiltArea").textContent = property.builtArea;
+      document.getElementById("detailLandArea").textContent = property.landArea;
+      document.getElementById("detailDate").textContent = property.date;
+
+      const mapFrame = document.getElementById("mapFrame");
+      const mapQuery = encodeURIComponent(property.mapQuery);
+      mapFrame.src = "https://www.google.com/maps?q=" + mapQuery + "&output=embed";
+
+      renderThumbnails(property.images);
+
+      document.title = property.title + " | Flux Inmobiliaria";
+      document.getElementById("propertyLink").value = window.location.href;
+    }
+
     function changeImage(element, event) {
       const src = element.src;
       const mainImage = document.getElementById('mainImage');
       mainImage.src = src;
 
-      document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
+      document.querySelectorAll('.thumbnail').forEach(function (thumb) {
+        thumb.classList.remove('active');
+      });
       element.classList.add('active');
 
       if (event && event.preventDefault) {
@@ -232,6 +460,8 @@
       document.execCommand('copy');
       alert('Enlace copiado al portapapeles.');
     }
+
+    renderProperty();
   </script>
 </body>
 </html>
