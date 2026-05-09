@@ -1,3 +1,37 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Recuperar contraseña — Flux Inmobiliaria</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+  </head>
+  <body class="login-page">
+    <header class="login-header">
+      <div class="container">
+        <a class="brand-login" href="/index.html">Flux Inmobiliaria</a>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="login-box">
+        <h1>Recuperar contraseña</h1>
+        <p>Ingresa el correo asociado a tu cuenta y te enviaremos instrucciones.</p>
+
+        <form id="recoverForm" novalidate>
+          <div class="form-group">
+            <label for="recoverEmail">Correo</label>
+            <input id="recoverEmail" type="email" placeholder="correo@dominio.cl" required />
+          </div>
+          <button class="btn btn-primary" type="submit">Enviar instrucciones</button>
+        </form>
+      </div>
+    </main>
+
+    <script src="/js/auth.js" defer></script>
+  </body>
+</html>
 <!DOCTYPE html>
 <html lang="es">
 <head>

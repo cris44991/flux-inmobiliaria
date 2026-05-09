@@ -1,3 +1,73 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Registro Gestor — Flux Inmobiliaria</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+  </head>
+  <body class="form-page">
+    <header class="site-header" role="banner">
+      <div class="container header-inner">
+        <a href="/index.html" class="brand"><span class="brand-logo">Flux</span> Inmobiliaria</a>
+        <nav class="site-nav" aria-label="principal">
+          <a href="/index.html">Inicio</a>
+          <a href="/propiedades/listado.html">Propiedades</a>
+          <a href="/login/login.html">Login</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="form-header" aria-labelledby="gestor-title">
+        <h1 id="gestor-title">Registro Gestor Inmobiliario</h1>
+      </section>
+
+      <section class="form-main">
+        <div class="form-box" role="region" aria-label="Formulario registro gestor">
+          <form id="managerForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="rut_g">RUT</label>
+                <input id="rut_g" name="rut_g" placeholder="12.345.678-9" required />
+              </div>
+              <div class="form-group">
+                <label for="nombre_g">Nombre completo</label>
+                <input id="nombre_g" name="nombre_g" placeholder="Nombre y Apellido" required />
+              </div>
+              <div class="form-group">
+                <label for="nacimiento_g">Fecha de nacimiento</label>
+                <input id="nacimiento_g" name="nacimiento_g" type="date" required />
+              </div>
+              <div class="form-group">
+                <label for="email_g">Correo electrónico</label>
+                <input id="email_g" name="email_g" type="email" placeholder="ejemplo@correo.cl" required />
+              </div>
+              <div class="form-group">
+                <label for="password_g">Contraseña</label>
+                <input id="password_g" name="password_g" type="password" minlength="8" required />
+              </div>
+              <div class="form-group">
+                <label for="telefono_g">Teléfono</label>
+                <input id="telefono_g" name="telefono_g" placeholder="+56 9 0000 0000" required />
+              </div>
+              <div class="form-group">
+                <label for="antecedentes">Certificado de antecedentes</label>
+                <input id="antecedentes" name="antecedentes" type="file" accept=".pdf,.jpg,.png" aria-label="Certificado de antecedentes" />
+              </div>
+            </div>
+
+            <div class="form-hint" id="managerFormFeedback" aria-live="polite"></div>
+            <button type="submit" class="btn btn-primary">Registrar gestor</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/auth.js" defer></script>
+  </body>
+</html>
 <!DOCTYPE html>
 <html lang="es">
 <head>

@@ -1,4 +1,48 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Login — Flux Inmobiliaria</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+  </head>
+  <body class="login-page">
+    <header class="login-header">
+      <div class="container">
+        <a class="brand-login" href="/index.html">Flux Inmobiliaria</a>
+        <nav class="site-nav">
+          <a href="/RegistroPropietario/propietario.html">Registrar Propietario</a>
+          <a href="/RegistroPropietario/gestor.html">Registrar Gestor</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="login-box" role="main" aria-labelledby="login-title">
+        <h1 id="login-title">Inicia sesión</h1>
+        <p>Accede a tu cuenta para administrar propiedades y publicaciones.</p>
+
+        <form id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="loginEmail">Correo</label>
+            <input id="loginEmail" type="email" placeholder="correo@dominio.cl" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPass">Contraseña</label>
+            <input id="loginPass" type="password" minlength="8" required />
+          </div>
+
+          <div class="forgot-text"><a href="/login/recuperar.html">¿Olvidaste tu contraseña?</a></div>
+          <div style="margin-top:1rem"><button class="btn btn-full btn-primary" type="submit">Entrar</button></div>
+        </form>
+      </div>
+    </main>
+
+    <script src="/js/auth.js" defer></script>
+  </body>
+</html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
