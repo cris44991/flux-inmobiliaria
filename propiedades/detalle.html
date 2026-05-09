@@ -12,573 +12,154 @@
   <link rel="stylesheet" href="../css/detalle.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="../index.html" class="brand" aria-label="Flux Inmobiliaria">
-<<<<<<< HEAD
-        <span class="brand-logo">🟦</span>
-=======
-        <span class="brand-logo" aria-hidden="true">🟦</span>
->>>>>>> ec64c52 (Site: versión inicial)
-        <span class="brand-text">Flux Inmobiliaria</span>
-      </a>
-      <nav class="site-nav" aria-label="Navegación principal">
-        <a href="../index.html">Inicio</a>
-        <a href="../login/login.html">Login</a>
-<<<<<<< HEAD
-=======
-        <a href="../RegistroPropietario/propietario.html">Registro Propietario</a>
-        <a href="../RegistroPropietario/gestorinmobiliario.html">Registro Gestor</a>
->>>>>>> ec64c52 (Site: versión inicial)
-        <a href="../propiedades/listado.html">Propiedades</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="property-detail">
-    <div class="container">
-      <div class="property-header">
-<<<<<<< HEAD
-        <h1 id="detailTitle">Casa 4 Dormitorios / 3 Baños en Las Condes</h1>
-        <p class="property-location" id="detailLocation">🏠 Av. Manquehue Norte 1234, Las Condes, Santiago</p>
-=======
-        <h1>Casa 4 Dormitorios / 3 Baños en Las Condes</h1>
-        <p class="property-location">🏠 Av. Manquehue Norte 1234, Las Condes, Santiago</p>
->>>>>>> ec64c52 (Site: versión inicial)
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalle de Propiedad | Flux Inmobiliaria</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/detalle.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="../index.html" class="brand" aria-label="Flux Inmobiliaria">
+          <span class="brand-logo" aria-hidden="true">🟦</span>
+          <span class="brand-text">Flux Inmobiliaria</span>
+        </a>
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a>
+          <a href="../login/login.html">Login</a>
+          <a href="../RegistroPropietario/propietario.html">Registro Propietario</a>
+          <a href="../RegistroPropietario/gestorinmobiliario.html">Registro Gestor</a>
+          <a href="../propiedades/listado.html">Propiedades</a>
+        </nav>
       </div>
+    </header>
 
-      <div class="property-gallery">
-        <div class="main-image">
-<<<<<<< HEAD
-          <img src="../img/propiedades/lascondesdefi.jpg" alt="Vista principal de la casa" id="mainImage" />
+    <main class="property-detail">
+      <div class="container">
+        <div class="property-header">
+          <h1 id="detailTitle">Propiedad</h1>
+          <p class="property-location" id="detailLocation">Ubicación</p>
         </div>
-        <div class="thumbnail-grid" id="thumbnailGrid">
-          <img src="../img/propiedades/lascondesdefi.jpg" alt="Vista frontal" class="thumbnail active" onclick="changeImage(this, event)" />
-          <img src="../img/propiedades/livin2.jpg" alt="Sala de estar" class="thumbnail" onclick="changeImage(this, event)" />
-          <img src="../img/propiedades/cocina.jpg" alt="Cocina" class="thumbnail" onclick="changeImage(this, event)" />
-          <img src="../img/propiedades/dormitorio.jpg" alt="Dormitorio principal" class="thumbnail" onclick="changeImage(this, event)" />
-          <img src="../img/propiedades/baño.jpg" alt="Baño principal" class="thumbnail" onclick="changeImage(this, event)" />
-=======
-          <img src="../img/propiedades/casalascondes.jpg" alt="Vista principal de la casa" id="mainImage" />
-        </div>
-        <div class="thumbnail-grid">
-          <img src="../img/propiedades/casalascondes.jpg" alt="Vista frontal" class="thumbnail active" onclick="changeImage(this, event)" />
-          <img src="../img/propiedades/departamentoviñadelmar.jpg" alt="Sala de estar" class="thumbnail" onclick="changeImage(this, event)" />
-          <img src="../img/propiedades/terreno.jpg" alt="Cocina" class="thumbnail" onclick="changeImage(this, event)" />
-          <img src="../img/propiedades/casalascondes.jpg" alt="Dormitorio principal" class="thumbnail" onclick="changeImage(this, event)" />
-          <img src="../img/propiedades/departamentoviñadelmar.jpg" alt="Baño principal" class="thumbnail" onclick="changeImage(this, event)" />
->>>>>>> ec64c52 (Site: versión inicial)
-        </div>
-      </div>
 
-      <div class="property-content">
-        <div class="property-info">
-          <div class="price-section">
-            <div class="price-primary">
-<<<<<<< HEAD
-              <span class="price-clp" id="priceClp">$285.000.000 CLP</span>
-              <span class="price-uf" id="priceUf">≈ 7.200 UF</span>
+        <div class="property-gallery">
+          <div class="main-image">
+            <img src="../img/propiedades/placeholder.jpg" alt="Imagen principal" id="mainImage" />
+          </div>
+          <div class="thumbnail-grid" id="thumbnailGrid"></div>
+        </div>
+
+        <div class="property-content">
+          <div class="property-info">
+            <div class="price-section">
+              <div class="price-primary">
+                <span class="price-clp" id="priceClp">-</span>
+                <span class="price-uf" id="priceUf">-</span>
+              </div>
+              <div class="price-secondary">
+                <span class="price-per-m2" id="priceM2">-</span>
+              </div>
             </div>
-            <div class="price-secondary">
-              <span class="price-per-m2" id="priceM2">$1.250.000/m²</span>
-=======
-              <span class="price-clp">$285.000.000 CLP</span>
-              <span class="price-uf">≈ 7.200 UF</span>
+
+            <div class="property-details">
+              <div class="detail-item">
+                <span class="detail-icon">🛏️</span>
+                <span class="detail-label">Dormitorios</span>
+                <span class="detail-value" id="detailBedrooms">-</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🚿</span>
+                <span class="detail-label">Baños</span>
+                <span class="detail-value" id="detailBathrooms">-</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">📐</span>
+                <span class="detail-label">Área Construida</span>
+                <span class="detail-value" id="detailBuiltArea">-</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">🌳</span>
+                <span class="detail-label">Área Total</span>
+                <span class="detail-value" id="detailLandArea">-</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">📅</span>
+                <span class="detail-label">Fecha de Publicación</span>
+                <span class="detail-value" id="detailDate">-</span>
+              </div>
             </div>
-            <div class="price-secondary">
-              <span class="price-per-m2">$1.250.000/m²</span>
->>>>>>> ec64c52 (Site: versión inicial)
+
+            <div class="property-features">
+              <h3>Características</h3>
+              <div class="features-grid" id="featuresGrid"></div>
             </div>
           </div>
 
-          <div class="property-details">
-            <div class="detail-item">
-              <span class="detail-icon">🛏️</span>
-              <span class="detail-label">Dormitorios</span>
-<<<<<<< HEAD
-              <span class="detail-value" id="detailBedrooms">4</span>
-=======
-              <span class="detail-value">4</span>
->>>>>>> ec64c52 (Site: versión inicial)
+          <section class="property-location-section">
+            <h3>Ubicación de la propiedad</h3>
+            <div class="map-wrapper">
+              <iframe id="mapFrame" title="Mapa de ubicación" src="about:blank" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
-            <div class="detail-item">
-              <span class="detail-icon">🚿</span>
-              <span class="detail-label">Baños</span>
-<<<<<<< HEAD
-              <span class="detail-value" id="detailBathrooms">3</span>
-=======
-              <span class="detail-value">3</span>
->>>>>>> ec64c52 (Site: versión inicial)
-            </div>
-            <div class="detail-item">
-              <span class="detail-icon">📐</span>
-              <span class="detail-label">Área Construida</span>
-<<<<<<< HEAD
-              <span class="detail-value" id="detailBuiltArea">180 m²</span>
-=======
-              <span class="detail-value">180 m²</span>
->>>>>>> ec64c52 (Site: versión inicial)
-            </div>
-            <div class="detail-item">
-              <span class="detail-icon">🌳</span>
-              <span class="detail-label">Área Total del Terreno</span>
-<<<<<<< HEAD
-              <span class="detail-value" id="detailLandArea">228 m²</span>
-=======
-              <span class="detail-value">228 m²</span>
->>>>>>> ec64c52 (Site: versión inicial)
-            </div>
-            <div class="detail-item">
-              <span class="detail-icon">📅</span>
-              <span class="detail-label">Fecha de Publicación</span>
-<<<<<<< HEAD
-              <span class="detail-value" id="detailDate">15/03/2026</span>
-=======
-              <span class="detail-value">15/03/2026</span>
->>>>>>> ec64c52 (Site: versión inicial)
-            </div>
-          </div>
+          </section>
 
-          <div class="property-features">
-            <h3>Características</h3>
-            <div class="features-grid">
-              <div class="feature-item">
-                <span class="feature-icon">🏊‍♂️</span>
-                <span>Piscina</span>
-              </div>
-              <div class="feature-item">
-                <span class="feature-icon">🚗</span>
-                <span>Estacionamiento</span>
-              </div>
-              <div class="feature-item">
-                <span class="feature-icon">📦</span>
-                <span>Bodega</span>
-              </div>
-              <div class="feature-item">
-                <span class="feature-icon">🌳</span>
-                <span>Antejardín</span>
-              </div>
-              <div class="feature-item">
-                <span class="feature-icon">🔥</span>
-                <span>Cocina amoblada</span>
-              </div>
-              <div class="feature-item">
-                <span class="feature-icon">🛡️</span>
-                <span>Logia</span>
-              </div>
-              <div class="feature-item">
-                <span class="feature-icon">🏡</span>
-                <span>Patio trasero</span>
-              </div>
-              <div class="feature-item">
-                <span class="feature-icon">🌿</span>
-                <span>Jardín</span>
-              </div>
-              <div class="feature-item">
-                <span class="feature-icon">🔥</span>
-                <span>Calefacción central</span>
-              </div>
-              <div class="feature-item">
-                <span class="feature-icon">🛡️</span>
-                <span>Seguridad 24/7</span>
+          <section class="share-section">
+            <h3>Compartir</h3>
+            <p>Comparte esta propiedad con tus clientes usando el siguiente enlace:</p>
+            <div class="share-actions">
+              <input id="propertyLink" class="share-input" readonly value="" />
+              <button class="btn-share" id="copyLinkBtn">Copiar enlace</button>
+              <a class="btn-share secondary" id="shareBtn" href="#">Compartir propiedad</a>
+            </div>
+          </section>
+
+          <div class="property-description">
+            <h3>Descripción</h3>
+            <p id="detailDescription1"></p>
+            <p id="detailDescription2"></p>
+            <p id="detailDescription3"></p>
+
+            <div class="contact-section">
+              <button class="btn-visit" id="visitBtn">
+                <span class="btn-icon">📅</span>
+                Solicitar Visita
+              </button>
+              <div class="contact-info">
+                <p><strong>Agente:</strong> <span id="agentName">-</span></p>
+                <p><strong>Teléfono:</strong> <span id="agentPhone">-</span></p>
+                <p><strong>Email:</strong> <span id="agentEmail">-</span></p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </main>
 
-        <section class="property-location-section">
-          <h3>Ubicación de la propiedad</h3>
-          <div class="map-wrapper">
-            <iframe
-<<<<<<< HEAD
-              id="mapFrame"
-=======
->>>>>>> ec64c52 (Site: versión inicial)
-              title="Mapa de ubicación"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.5425813915266!2d-70.58308458480197!3d-33.41614378078027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c5588086e645%3A0x3a1d488170c0032e!2sLas%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div>
-        </section>
-
-        <section class="share-section">
-          <h3>Compartir</h3>
-          <p>Comparte esta propiedad con tus clientes usando el siguiente enlace:</p>
-          <div class="share-actions">
-<<<<<<< HEAD
-            <input id="propertyLink" class="share-input" readonly value="" />
-=======
-            <input id="propertyLink" class="share-input" readonly value="https://fluxinmobiliaria.cl/propiedades/detalle.html" />
->>>>>>> ec64c52 (Site: versión inicial)
-            <button class="btn-share" onclick="copiarLink()">Copiar enlace</button>
-            <a class="btn-share secondary" href="#" onclick="alert('Enlace copiado. Pegar en redes sociales.'); return false;">Compartir propiedad</a>
-          </div>
-        </section>
-
-        <div class="property-description">
-          <h3>Descripción</h3>
-<<<<<<< HEAD
-          <p id="detailDescription1">
-            Hermosa casa familiar ubicada en una de las mejores zonas de Las Condes, ideal para quienes
-            priorizan confort, conectividad y vida de barrio premium.
-          </p>
-          <p id="detailDescription2">
-            Su distribución de 4 dormitorios y 3 baños entrega amplitud real para familias grandes o para
-            quienes buscan integrar home office sin sacrificar espacios sociales.
-          </p>
-          <p id="detailDescription3">
-            El exterior con piscina, jardín y quincho privado completa una propuesta muy atractiva para
-            disfrutar todo el año y proyectar una excelente plusvalía.
-=======
-          <p>
-            Hermosa casa familiar ubicada en una de las mejores zonas de Las Condes. Esta propiedad ofrece
-            un diseño moderno con acabados de alta calidad, perfecta para familias que buscan comodidad y
-            exclusividad.
-          </p>
-          <p>
-            La casa cuenta con 4 amplios dormitorios, incluyendo un dormitorio principal con baño en suite
-            y vestidor. La sala de estar es espaciosa con grandes ventanales que permiten la entrada de luz
-            natural, y la cocina está equipada con electrodomésticos de primera línea.
-          </p>
-          <p>
-            Disfrute de áreas verdes privadas, piscina y zona de parrilla en el jardín. El barrio ofrece
-            excelente conectividad con centros comerciales, colegios y transporte público.
->>>>>>> ec64c52 (Site: versión inicial)
-          </p>
-
-          <div class="contact-section">
-            <button class="btn-visit" onclick="solicitarVisita()">
-              <span class="btn-icon">📅</span>
-              Solicitar Visita
-            </button>
-            <div class="contact-info">
-              <p><strong>Agente:</strong> María González</p>
-              <p><strong>Teléfono:</strong> +56 9 1234 5678</p>
-              <p><strong>Email:</strong> maria.gonzalez@flux.cl</p>
-            </div>
-          </div>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Flux Inmobiliaria</h3>
+          <p>Agencia inmobiliaria con cobertura nacional. Asesoría profesional en compra, venta y arrendamiento.</p>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <p>Email: contacto@fluxinmobiliaria.cl</p>
+          <p>Teléfono: +56 9 1234 5678</p>
+          <p>Dirección: Av. Providencia 2500, Santiago</p>
+        </div>
+        <div>
+          <h4>Redes</h4>
+          <p>Facebook | Instagram | LinkedIn</p>
         </div>
       </div>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h3>Flux Inmobiliaria</h3>
-        <p>
-          Agencia inmobiliaria con cobertura nacional. Asesoría profesional en compra, venta y arrendamiento.
-        </p>
+      <div class="footer-bottom">
+        <p>© 2026 Flux Inmobiliaria - Todos los derechos reservados</p>
       </div>
-      <div>
-        <h4>Contacto</h4>
-        <p>Email: contacto@fluxinmobiliaria.cl</p>
-        <p>Teléfono: +56 9 1234 5678</p>
-        <p>Dirección: Av. Providencia 2500, Santiago</p>
-      </div>
-      <div>
-        <h4>Redes</h4>
-        <p>Facebook | Instagram | LinkedIn</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2026 Flux Inmobiliaria - Todos los derechos reservados</p>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-<<<<<<< HEAD
-    const propertyData = {
-      "las-condes-casa": {
-        title: "Casa 4 Dormitorios / 3 Baños en Las Condes",
-        location: "🏠 Av. Manquehue Norte 1234, Las Condes, Santiago",
-        priceClp: "$285.000.000 CLP",
-        priceUf: "≈ 7.200 UF",
-        priceM2: "$1.250.000/m²",
-        bedrooms: "4",
-        bathrooms: "3",
-        builtArea: "180 m²",
-        landArea: "228 m²",
-        date: "15/03/2026",
-        mapQuery: "Av. Manquehue Norte 1234, Las Condes, Santiago, Chile",
-        description: [
-          "Casa familiar en sector residencial consolidado de Las Condes, con excelente conexión a colegios, comercio y servicios clave.",
-          "Sus 4 dormitorios y 3 baños ofrecen una distribución funcional para familias que buscan amplitud, privacidad y comodidad diaria.",
-          "Piscina, jardín y áreas exteriores bien resueltas convierten esta propiedad en una oportunidad ideal para vivir e invertir con proyección."
-        ],
-        images: [
-          "../img/propiedades/lascondesdefi.jpg",
-          "../img/propiedades/livin2.jpg",
-          "../img/propiedades/cocina.jpg",
-          "../img/propiedades/baño.jpg"
-        ]
-      },
-      "depa-vina": {
-        title: "Departamento 3 Dormitorios / 2 Baños en Viña del Mar",
-        location: "🏙️ San Martín, Viña del Mar, Valparaíso",
-        priceClp: "$138.000.000 CLP",
-        priceUf: "≈ 3.520 UF",
-        priceM2: "$1.746.000/m²",
-        bedrooms: "3",
-        bathrooms: "2",
-        builtArea: "79 m²",
-        landArea: "79 m²",
-        date: "18/03/2026",
-        mapQuery: "San Martín, Viña del Mar, Valparaíso, Chile",
-        description: [
-          "Departamento ubicado en el cotizado sector San Martín, a pasos de la playa, gastronomía y panoramas de Viña del Mar.",
-          "Su programa de 3 dormitorios y 2 baños es perfecto para familias jóvenes, segunda vivienda o inversión para arriendo anual.",
-          "La combinación de ubicación estratégica y metraje eficiente lo transforma en una alternativa muy competitiva en la zona."
-        ],
-        images: [
-          "../img/propiedades/departamentojak.jpg",
-          "../img/propiedades/viña1.jpg",
-          "../img/propiedades/viña2.jpg",
-          "../img/propiedades/viña3.jpeg"
-        ]
-      },
-      "terreno-concepcion": {
-        title: "Terreno 720 m² en Concepción",
-        location: "🌳 Centro, Concepción, Biobío",
-        priceClp: "$95.000.000 CLP",
-        priceUf: "≈ 2.400 UF",
-        priceM2: "$131.900/m²",
-        bedrooms: "0",
-        bathrooms: "0",
-        builtArea: "0 m²",
-        landArea: "720 m²",
-        date: "20/03/2026",
-        mapQuery: "Centro, Concepción, Biobío, Chile",
-        description: [
-          "Terreno de 720 m² en una ubicación estratégica de Concepción, ideal para proyectos residenciales o mixtos de escala media.",
-          "Su superficie regular facilita el diseño arquitectónico y permite optimizar costos de construcción desde la etapa inicial.",
-          "Excelente oportunidad para desarrolladores e inversionistas que buscan capturar plusvalía en un sector con alta demanda."
-        ],
-        images: [
-          "../img/propiedades/terreno.jpg",
-          "../img/propiedades/terrenoja.jpg"
-        ]
-      },
-      "casa-providencia": {
-        title: "Casa 5 Dormitorios / 4 Baños en Providencia",
-        location: "🏠 Pedro de Valdivia, Providencia, Santiago",
-        priceClp: "$420.000.000 CLP",
-        priceUf: "≈ 10.600 UF",
-        priceM2: "$1.312.500/m²",
-        bedrooms: "5",
-        bathrooms: "4",
-        builtArea: "320 m²",
-        landArea: "380 m²",
-        date: "10/03/2026",
-        mapQuery: "Pedro de Valdivia, Providencia, Santiago, Chile",
-        description: [
-          "Propiedad de alto estándar en Providencia, en entorno residencial consolidado y cercano a metro, colegios y servicios premium.",
-          "Con 5 dormitorios y 4 baños, entrega espacios versátiles para familias numerosas o para integrar oficinas privadas en casa.",
-          "Su metraje y ubicación la posicionan como una alternativa exclusiva para vivir con confort y respaldar una inversión sólida."
-        ],
-        images: [
-          "../img/propiedades/providencia1.jpg",
-          "../img/propiedades/nueva1.jpg",
-          "../img/propiedades/nueva2.jpg",
-          "../img/propiedades/nueva3.jpg"
-        ]
-      },
-      "oficina-centro": {
-        title: "Oficina 200 m² en Santiago Centro",
-        location: "🏢 Centro, Santiago",
-        priceClp: "$180.000.000 CLP",
-        priceUf: "≈ 4.500 UF",
-        priceM2: "$900.000/m²",
-        bedrooms: "0",
-        bathrooms: "2",
-        builtArea: "200 m²",
-        landArea: "200 m²",
-        date: "22/03/2026",
-        mapQuery: "Santiago Centro, Santiago, Chile",
-        description: [
-          "Oficina corporativa de 200 m² en pleno Santiago Centro, con conectividad privilegiada y acceso inmediato a transporte público.",
-          "Su configuración permite operar equipos multidisciplinarios, salas de reunión y áreas colaborativas en una misma planta.",
-          "Ideal para empresas que buscan presencia estratégica, eficiencia operativa y potencial de valorización en zona de negocios."
-        ],
-        images: [
-          "../img/propiedades/oficina.jpg",
-          "../img/propiedades/oficina1.jpg",
-          "../img/propiedades/oficina2.jpg",
-          "../img/propiedades/oficina3.jpg"
-        ]
-      },
-      "local-temuco": {
-        title: "Local Comercial 150 m² en Temuco",
-        location: "🏪 Centro, Temuco, La Araucanía",
-        priceClp: "$250.000.000 CLP",
-        priceUf: "≈ 6.300 UF",
-        priceM2: "$1.666.000/m²",
-        bedrooms: "0",
-        bathrooms: "2",
-        builtArea: "150 m²",
-        landArea: "150 m²",
-        date: "12/03/2026",
-        mapQuery: "Centro, Temuco, La Araucanía, Chile",
-        description: [
-          "Local comercial en eje de alto flujo peatonal de Temuco, ideal para marcas que buscan visibilidad y posicionamiento rápido.",
-          "Los 150 m² permiten implementar showroom, punto de venta y bodega ligera con circulación cómoda para clientes.",
-          "Una opción atractiva para retail, servicios o gastronomía ligera, con excelente proyección de rentabilidad comercial."
-        ],
-        images: [
-          "../img/propiedades/localcomercial2.jpg",
-          "../img/propiedades/new.jpg",
-          "../img/propiedades/new2.jpg"
-        ]
-      },
-      "casa-nunoa": {
-        title: "Casa 3 Dormitorios / 2 Baños en Ñuñoa",
-        location: "🏠 Plaza Ñuñoa, Santiago",
-        priceClp: "$195.000.000 CLP",
-        priceUf: "≈ 4.900 UF",
-        priceM2: "$1.218.000/m²",
-        bedrooms: "3",
-        bathrooms: "2",
-        builtArea: "160 m²",
-        landArea: "200 m²",
-        date: "25/03/2026",
-        mapQuery: "Plaza Ñuñoa, Santiago, Chile",
-        description: [
-          "Casa en sector Plaza Ñuñoa, combinando vida de barrio, conectividad y cercanía a comercio, cultura y gastronomía.",
-          "Su distribución de 3 dormitorios y 2 baños se adapta muy bien a familias jóvenes y compradores en primera inversión.",
-          "Destaca por su equilibrio entre precio, ubicación y calidad de vida, con alta demanda en uno de los polos de Santiago."
-        ],
-        images: [
-          "../img/propiedades/casañuñoa.jpg",
-          "../img/propiedades/livin2.jpg",
-          "../img/propiedades/cocina.jpg",
-          "../img/propiedades/dormitorio.jpg",
-          "../img/propiedades/baño.jpg"
-        ]
-      },
-      "depa-serena": {
-        title: "Departamento 2 Dormitorios / 1 Baño en La Serena",
-        location: "🏙️ El Milagro, La Serena, Coquimbo",
-        priceClp: "$85.000.000 CLP",
-        priceUf: "≈ 2.100 UF",
-        priceM2: "$1.307.000/m²",
-        bedrooms: "2",
-        bathrooms: "1",
-        builtArea: "65 m²",
-        landArea: "65 m²",
-        date: "28/03/2026",
-        mapQuery: "El Milagro, La Serena, Coquimbo, Chile",
-        description: [
-          "Departamento funcional en El Milagro, uno de los sectores con mayor crecimiento urbano y servicios en La Serena.",
-          "Con 2 dormitorios y 1 baño, es ideal para primera vivienda, renta de largo plazo o arriendo para profesionales.",
-          "Su valor de entrada competitivo y buena ubicación lo convierten en una excelente puerta de ingreso al mercado inmobiliario."
-        ],
-        images: [
-          "../img/propiedades/departamento2d.jpg",
-          "../img/propiedades/depa.jpg",
-          "../img/propiedades/cocina.jpg",
-          "../img/propiedades/baño.jpg"
-        ]
-      }
-    };
-
-    function getPropertyFromQuery() {
-      const params = new URLSearchParams(window.location.search);
-      const id = params.get("id") || "las-condes-casa";
-      return propertyData[id] || propertyData["las-condes-casa"];
-    }
-
-    function renderThumbnails(images) {
-      const grid = document.getElementById("thumbnailGrid");
-      const mainImage = document.getElementById("mainImage");
-      if (!grid || !mainImage || !images || !images.length) return;
-
-      mainImage.src = images[0];
-      grid.innerHTML = "";
-
-      images.forEach(function (imgSrc, index) {
-        const img = document.createElement("img");
-        img.src = imgSrc;
-        img.alt = "Vista " + (index + 1);
-        img.className = "thumbnail" + (index === 0 ? " active" : "");
-        img.onclick = function (event) {
-          changeImage(img, event);
-        };
-        grid.appendChild(img);
-      });
-    }
-
-    function renderProperty() {
-      const property = getPropertyFromQuery();
-      const defaultDescription = [
-        "Propiedad destacada en una ubicación estratégica, con excelente conectividad y entorno consolidado.",
-        "Su distribución interior está pensada para aprovechar al máximo cada espacio y entregar confort diario.",
-        "Una alternativa atractiva para vivir o invertir, con gran potencial de valorización a mediano plazo."
-      ];
-      const description = Array.isArray(property.description) && property.description.length
-        ? property.description
-        : defaultDescription;
-
-      document.getElementById("detailTitle").textContent = property.title;
-      document.getElementById("detailLocation").textContent = property.location;
-      document.getElementById("priceClp").textContent = property.priceClp;
-      document.getElementById("priceUf").textContent = property.priceUf;
-      document.getElementById("priceM2").textContent = property.priceM2;
-      document.getElementById("detailBedrooms").textContent = property.bedrooms;
-      document.getElementById("detailBathrooms").textContent = property.bathrooms;
-      document.getElementById("detailBuiltArea").textContent = property.builtArea;
-      document.getElementById("detailLandArea").textContent = property.landArea;
-      document.getElementById("detailDate").textContent = property.date;
-      document.getElementById("detailDescription1").textContent = description[0] || "";
-      document.getElementById("detailDescription2").textContent = description[1] || "";
-      document.getElementById("detailDescription3").textContent = description[2] || "";
-
-      const mapFrame = document.getElementById("mapFrame");
-      const mapQuery = encodeURIComponent(property.mapQuery);
-      mapFrame.src = "https://www.google.com/maps?q=" + mapQuery + "&output=embed";
-
-      renderThumbnails(property.images);
-
-      document.title = property.title + " | Flux Inmobiliaria";
-      document.getElementById("propertyLink").value = window.location.href;
-    }
-
-=======
->>>>>>> ec64c52 (Site: versión inicial)
-    function changeImage(element, event) {
-      const src = element.src;
-      const mainImage = document.getElementById('mainImage');
-      mainImage.src = src;
-
-<<<<<<< HEAD
-      document.querySelectorAll('.thumbnail').forEach(function (thumb) {
-        thumb.classList.remove('active');
-      });
-=======
-      document.querySelectorAll('.thumbnail').forEach(thumb => thumb.classList.remove('active'));
->>>>>>> ec64c52 (Site: versión inicial)
-      element.classList.add('active');
-
-      if (event && event.preventDefault) {
-        event.preventDefault();
-      }
-    }
-
-    function solicitarVisita() {
-      alert('¡Gracias por tu interés! Un agente se pondrá en contacto contigo pronto.');
-    }
-
-    function copiarLink() {
-      const linkInput = document.getElementById('propertyLink');
-      linkInput.select();
-      linkInput.setSelectionRange(0, 99999);
-      document.execCommand('copy');
-      alert('Enlace copiado al portapapeles.');
-    }
-<<<<<<< HEAD
-
-    renderProperty();
-=======
->>>>>>> ec64c52 (Site: versión inicial)
-  </script>
-</body>
-</html>
+    <script src="../js/property-detail.js" defer></script>
+  </body>
+  </html>
+              <div class="feature-item">
