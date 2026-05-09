@@ -87,9 +87,56 @@
 
           <section id="propiedades" aria-label="Propiedades" style="margin-top:1.6rem">
             <h2>Propiedades</h2>
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <p class="muted">Gestiona las propiedades publicadas</p>
+              <div>
+                <button id="newPropertyBtn" class="btn btn-primary">Nueva propiedad</button>
+              </div>
+            </div>
+
             <div class="cards-grid" id="dashboardProperties">
               <!-- tarjetas JS -->
             </div>
+          </section>
+
+          <!-- Modal para crear/editar propiedad -->
+          <div id="propertyModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="propertyModalTitle">
+            <div class="modal-dialog">
+              <header class="modal-header">
+                <h3 id="propertyModalTitle">Nueva propiedad</h3>
+                <button class="btn" id="closePropertyModal">✕</button>
+              </header>
+              <div class="modal-body">
+                <form id="propertyForm">
+                  <div class="form-grid">
+                    <div class="form-group"><label for="p_title">Título</label><input id="p_title" name="p_title" required /></div>
+                    <div class="form-group"><label for="p_tipo">Tipo</label><select id="p_tipo" name="p_tipo"><option value="Casa">Casa</option><option value="Departamento">Departamento</option><option value="Terreno">Terreno</option></select></div>
+                    <div class="form-group"><label for="p_price">Precio (UF)</label><input id="p_price" name="p_price" required /></div>
+                    <div class="form-group"><label for="p_uf">Precio (CLP)</label><input id="p_uf" name="p_uf" /></div>
+                    <div class="form-group"><label for="p_bed">Dormitorios</label><input id="p_bed" name="p_bed" type="number" min="0" /></div>
+                    <div class="form-group"><label for="p_bath">Baños</label><input id="p_bath" name="p_bath" type="number" min="0" /></div>
+                    <div class="form-group"><label for="p_area">Área (m²)</label><input id="p_area" name="p_area" /></div>
+                    <div class="form-group"><label for="p_location">Ubicación</label><input id="p_location" name="p_location" placeholder="Comuna, Ciudad" /></div>
+                    <div class="form-group"><label for="p_features">Características</label>
+                      <div style="display:flex;flex-wrap:wrap;gap:.4rem">
+                        <label><input type="checkbox" name="p_features" value="Piscina" /> Piscina</label>
+                        <label><input type="checkbox" name="p_features" value="Patio" /> Patio</label>
+                        <label><input type="checkbox" name="p_features" value="Estacionamiento" /> Estacionamiento</label>
+                        <label><input type="checkbox" name="p_features" value="Bodega" /> Bodega</label>
+                        <label><input type="checkbox" name="p_features" value="Logia" /> Logia</label>
+                      </div>
+                    </div>
+                    <div class="form-group"><label for="p_images">Fotografías (select archivos)</label><input id="p_images" name="p_images" type="file" accept="image/*" multiple /></div>
+                    <div class="form-group" style="grid-column:1/-1"><label for="p_desc">Descripción</label><textarea id="p_desc" name="p_desc" rows="4"></textarea></div>
+                  </div>
+                  <div style="margin-top:1rem;display:flex;gap:.6rem;justify-content:flex-end">
+                    <button type="button" class="btn" id="cancelProperty">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar propiedad</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
           </section>
         </main>
       </div>
