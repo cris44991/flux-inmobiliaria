@@ -1,3 +1,76 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Dashboard — Flux Inmobiliaria</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components.css" />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body class="dashboard-page">
+    <div class="dashboard-shell">
+      <aside class="dashboard-sidebar" id="sidebar" aria-label="Menú lateral">
+        <div class="sidebar-brand">
+          <a href="/index.html" class="brand"><span class="brand-logo">Flux</span> Inmobiliaria</a>
+        </div>
+        <nav class="sidebar-nav" role="navigation" aria-label="Dashboard">
+          <a href="#usuarios" class="active">Usuarios</a>
+          <a href="#propiedades">Propiedades</a>
+          <a href="#publicaciones">Publicaciones</a>
+          <a href="#estadisticas">Estadísticas</a>
+          <a href="#configuracion">Configuración</a>
+        </nav>
+      </aside>
+
+      <div class="dashboard-main">
+        <header class="dashboard-topbar">
+          <button id="sidebarToggle" class="btn">☰</button>
+          <div class="top-actions">
+            <span aria-hidden="true">Admin</span>
+          </div>
+        </header>
+
+        <main class="dashboard-content container">
+          <section id="usuarios" aria-label="Usuarios">
+            <h2>Usuarios</h2>
+            <p class="muted">Gestiona usuarios registrados</p>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="flex" style="justify-content:space-between;align-items:center">
+                  <h3>Lista de usuarios</h3>
+                  <a class="btn btn-primary" href="#">Nuevo usuario</a>
+                </div>
+                <div style="margin-top:1rem;overflow:auto">
+                  <table class="table-users" style="width:100%;border-collapse:collapse">
+                    <thead>
+                      <tr>
+                        <th>RUT</th><th>Nombre</th><th>Email</th><th>Teléfono</th><th>Acciones</th>
+                      </tr>
+                    </thead>
+                    <tbody id="usersTableBody">
+                      <!-- filas generadas por JS -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="propiedades" aria-label="Propiedades" style="margin-top:1.6rem">
+            <h2>Propiedades</h2>
+            <div class="cards-grid" id="dashboardProperties">
+              <!-- tarjetas JS -->
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="/js/dashboard.js" defer></script>
+  </body>
+</html>
 <!DOCTYPE html>
 <html lang="es">
 <head>

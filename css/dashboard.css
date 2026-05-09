@@ -1,3 +1,19 @@
+/* Dashboard specific styles */
+.dashboard-shell{display:flex;min-height:100vh}
+.dashboard-sidebar{width:260px;background:#0f254c;color:#fff;padding:1.2rem;flex-shrink:0}
+.sidebar-brand{margin-bottom:1rem}
+.sidebar-nav{display:flex;flex-direction:column;gap:.35rem}
+.sidebar-nav a{color:#cfe3ff;text-decoration:none;padding:.55rem .6rem;border-radius:8px}
+.sidebar-nav a.active,.sidebar-nav a:hover{background:rgba(255,255,255,0.06);color:#fff}
+.dashboard-main{flex:1;display:flex;flex-direction:column}
+.dashboard-topbar{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1rem;border-bottom:1px solid rgba(15,23,42,0.05)}
+.dashboard-content{padding:1.2rem 0}
+.muted{color:var(--muted)}
+.table-users th,.table-users td{padding:.6rem .5rem;border-bottom:1px solid rgba(15,23,42,0.05);text-align:left}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+
+@media (max-width:1024px){.dashboard-sidebar{width:220px}.cards-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:720px){.dashboard-shell{flex-direction:column}.dashboard-sidebar{width:100%}.cards-grid{grid-template-columns:1fr}}
 /* === Dashboard Administrativo Flux Inmobiliaria === */
 :root {
   --dashboard-bg: #f8fafc;
