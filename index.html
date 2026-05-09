@@ -1,3 +1,126 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Flux Inmobiliaria — Encuentra tu hogar ideal</title>
+    <meta name="description" content="Portal inmobiliario profesional - Flux Inmobiliaria" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/home.css" />
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <header class="site-header" role="banner">
+        <div class="container header-inner">
+          <a href="index.html" class="brand" aria-label="Flux Inmobiliaria">
+            <span class="brand-logo">Flux</span>
+            <span class="brand-name">Inmobiliaria</span>
+          </a>
+          <nav class="site-nav" role="navigation" aria-label="Principal">
+            <a href="index.html">Inicio</a>
+            <a href="propiedades/listado.html">Propiedades</a>
+            <a href="RegistroPropietario/propietario.html">Registrar Propietario</a>
+            <a href="RegistroPropietario/gestor.html">Registrar Gestor</a>
+            <a href="login/login.html">Login</a>
+            <a href="dashboard/dashboard.html">Dashboard</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero" aria-label="Hero - Encuentra tu hogar ideal">
+          <div class="hero-overlay" aria-hidden="true"></div>
+          <div class="container hero-content">
+            <h1>Encuentra tu hogar ideal</h1>
+            <p>Explora, compara y contacta a propietarios con confianza.</p>
+            <a class="btn btn-primary" href="#buscador">Buscar propiedades</a>
+          </div>
+        </section>
+
+        <section class="search-section" id="buscador" aria-label="Buscador inmobiliario">
+          <div class="container">
+            <h2 class="sr-only">Buscador</h2>
+            <form id="searchForm" class="search-form" role="search" aria-label="Buscar propiedades">
+              <div class="form-group">
+                <label for="provincia">Provincia</label>
+                <select id="provincia" name="provincia" aria-label="Provincia">
+                  <option value="">Selecciona provincia</option>
+                  <option value="santiago">Santiago</option>
+                  <option value="valparaiso">Valparaíso</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="comuna">Comuna</label>
+                <select id="comuna" name="comuna" aria-label="Comuna">
+                  <option value="">Selecciona comuna</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="sector">Sector</label>
+                <input id="sector" name="sector" placeholder="Ej: Centro, Las Condes" aria-label="Sector" />
+              </div>
+
+              <div class="form-group">
+                <button class="btn btn-secondary" type="submit">Buscar</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <section class="featured-properties" aria-label="Propiedades destacadas">
+          <div class="container">
+            <div class="section-header">
+              <h2>Propiedades destacadas</h2>
+              <p>Algunas de nuestras mejores opciones del mes.</p>
+            </div>
+
+            <div class="cards-grid" id="propertiesList">
+              <!-- Cards generadas por JS -->
+            </div>
+
+            <div class="more-btn-wrapper">
+              <a class="btn-card" href="propiedades/listado.html">Ver más propiedades</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="info-section" id="contacto" aria-label="Contacto e información">
+          <div class="container">
+            <div class="footer-grid">
+              <div>
+                <h3>Flux Inmobiliaria</h3>
+                <p>Profesionalismo y confianza en cada operación.</p>
+              </div>
+              <div>
+                <h4>Contacto</h4>
+                <p>email: contacto@fluxinmobiliaria.cl</p>
+                <p>Tel: +56 9 0000 0000</p>
+              </div>
+              <div>
+                <h4>Síguenos</h4>
+                <p>Redes sociales: Facebook · Instagram · LinkedIn</p>
+              </div>
+            </div>
+
+            <div class="footer-bottom">© <span id="year"></span> Flux Inmobiliaria. Todos los derechos reservados.</div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer" role="contentinfo">
+        <div class="container">
+          <p class="sr-only">Pie de página de Flux Inmobiliaria</p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
 <!DOCTYPE html>
 <html lang="es">
 <head>
