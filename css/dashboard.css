@@ -12,6 +12,19 @@
 .table-users th,.table-users td{padding:.6rem .5rem;border-bottom:1px solid rgba(15,23,42,0.05);text-align:left}
 .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 
+/* Modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(12,17,36,0.45);visibility:hidden;opacity:0;transition:opacity .18s ease}
+.modal[aria-hidden="false"]{visibility:visible;opacity:1}
+.modal-dialog{background:#fff;border-radius:12px;max-width:720px;width:100%;box-shadow:0 12px 34px rgba(15,23,42,0.18);overflow:hidden}
+.modal-header{display:flex;justify-content:space-between;align-items:center;padding:1rem;border-bottom:1px solid rgba(15,23,42,0.04)}
+.modal-body{padding:1rem}
+
+/* Table responsive */
+.table-users{width:100%}
+.table-users thead{background:transparent}
+.table-users th{font-weight:700}
+
+
 @media (max-width:1024px){.dashboard-sidebar{width:220px}.cards-grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:720px){.dashboard-shell{flex-direction:column}.dashboard-sidebar{width:100%}.cards-grid{grid-template-columns:1fr}}
 /* === Dashboard Administrativo Flux Inmobiliaria === */

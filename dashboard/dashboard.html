@@ -40,7 +40,10 @@
               <div class="card-body">
                 <div class="flex" style="justify-content:space-between;align-items:center">
                   <h3>Lista de usuarios</h3>
-                  <a class="btn btn-primary" href="#">Nuevo usuario</a>
+                  <div style="display:flex;gap:.6rem;align-items:center">
+                    <input id="userSearch" placeholder="Buscar usuarios..." aria-label="Buscar usuarios" style="padding:.45rem .6rem;border-radius:8px;border:1px solid rgba(15,23,42,0.06)" />
+                    <button id="newUserBtn" class="btn btn-primary">Nuevo usuario</button>
+                  </div>
                 </div>
                 <div style="margin-top:1rem;overflow:auto">
                   <table class="table-users" style="width:100%;border-collapse:collapse">
@@ -57,6 +60,30 @@
               </div>
             </div>
           </section>
+
+          <!-- Modal para crear/editar usuario -->
+          <div id="userModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="userModalTitle">
+            <div class="modal-dialog">
+              <header class="modal-header">
+                <h3 id="userModalTitle">Nuevo usuario</h3>
+                <button class="btn" id="closeModal">✕</button>
+              </header>
+              <div class="modal-body">
+                <form id="userForm">
+                  <div class="form-grid">
+                    <div class="form-group"><label for="u_rut">RUT</label><input id="u_rut" name="u_rut" required /></div>
+                    <div class="form-group"><label for="u_name">Nombre</label><input id="u_name" name="u_name" required /></div>
+                    <div class="form-group"><label for="u_email">Email</label><input id="u_email" name="u_email" type="email" required /></div>
+                    <div class="form-group"><label for="u_phone">Teléfono</label><input id="u_phone" name="u_phone" required /></div>
+                  </div>
+                  <div style="margin-top:1rem;display:flex;gap:.6rem;justify-content:flex-end">
+                    <button type="button" class="btn" id="cancelUser">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
 
           <section id="propiedades" aria-label="Propiedades" style="margin-top:1.6rem">
             <h2>Propiedades</h2>
