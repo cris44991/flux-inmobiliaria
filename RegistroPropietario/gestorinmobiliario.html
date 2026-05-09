@@ -11,15 +11,22 @@
 <body>
   <div class="gestor-form-page">
     <header class="gestor-form-header">
+<<<<<<< HEAD
       <a href="../index.html" class="brand-gestor" aria-label="Volver al inicio">🏢 Flux Inmobiliaria</a>
       <nav aria-label="Navegación secundaria gestor">
         <a href="../index.html">Inicio</a>
+=======
+      <a href="../login/index.html" class="brand-gestor" aria-label="Volver al inicio">🏢 Flux Inmobiliaria</a>
+      <nav aria-label="Navegación secundaria gestor">
+        <a href="../login/index.html">Inicio</a>
+>>>>>>> ec64c52 (Site: versión inicial)
         <a href="../login/login.html">Login</a>
         <a href="gestorinmobiliario.html" aria-current="page">Registro Gestor</a>
       </nav>
     </header>
 
     <main class="gestor-form-main" aria-labelledby="gestor-title">
+<<<<<<< HEAD
       <section class="gestor-form-card" aria-label="Registro de gestor inmobiliario">
         <div class="gestor-header">
           <h1 id="gestor-title">Registro Gestor Inmobiliario</h1>
@@ -117,6 +124,94 @@
             <button type="submit" class="btn btn-gestor" id="ownerUploadBtn" disabled>Subir Antecedentes</button>
           </form>
         </section>
+=======
+      <section class="gestor-hero" aria-label="Presentación de registro de gestor">
+        <div class="gestor-hero-copy">
+          <span class="gestor-eyebrow">Panel profesional</span>
+          <h1 id="gestor-title">Registro Gestor Inmobiliario</h1>
+          <p class="gestor-description">
+            Accede a una plataforma pensada para corredores: control de propiedades, contacto con clientes y
+            publicación rápida con una imagen más sólida y confiable.
+          </p>
+          <div class="gestor-hero-stats" aria-hidden="true">
+            <div>
+              <strong>24/7</strong>
+              <span>gestión disponible</span>
+            </div>
+            <div>
+              <strong>+120</strong>
+              <span>propiedades activas</span>
+            </div>
+            <div>
+              <strong>100%</strong>
+              <span>seguimiento centralizado</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="gestor-form-card" aria-label="Registro de gestor inmobiliario">
+          <div class="gestor-header">
+            <h2>Completa tus datos</h2>
+            <p>Una vez registrado, podrás acceder al flujo profesional de administración.</p>
+          </div>
+
+          <form action="#" method="post" enctype="multipart/form-data" novalidate>
+            <div class="gestor-form-grid">
+              <div class="form-group">
+                <label for="rut">📋 RUT</label>
+                <input id="rut" name="rut" type="text" placeholder="12.345.678-9" required />
+              </div>
+
+              <div class="form-group">
+                <label for="nombre">👤 Nombre completo</label>
+                <input id="nombre" name="nombre" type="text" placeholder="María López Pérez" required />
+              </div>
+
+              <div class="form-group">
+                <label for="fecha">📅 Fecha de nacimiento</label>
+                <input id="fecha" name="fecha" type="date" required />
+              </div>
+
+              <div class="form-group">
+                <label for="correo">📧 Correo electrónico</label>
+                <input id="correo" name="correo" type="email" placeholder="gestor@ejemplo.cl" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contrasena">🔒 Contraseña</label>
+                <input id="contrasena" name="contrasena" type="password" placeholder="Mínimo 8 caracteres" required minlength="8" />
+              </div>
+
+              <div class="form-group">
+                <label for="sexo">⚖️ Sexo</label>
+                <select id="sexo" name="sexo" required>
+                  <option value="">Selecciona...</option>
+                  <option value="masculino">Masculino</option>
+                  <option value="femenino">Femenino</option>
+                  <option value="otro">Otro</option>
+                  <option value="prefiero-no-decir">Prefiero no decir</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="telefono">📞 Teléfono</label>
+                <input id="telefono" name="telefono" type="tel" placeholder="+56 9 1234 5678" required pattern="[0-9+\s-]{8,20}" />
+              </div>
+
+              <div class="form-group">
+                <label for="antecedentes">📄 Certificado de antecedentes</label>
+                <input id="antecedentes" name="antecedentes" type="file" accept=".pdf,.jpg,.jpeg,.png" required />
+                <small class="form-hint">Sube un archivo PDF o imagen (máx. 5MB)</small>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-gestor">Crear cuenta profesional</button>
+            <p class="gestor-login-link">
+              <a href="../login/login.html">¿Ya eres gestor? Inicia sesión</a>
+            </p>
+          </form>
+        </div>
+>>>>>>> ec64c52 (Site: versión inicial)
       </section>
     </main>
 
@@ -124,6 +219,7 @@
       <p>© 2026 Flux Inmobiliaria - Plataforma profesional para gestores</p>
     </footer>
   </div>
+<<<<<<< HEAD
 
   <script>
     (function () {
@@ -212,5 +308,7 @@
       refreshOwnerUploadAvailability();
     })();
   </script>
+=======
+>>>>>>> ec64c52 (Site: versión inicial)
 </body>
 </html>

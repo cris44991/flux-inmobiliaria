@@ -15,10 +15,16 @@
         <a href="../login/index.html" class="btn-nav">Inicio</a>
         <a href="../login/login.html" class="btn-nav">Login</a>
         <a href="propietario.html" class="btn-nav active" aria-current="page">Registro Propietario</a>
+<<<<<<< HEAD
+=======
+        <a href="gestorinmobiliario.html" class="btn-nav">Registro Gestor</a>
+        <a href="../propiedades/listado.html" class="btn-nav">Propiedades</a>
+>>>>>>> ec64c52 (Site: versión inicial)
       </nav>
     </header>
 
     <main class="form-main" aria-labelledby="registro-title">
+<<<<<<< HEAD
       <section class="form-box" aria-label="Registro de propietario">
         <h1 id="registro-title">Registro de Propietario</h1>
         <p>Completa los datos para darte de alta y gestionar tus propiedades.</p>
@@ -87,6 +93,90 @@
           </p>
         </fieldset>
         </form>
+=======
+      <section class="owner-hero" aria-label="Presentación de registro de propietario">
+        <div class="owner-copy">
+          <span class="login-eyebrow">Alta de propietario</span>
+          <h1 id="registro-title">Registro de Propietario</h1>
+          <p>
+            Crea tu perfil para publicar inmuebles, gestionar información y mantener todo tu portafolio en un solo lugar.
+          </p>
+          <div class="owner-points" aria-hidden="true">
+            <span>Publicación rápida</span>
+            <span>Gestión centralizada</span>
+            <span>Atención personalizada</span>
+          </div>
+        </div>
+
+        <section class="form-box" aria-label="Registro de propietario">
+          <h2>Completa tus datos</h2>
+          <p>La información debe ser precisa para validar tu perfil y tus propiedades.</p>
+
+          <form action="#" method="post" novalidate>
+            <fieldset>
+              <legend class="sr-only">Datos del propietario</legend>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="rut">RUT <span aria-hidden="true">*</span></label>
+                  <input id="rut" name="rut" type="text" placeholder="12.345.678-9" required pattern="^[0-9]{1,2}\.[0-9]{3}\.[0-9]{3}-[0-9Kk]$" aria-required="true" />
+                  <small class="form-hint">Formato: 12.345.678-9</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="nombre">Nombre completo</label>
+                  <input id="nombre" name="nombre" type="text" placeholder="Juan Pérez González" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="fecha">Fecha de nacimiento</label>
+                  <input id="fecha" name="fecha" type="date" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="correo">Correo electrónico</label>
+                  <input id="correo" name="correo" type="email" placeholder="nombre@ejemplo.cl" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="contrasena">Contraseña</label>
+                  <input id="contrasena" name="contrasena" type="password" placeholder="Mínimo 8 caracteres" required minlength="8" />
+                </div>
+
+                <div class="form-group">
+                  <label for="sexo">Sexo</label>
+                  <select id="sexo" name="sexo" required>
+                    <option value="">Selecciona...</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                    <option value="prefiero-no-decir">Prefiero no decir</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="telefono">Teléfono</label>
+                  <input id="telefono" name="telefono" type="tel" placeholder="+56 9 1234 5678" required pattern="[0-9+\s-]{8,20}" />
+                </div>
+
+                <div class="form-group">
+                  <label for="numpropiedad">Número de propiedad</label>
+                  <input id="numpropiedad" name="numpropiedad" type="text" placeholder="Ej. 009762" required />
+                </div>
+              </div>
+
+              <div class="form-group form-check">
+                <input id="acepto" name="acepto" type="checkbox" required aria-required="true" />
+                <label for="acepto">Acepto términos y condiciones <span aria-hidden="true">*</span></label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">Crear cuenta</button>
+              <p class="forgot-text">
+                <a href="../login/login.html">¿Ya tienes cuenta? Inicia sesión</a>
+              </p>
+            </fieldset>
+          </form>
+        </section>
+>>>>>>> ec64c52 (Site: versión inicial)
       </section>
     </main>
 
@@ -94,6 +184,7 @@
       <p>© 2026 Flux Inmobiliaria</p>
     </footer>
   </div>
+<<<<<<< HEAD
 
   <script>
     (function () {
@@ -138,5 +229,7 @@
       });
     })();
   </script>
+=======
+>>>>>>> ec64c52 (Site: versión inicial)
 </body>
 </html>

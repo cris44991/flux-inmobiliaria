@@ -12,6 +12,7 @@
 <body>
   <div class="login-page">
     <header class="login-header">
+<<<<<<< HEAD
       <a href="../index.html" class="brand-login" aria-label="Volver al inicio">Flux Inmobiliaria</a>
     </header>
     <main class="login-main" aria-labelledby="login-title">
@@ -32,6 +33,53 @@
             <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
           </p>
         </form>
+=======
+      <a href="index.html" class="brand-login" aria-label="Volver al inicio">
+        <span class="brand-logo" aria-hidden="true">🟦</span>
+        <span class="brand-text">Flux Inmobiliaria</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="login.html">Login</a>
+        <a href="../RegistroPropietario/propietario.html">Registro Propietario</a>
+        <a href="../RegistroPropietario/gestorinmobiliario.html">Registro Gestor</a>
+        <a href="../propiedades/listado.html">Propiedades</a>
+      </nav>
+    </header>
+    <main class="login-main" aria-labelledby="login-title">
+      <section class="login-hero">
+        <div class="login-copy">
+          <span class="login-eyebrow">Acceso profesional</span>
+          <h1 id="login-title">Iniciar Sesión</h1>
+          <p>
+            Entra al panel de Flux para administrar propiedades, responder clientes y mantener tu cartera al día.
+          </p>
+          <div class="login-points" aria-hidden="true">
+            <span>Control de publicaciones</span>
+            <span>Acceso seguro</span>
+            <span>Seguimiento de clientes</span>
+          </div>
+        </div>
+
+        <section class="login-box" role="form" aria-label="Formulario de inicio de sesión">
+          <h2>Bienvenido de vuelta</h2>
+          <p>Ingresa tus credenciales para continuar.</p>
+          <form action="#" method="post" novalidate>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input id="email" name="email" type="email" placeholder="nombre@ejemplo.cl" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="password">Contraseña</label>
+              <input id="password" name="password" type="password" placeholder="********" required autocomplete="current-password" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Iniciar Sesión</button>
+            <p class="forgot-text">
+              <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
+            </p>
+          </form>
+        </section>
+>>>>>>> ec64c52 (Site: versión inicial)
       </section>
     </main>
     <footer class="login-footer">

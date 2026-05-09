@@ -52,8 +52,12 @@
 
 .thumbnail-grid {
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: repeat(auto-fill, minmax(100px, 100px));
   justify-content: start;
+=======
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+>>>>>>> ec64c52 (Site: versión inicial)
   gap: 0.5rem;
   max-height: 200px;
   overflow-y: auto;

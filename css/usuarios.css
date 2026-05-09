@@ -1,4 +1,5 @@
 /* === Estilos para Gestión de Usuarios === */
+<<<<<<< HEAD
 
 /* Page Header Mejorado */
 .page-header {
@@ -16,10 +17,23 @@
 .page-header h2 {
   margin: 0 0 0.5rem 0;
   font-size: 1.8rem;
+=======
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+>>>>>>> ec64c52 (Site: versión inicial)
   font-weight: 700;
   color: var(--text-primary);
 }
 
+<<<<<<< HEAD
 .page-subtitle {
   margin: 0;
   color: #6b7280;
@@ -242,6 +256,8 @@
   box-shadow: 0 6px 12px -2px rgba(59, 130, 246, 0.3);
 }
 
+=======
+>>>>>>> ec64c52 (Site: versión inicial)
 .add-user-btn {
   background: linear-gradient(135deg, #10b981, #059669);
   color: #ffffff;
@@ -306,6 +322,7 @@
   background: #f8fafc;
 }
 
+<<<<<<< HEAD
 /* Checkboxes */
 input[type="checkbox"] {
   width: 18px;
@@ -318,6 +335,8 @@ input[type="checkbox"] {
   margin-top: 2px;
 }
 
+=======
+>>>>>>> ec64c52 (Site: versión inicial)
 /* User Info */
 .user-info {
   display: flex;
@@ -389,6 +408,7 @@ input[type="checkbox"] {
   color: #dc2626;
 }
 
+<<<<<<< HEAD
 .status.pending {
   background: #fef3c7;
   color: #92400e;
@@ -421,15 +441,23 @@ input[type="checkbox"] {
   letter-spacing: 0.02em;
 }
 
+=======
+>>>>>>> ec64c52 (Site: versión inicial)
 /* Action Buttons */
 .action-buttons {
   display: flex;
   gap: 0.5rem;
+<<<<<<< HEAD
   justify-content: flex-start;
 }
 
 .btn-edit,
 .btn-view,
+=======
+}
+
+.btn-edit,
+>>>>>>> ec64c52 (Site: versión inicial)
 .btn-delete {
   padding: 0.5rem 0.75rem;
   border: none;
@@ -441,8 +469,11 @@ input[type="checkbox"] {
   align-items: center;
   gap: 0.25rem;
   transition: all 0.2s ease;
+<<<<<<< HEAD
   min-width: 44px;
   justify-content: center;
+=======
+>>>>>>> ec64c52 (Site: versión inicial)
 }
 
 .btn-edit {
@@ -453,6 +484,7 @@ input[type="checkbox"] {
 .btn-edit:hover {
   background: #bfdbfe;
   color: #1d4ed8;
+<<<<<<< HEAD
   transform: translateY(-1px);
 }
 
@@ -483,6 +515,8 @@ input[type="checkbox"] {
   background: #bbf7d0;
   color: #14532d;
   transform: translateY(-1px);
+=======
+>>>>>>> ec64c52 (Site: versión inicial)
 }
 
 .btn-delete {
@@ -493,7 +527,10 @@ input[type="checkbox"] {
 .btn-delete:hover {
   background: #fecaca;
   color: #b91c1c;
+<<<<<<< HEAD
   transform: translateY(-1px);
+=======
+>>>>>>> ec64c52 (Site: versión inicial)
 }
 
 /* Table Footer */
@@ -501,6 +538,7 @@ input[type="checkbox"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
   padding: 1.5rem;
   background: #f8fafc;
   border-top: 1px solid #e2e8f0;
@@ -571,10 +609,22 @@ input[type="checkbox"] {
   gap: 0.75rem;
   align-items: center;
   white-space: nowrap;
+=======
+  padding: 1rem 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+>>>>>>> ec64c52 (Site: versión inicial)
 }
 
 .pagination-btn {
   padding: 0.5rem 1rem;
+<<<<<<< HEAD
   background: #e5e7eb;
   border: 1px solid #d1d5db;
   border-radius: 6px;
@@ -582,13 +632,26 @@ input[type="checkbox"] {
   font-weight: 600;
   font-size: 0.85rem;
   cursor: pointer;
+=======
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: var(--text-secondary);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+>>>>>>> ec64c52 (Site: versión inicial)
   transition: all 0.2s ease;
 }
 
 .pagination-btn:hover:not(:disabled) {
+<<<<<<< HEAD
   background: #d1d5db;
   border-color: #9ca3af;
   transform: translateY(-1px);
+=======
+  background: #f8fafc;
+  border-color: #cbd5e1;
+>>>>>>> ec64c52 (Site: versión inicial)
 }
 
 .pagination-btn:disabled {
@@ -597,6 +660,7 @@ input[type="checkbox"] {
 }
 
 .pagination-info {
+<<<<<<< HEAD
   color: #6b7280;
   font-size: 0.9rem;
   font-weight: 500;
@@ -637,6 +701,14 @@ input[type="checkbox"] {
     grid-template-columns: 1fr;
   }
 
+=======
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+>>>>>>> ec64c52 (Site: versión inicial)
   .users-table {
     font-size: 0.8rem;
   }
@@ -646,17 +718,37 @@ input[type="checkbox"] {
     padding: 0.75rem 0.5rem;
   }
 
+<<<<<<< HEAD
   .action-buttons {
     flex-direction: column;
   }
 
   .action-buttons button {
     width: 100%;
+=======
+  .user-info {
+    gap: 0.5rem;
+  }
+
+  .user-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+>>>>>>> ec64c52 (Site: versión inicial)
   }
 
   .table-footer {
     flex-direction: column;
     gap: 1rem;
+<<<<<<< HEAD
   }
 
   .pagination {
@@ -664,3 +756,19 @@ input[type="checkbox"] {
     justify-content: center;
   }
 }
+=======
+    align-items: center;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}
+>>>>>>> ec64c52 (Site: versión inicial)

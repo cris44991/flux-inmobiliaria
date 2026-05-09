@@ -11,20 +11,52 @@
 
 .gestor-form-page {
   min-height: 100vh;
+<<<<<<< HEAD
   background: linear-gradient(135deg, var(--gestor-light) 0%, #edf2f7 100%);
   display: grid;
   place-items: center;
   padding: 2rem 1rem;
+=======
+  background:
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.12), transparent 35%),
+    linear-gradient(135deg, var(--gestor-light) 0%, #edf2f7 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+>>>>>>> ec64c52 (Site: versión inicial)
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .gestor-form-header {
+<<<<<<< HEAD
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
 }
 
 .brand-gestor {
+=======
+  width: min(100%, 1180px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 1.1rem;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(26, 54, 93, 0.08);
+}
+
+.brand-gestor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+>>>>>>> ec64c52 (Site: versión inicial)
   color: var(--gestor-primary);
   font-weight: 800;
   font-size: 1.3rem;
@@ -32,20 +64,83 @@
   letter-spacing: -0.02em;
 }
 
+<<<<<<< HEAD
 .gestor-form-main {
   width: min(720px, 100%);
+=======
+.gestor-form-header nav {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.gestor-form-header nav a {
+  text-decoration: none;
+  color: var(--gestor-secondary);
+  font-weight: 600;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(226, 232, 240, 0.75);
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gestor-form-header nav a:hover,
+.gestor-form-header nav a:focus-visible,
+.gestor-form-header nav a[aria-current="page"] {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.22);
+  transform: translateY(-1px);
+}
+
+.gestor-form-main {
+  width: min(1180px, 100%);
+}
+
+.gestor-hero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.gestor-hero-copy {
+  padding: 2rem 0.5rem 0.5rem 0;
+}
+
+.gestor-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.1);
+  color: #1d4ed8;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+>>>>>>> ec64c52 (Site: versión inicial)
 }
 
 .gestor-form-card {
   background: #ffffff;
+<<<<<<< HEAD
   border: 2px solid var(--gestor-border);
   border-radius: var(--gestor-radius);
   box-shadow: var(--gestor-shadow);
   padding: 2.5rem;
+=======
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(26, 54, 93, 0.12);
+  padding: 2rem;
+>>>>>>> ec64c52 (Site: versión inicial)
   position: relative;
 }
 
 .gestor-header {
+<<<<<<< HEAD
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -53,17 +148,62 @@
 .gestor-header h1 {
   font-size: 2rem;
   font-weight: 700;
+=======
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.gestor-header h1,
+.gestor-header h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+>>>>>>> ec64c52 (Site: versión inicial)
   color: var(--gestor-primary);
   margin: 0 0 0.5rem;
 }
 
 .gestor-description {
+<<<<<<< HEAD
   font-size: 1.1rem;
   color: var(--gestor-accent);
   line-height: 1.5;
   margin: 0;
   max-width: 600px;
   margin: 0 auto;
+=======
+  font-size: 1.03rem;
+  color: var(--gestor-accent);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 620px;
+}
+
+.gestor-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.4rem;
+}
+
+.gestor-hero-stats > div {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 10px 22px rgba(26, 54, 93, 0.06);
+}
+
+.gestor-hero-stats strong {
+  display: block;
+  font-size: 1.35rem;
+  color: var(--gestor-primary);
+  margin-bottom: 0.15rem;
+}
+
+.gestor-hero-stats span {
+  color: var(--gestor-accent);
+  font-size: 0.9rem;
+>>>>>>> ec64c52 (Site: versión inicial)
 }
 
 .gestor-form-grid {
@@ -111,22 +251,38 @@
 
 .btn-gestor {
   width: 100%;
+<<<<<<< HEAD
   background: linear-gradient(135deg, var(--gestor-primary), var(--gestor-secondary));
   color: #ffffff;
   border: none;
   border-radius: var(--gestor-radius);
+=======
+  background: linear-gradient(135deg, #2563eb, #1d4ed8 55%, #1e3a8a);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+>>>>>>> ec64c52 (Site: versión inicial)
   padding: 1rem 2rem;
   font-size: 1.1rem;
   font-weight: 700;
   cursor: pointer;
+<<<<<<< HEAD
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+=======
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+>>>>>>> ec64c52 (Site: versión inicial)
   margin-bottom: 1rem;
 }
 
 .btn-gestor:hover,
 .btn-gestor:focus-visible {
   transform: translateY(-2px);
+<<<<<<< HEAD
   box-shadow: 0 10px 25px rgba(26, 54, 93, 0.25);
+=======
+  filter: brightness(1.02);
+  box-shadow: 0 14px 26px rgba(37, 99, 235, 0.28);
+>>>>>>> ec64c52 (Site: versión inicial)
 }
 
 .gestor-login-link {
@@ -152,6 +308,7 @@
   font-size: 0.9rem;
 }
 
+<<<<<<< HEAD
 .estado-postulacion {
   margin: 0.75rem 0 0;
   font-weight: 600;
@@ -186,11 +343,35 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+=======
+/* Responsive */
+@media (max-width: 1100px) {
+  .gestor-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .gestor-hero-copy {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .gestor-form-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+>>>>>>> ec64c52 (Site: versión inicial)
   .gestor-form-card {
     padding: 1.5rem;
   }
 
+<<<<<<< HEAD
   .gestor-header h1 {
+=======
+  .gestor-header h1,
+  .gestor-header h2 {
+>>>>>>> ec64c52 (Site: versión inicial)
     font-size: 1.6rem;
   }
 
@@ -198,6 +379,13 @@
     font-size: 1rem;
   }
 
+<<<<<<< HEAD
+=======
+  .gestor-hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+>>>>>>> ec64c52 (Site: versión inicial)
   .gestor-form-grid {
     grid-template-columns: 1fr;
   }
