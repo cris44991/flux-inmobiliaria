@@ -42,6 +42,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Login
       if (form.id === 'loginForm') {
+        const email = form.email?.value || '';
+        
+        // Guardar sesión activa
+        localStorage.setItem('flux_session', JSON.stringify({
+          email: email,
+          nombre: email.split('@')[0],
+          role: 'user',
+          loggedAt: Date.now()
+        }));
+        
         if (feedbackEl) feedbackEl.textContent = 'Iniciando sesión...';
         setTimeout(() => {
           window.location.href = '../dashboard/dashboard.html';

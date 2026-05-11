@@ -4,15 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Dashboard — Flux Inmobiliaria</title>
-    <link rel="stylesheet" href="/css/base.css" />
-    <link rel="stylesheet" href="/css/components.css" />
-    <link rel="stylesheet" href="/css/dashboard.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
   </head>
   <body class="dashboard-page">
     <div class="dashboard-shell">
       <aside class="dashboard-sidebar" id="sidebar" aria-label="Menú lateral">
         <div class="sidebar-brand">
-          <a href="/index.html" class="brand"><span class="brand-logo">Flux</span> Inmobiliaria</a>
+          <a href="../index.html" class="brand"><span class="brand-logo">Flux</span> Inmobiliaria</a>
         </div>
         <nav class="sidebar-nav" role="navigation" aria-label="Dashboard">
           <a href="#usuarios" class="active">Usuarios</a>
@@ -27,7 +27,9 @@
         <header class="dashboard-topbar">
           <button id="sidebarToggle" class="btn">☰</button>
           <div class="top-actions">
-            <span aria-hidden="true">Admin</span>
+            <span>👤 <span id="userName">Usuario</span></span>
+            <span style="font-size: 0.85rem; color: var(--muted);">(<span id="userRole">Admin</span>)</span>
+            <button id="logoutBtn" class="btn btn-secondary" style="margin-left: 1rem;">Cerrar sesión</button>
           </div>
         </header>
 
@@ -140,7 +142,7 @@
     </div>
 
     <script src="/js/dashboard.js" defer></script>
-  </body>
+    <script src="../js/dashboard-auth.js" defer></script>
 </html>
                   <span class="stat-label">Publicaciones</span>
                 </div>
@@ -219,5 +221,6 @@
       </main>
     </div>
   </div>
+  <script src="../js/dashboard-auth.js" defer></script>
 </body>
 </html>
