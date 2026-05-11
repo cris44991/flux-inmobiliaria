@@ -3,10 +3,79 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta http-equiv="refresh" content="0; url=./gestor.html" />
     <title>Registro Gestor — Flux Inmobiliaria</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
   </head>
-  <body>
-    <p>Redirigiendo al formulario de gestor...</p>
+  <body class="login-page">
+    <header class="login-header">
+      <div class="container login-header-inner">
+        <a class="brand-login" href="../index.html">Flux Inmobiliaria</a>
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="../index.html" class="nav-link">Inicio</a>
+          <a href="../propiedades/listado.html" class="nav-link">Propiedades</a>
+          <a href="../login/login.html" class="nav-link">Login</a>
+          <a href="./propietario.html" class="nav-link">Registrar Propietario</a>
+          <a href="../index.html#contacto" class="nav-link">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container auth-shell" aria-labelledby="gestor-title">
+      <section class="auth-hero" aria-hidden="true">
+        <span class="auth-kicker">Únete como gestor</span>
+        <h1 id="gestor-title">Gestiona propiedades profesionalmente</h1>
+        <p>Regístrate como gestor inmobiliario y administra portafolios de clientes de forma segura y verificada.</p>
+        <div class="auth-pills">
+          <span>Gestión profesional</span>
+          <span>Perfil verificado</span>
+          <span>Comisiones competitivas</span>
+        </div>
+      </section>
+
+      <section class="login-box" role="region" aria-label="Formulario de registro de gestor">
+        <h2>Crear cuenta</h2>
+        <p>Regístrate para gestionar propiedades profesionalmente.</p>
+
+        <form id="managerForm" novalidate>
+          <div class="form-group">
+            <label for="nombre_g">Nombre completo</label>
+            <input id="nombre_g" name="nombre_g" placeholder="Nombre y Apellido" required />
+          </div>
+          <div class="form-group">
+            <label for="email_g">Correo electrónico</label>
+            <input id="email_g" name="email_g" type="email" placeholder="ejemplo@correo.cl" required />
+          </div>
+          <div class="form-group">
+            <label for="rut_g">RUT</label>
+            <input id="rut_g" name="rut_g" placeholder="12.345.678-9" required />
+          </div>
+          <div class="form-group">
+            <label for="telefono_g">Teléfono</label>
+            <input id="telefono_g" name="telefono_g" placeholder="+56 9 0000 0000" required />
+          </div>
+          <div class="form-group">
+            <label for="password_g">Contraseña</label>
+            <input id="password_g" name="password_g" type="password" minlength="8" placeholder="Mínimo 8 caracteres" required />
+          </div>
+
+          <div class="form-group">
+            <label for="antecedentes">Certificado de antecedentes (opcional)</label>
+            <input id="antecedentes" name="antecedentes" type="file" accept=".pdf,.jpg,.png" />
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Registrar como Gestor</button>
+          <div id="managerFormFeedback" class="form-hint" aria-live="polite"></div>
+        </form>
+
+        <p style="margin-top: 1.5rem; text-align: center; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+          ¿Eres propietario? <a href="./propietario.html" style="color: var(--secondary); font-weight: 600; text-decoration: none;">Regístrate aquí</a>
+        </p>
+      </section>
+    </main>
+
+    <p class="login-footer-text">¿Ya tienes cuenta? <a href="../login/login.html" style="color: var(--secondary); font-weight: 600; text-decoration: none;">Inicia sesión</a></p>
+
+    <script src="../js/auth.js" defer></script>
   </body>
 </html>
