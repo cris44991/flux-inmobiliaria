@@ -856,6 +856,14 @@ body {
 }
 
 .activity-item:hover {
+  background: rgba(59, 130, 246, 0.05);
+}
+
+/* Modal show state */
+.modal-show {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
   background: var(--dashboard-bg);
 }
 
