@@ -42,14 +42,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Login
       if (form.id === 'loginForm') {
-        alert('Inicio de sesión simulado.');
-        window.location.href = '/dashboard/dashboard.html';
+        if (feedbackEl) feedbackEl.textContent = 'Iniciando sesión...';
+        setTimeout(() => {
+          window.location.href = '../dashboard/dashboard.html';
+        }, 500);
         return;
       }
 
       // Recover
       if (form.id === 'recoverForm') {
-        alert('Se enviaron las instrucciones al correo.');
+        if (feedbackEl) feedbackEl.textContent = 'Se enviaron las instrucciones al correo.';
+        form.reset();
         return;
       }
 
