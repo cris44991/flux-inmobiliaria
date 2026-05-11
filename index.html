@@ -14,17 +14,16 @@
       <header class="site-header" role="banner">
         <div class="container header-inner">
           <a href="index.html" class="brand" aria-label="Flux Inmobiliaria">
-            <span class="brand-logo">Flux</span>
-            <span class="brand-name">Inmobiliaria</span>
+            <span class="brand-logo" aria-hidden="true">🟦</span>
+            <span class="brand-name">Flux Inmobiliaria</span>
           </a>
           <nav class="site-nav" role="navigation" aria-label="Principal">
-            <a href="index.html">Inicio</a>
-            <a href="propiedades/listado.html">Propiedades</a>
-            <a href="RegistroPropietario/propietario.html">Registrar Propietario</a>
-            <a href="RegistroPropietario/gestor.html">Registrar Gestor</a>
-            <a href="login/login.html">Login</a>
-            <a href="dashboard/dashboard.html">Dashboard</a>
-            <a href="#contacto">Contacto</a>
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="propiedades/listado.html" class="nav-link">Propiedades</a>
+            <a href="RegistroPropietario/propietario.html" class="nav-link">Registrar Propietario</a>
+            <a href="RegistroPropietario/gestorinmobiliario.html" class="nav-link">Registrar Gestor</a>
+            <a href="login/login.html" class="nav-link nav-link-highlight">Login</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
           </nav>
         </div>
       </header>
@@ -35,55 +34,41 @@
           <div class="container hero-content">
             <h1>Encuentra tu hogar ideal</h1>
             <p>Explora, compara y contacta a propietarios con confianza.</p>
-            <a class="btn btn-primary" href="#buscador">Buscar propiedades</a>
+            <a class="btn btn-primary" href="propiedades/listado.html">Buscar propiedades</a>
           </div>
         </section>
 
-        <section class="search-section" id="buscador" aria-label="Buscador inmobiliario">
-          <div class="container">
-            <h2 class="sr-only">Buscador</h2>
-            <form id="searchForm" class="search-form" role="search" aria-label="Buscar propiedades">
-              <div class="form-group">
-                <label for="provincia">Provincia</label>
-                <select id="provincia" name="provincia" aria-label="Provincia">
-                  <option value="">Selecciona provincia</option>
-                  <option value="santiago">Santiago</option>
-                  <option value="valparaiso">Valparaíso</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="comuna">Comuna</label>
-                <select id="comuna" name="comuna" aria-label="Comuna">
-                  <option value="">Selecciona comuna</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="sector">Sector</label>
-                <input id="sector" name="sector" placeholder="Ej: Centro, Las Condes" aria-label="Sector" />
-              </div>
-
-              <div class="form-group">
-                <button class="btn btn-secondary" type="submit">Buscar</button>
-              </div>
-            </form>
-          </div>
-        </section>
-
-        <section class="featured-properties" aria-label="Propiedades destacadas">
+        <section class="why-choose-us" aria-label="Por qué elegirnos">
           <div class="container">
             <div class="section-header">
-              <h2>Propiedades destacadas</h2>
-              <p>Algunas de nuestras mejores opciones del mes.</p>
+              <h2>¿Por qué elegirnos?</h2>
+              <p>Descubre los beneficios de usar Flux Inmobiliaria.</p>
             </div>
 
-            <div class="cards-grid" id="propertiesList">
-              <!-- Cards generadas por JS -->
-            </div>
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">🔒</div>
+                <h3>Seguridad garantizada</h3>
+                <p>Transacciones seguras y verificadas con máxima privacidad.</p>
+              </div>
 
-            <div class="more-btn-wrapper">
-              <a class="btn-card" href="propiedades/listado.html">Ver más propiedades</a>
+              <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">💡</div>
+                <h3>Fácil de usar</h3>
+                <p>Interfaz intuitiva diseñada para encontrar tu propiedad ideal.</p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">⚡</div>
+                <h3>Rápido y eficiente</h3>
+                <p>Publicaciones en tiempo real y búsqueda instantánea.</p>
+              </div>
+
+              <div class="feature-card">
+                <div class="feature-icon" aria-hidden="true">👥</div>
+                <h3>Comunidad de expertos</h3>
+                <p>Gestores inmobiliarios profesionales a tu servicio.</p>
+              </div>
             </div>
           </div>
         </section>
@@ -91,18 +76,45 @@
         <section class="info-section" id="contacto" aria-label="Contacto e información">
           <div class="container">
             <div class="footer-grid">
-              <div>
+              <div class="footer-brand">
                 <h3>Flux Inmobiliaria</h3>
                 <p>Profesionalismo y confianza en cada operación.</p>
               </div>
-              <div>
-                <h4>Contacto</h4>
-                <p>email: contacto@fluxinmobiliaria.cl</p>
-                <p>Tel: +56 9 0000 0000</p>
+
+              <div class="footer-contact">
+                <h4>📞 Contacto</h4>
+                <div class="contact-item">
+                  <span class="contact-icon">✉️</span>
+                  <div>
+                    <p class="contact-label">Email</p>
+                    <a href="mailto:contacto@fluxinmobiliaria.cl">contacto@fluxinmobiliaria.cl</a>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <span class="contact-icon">📱</span>
+                  <div>
+                    <p class="contact-label">Teléfono</p>
+                    <a href="tel:+56900000000">+56 9 0000 0000</a>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h4>Síguenos</h4>
-                <p>Redes sociales: Facebook · Instagram · LinkedIn</p>
+
+              <div class="footer-social">
+                <h4>🌐 Síguenos</h4>
+                <div class="social-links">
+                  <a href="#" class="social-link" aria-label="Facebook">
+                    <span class="social-icon">f</span>
+                    <span>Facebook</span>
+                  </a>
+                  <a href="#" class="social-link" aria-label="Instagram">
+                    <span class="social-icon">📷</span>
+                    <span>Instagram</span>
+                  </a>
+                  <a href="#" class="social-link" aria-label="LinkedIn">
+                    <span class="social-icon">in</span>
+                    <span>LinkedIn</span>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -122,4 +134,3 @@
     <script src="js/public-properties.js" defer></script>
   </body>
 </html>
->>>>>>> ec64c52 (Site: versión inicial)

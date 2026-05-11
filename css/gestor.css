@@ -1,43 +1,28 @@
-/* === Estilos para formulario de registro de Gestor Inmobiliario === */
+/* Estilos para la ruta legacy de gestor. La página principal usa base/components. */
 :root {
-  --gestor-primary: #1a365d; /* Azul oscuro profesional */
-  --gestor-secondary: #2d3748; /* Gris oscuro */
-  --gestor-accent: #4a5568; /* Gris medio */
-  --gestor-light: #f7fafc; /* Blanco grisáceo */
-  --gestor-border: #e2e8f0;
-  --gestor-shadow: 0 20px 40px rgba(26, 54, 93, 0.15);
-  --gestor-radius: 12px;
+  --gestor-primary: #1d4ed8;
+  --gestor-secondary: #334155;
+  --gestor-accent: #64748b;
+  --gestor-light: #f8fafc;
+  --gestor-border: #dbe3f0;
+  --gestor-shadow: 0 20px 40px rgba(26, 54, 93, 0.12);
+  --gestor-radius: 16px;
 }
 
 .gestor-form-page {
   min-height: 100vh;
-<<<<<<< HEAD
-  background: linear-gradient(135deg, var(--gestor-light) 0%, #edf2f7 100%);
-  display: grid;
-  place-items: center;
-  padding: 2rem 1rem;
-=======
   background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.12), transparent 35%),
-    linear-gradient(135deg, var(--gestor-light) 0%, #edf2f7 100%);
+    radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(14, 165, 233, 0.1), transparent 32%),
+    linear-gradient(135deg, var(--gestor-light), #edf2f7);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1.5rem;
->>>>>>> ec64c52 (Site: versión inicial)
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .gestor-form-header {
-<<<<<<< HEAD
-  position: absolute;
-  top: 1.5rem;
-  left: 1.5rem;
-}
-
-.brand-gestor {
-=======
   width: min(100%, 1180px);
   display: flex;
   align-items: center;
@@ -45,7 +30,7 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding: 0.9rem 1.1rem;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(226, 232, 240, 0.9);
   border-radius: 18px;
@@ -56,7 +41,6 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
->>>>>>> ec64c52 (Site: versión inicial)
   color: var(--gestor-primary);
   font-weight: 800;
   font-size: 1.3rem;
@@ -64,10 +48,6 @@
   letter-spacing: -0.02em;
 }
 
-<<<<<<< HEAD
-.gestor-form-main {
-  width: min(720px, 100%);
-=======
 .gestor-form-header nav {
   display: flex;
   gap: 0.5rem;
@@ -89,7 +69,7 @@
 .gestor-form-header nav a:focus-visible,
 .gestor-form-header nav a[aria-current="page"] {
   background: linear-gradient(135deg, #2563eb, #1d4ed8);
-  color: #ffffff;
+  color: #fff;
   box-shadow: 0 10px 20px rgba(37, 99, 235, 0.22);
   transform: translateY(-1px);
 }
@@ -120,35 +100,18 @@
   font-weight: 700;
   font-size: 0.9rem;
   margin-bottom: 1rem;
->>>>>>> ec64c52 (Site: versión inicial)
 }
 
 .gestor-form-card {
-  background: #ffffff;
-<<<<<<< HEAD
-  border: 2px solid var(--gestor-border);
-  border-radius: var(--gestor-radius);
-  box-shadow: var(--gestor-shadow);
-  padding: 2.5rem;
-=======
+  background: #fff;
   border: 1px solid rgba(226, 232, 240, 0.95);
   border-radius: 22px;
   box-shadow: 0 18px 40px rgba(26, 54, 93, 0.12);
   padding: 2rem;
->>>>>>> ec64c52 (Site: versión inicial)
   position: relative;
 }
 
 .gestor-header {
-<<<<<<< HEAD
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.gestor-header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-=======
   text-align: left;
   margin-bottom: 1.5rem;
 }
@@ -157,25 +120,200 @@
 .gestor-header h2 {
   font-size: 1.85rem;
   font-weight: 800;
->>>>>>> ec64c52 (Site: versión inicial)
   color: var(--gestor-primary);
   margin: 0 0 0.5rem;
 }
 
 .gestor-description {
-<<<<<<< HEAD
-  font-size: 1.1rem;
-  color: var(--gestor-accent);
-  line-height: 1.5;
-  margin: 0;
-  max-width: 600px;
-  margin: 0 auto;
-=======
   font-size: 1.03rem;
   color: var(--gestor-accent);
   line-height: 1.5;
   margin: 0;
   max-width: 620px;
+}
+
+.gestor-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.4rem;
+}
+
+.gestor-hero-stats > div {
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 10px 22px rgba(26, 54, 93, 0.06);
+}
+
+.gestor-hero-stats strong {
+  display: block;
+  font-size: 1.35rem;
+  color: var(--gestor-primary);
+  margin-bottom: 0.15rem;
+}
+
+.gestor-hero-stats span {
+  color: var(--gestor-accent);
+  font-size: 0.9rem;
+}
+
+.gestor-form-grid {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--gestor-secondary);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select {
+  border: 1px solid var(--gestor-border);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--gestor-secondary);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--gestor-primary);
+  box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.1);
+}
+
+.form-hint {
+  font-size: 0.85rem;
+  color: var(--gestor-accent);
+  margin-top: 0.2rem;
+}
+
+.btn-gestor {
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8 55%, #1e3a8a);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.btn-gestor:hover,
+.btn-gestor:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.02);
+  box-shadow: 0 14px 26px rgba(37, 99, 235, 0.28);
+}
+
+.gestor-login-link {
+  text-align: center;
+  margin: 0;
+}
+
+.gestor-login-link a {
+  color: var(--gestor-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.gestor-login-link a:hover,
+.gestor-login-link a:focus-visible {
+  text-decoration: underline;
+}
+
+.gestor-form-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--gestor-accent);
+  font-size: 0.9rem;
+}
+
+.estado-postulacion {
+  margin: 0.75rem 0 0;
+  font-weight: 600;
+}
+
+.gestor-flow,
+.gestor-owner-upload {
+  margin-top: 1.75rem;
+  border-top: 1px solid var(--gestor-border);
+  padding-top: 1.5rem;
+}
+
+.gestor-flow h2,
+.gestor-owner-upload h2 {
+  margin: 0 0 0.75rem;
+  color: var(--gestor-primary);
+  font-size: 1.2rem;
+}
+
+.gestor-flow ol {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+  color: var(--gestor-secondary);
+  line-height: 1.55;
+}
+
+.gestor-note {
+  margin: 0;
+  color: var(--gestor-accent);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1100px) {
+  .gestor-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .gestor-hero-copy {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .gestor-form-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gestor-form-card {
+    padding: 1.5rem;
+  }
+
+  .gestor-header h1,
+  .gestor-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .gestor-description {
+    font-size: 1rem;
+  }
+
+  .gestor-hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .gestor-form-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .gestor-hero-stats {

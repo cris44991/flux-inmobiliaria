@@ -1,20 +1,26 @@
-/* Componentes reutilizables: header, nav, botones, cards, footer */
+/* Componentes reutilizables: header, nav, botones, cards, footer y auth */
 
 .site-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;box-shadow:0 1px 0 rgba(15,23,42,0.03)}
 .header-inner{display:flex;justify-content:space-between;align-items:center;padding:.95rem 0 1rem}
 .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;color:var(--primary);font-weight:700;font-size:1.25rem}
 .brand-logo{font-size:1.4rem;line-height:1}
 
-.site-nav{display:flex;gap:1.1rem}
-.site-nav a{color:var(--text);text-decoration:none;font-weight:500;padding:.35rem .65rem;border-radius:8px;transition:all .18s}
-.site-nav a:hover,.site-nav a:focus-visible{background:rgba(31,61,122,0.08);color:var(--primary)}
+.site-nav{display:flex;gap:0.8rem;flex-wrap:wrap;align-items:center}
+.site-nav .nav-link{color:var(--text);text-decoration:none;font-weight:600;padding:0.6rem 1rem;border-radius:10px;transition:all 0.25s ease;border:2px solid transparent;position:relative;font-size:0.95rem}
+.site-nav .nav-link::before{content:'';position:absolute;bottom:-2px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--primary),var(--secondary));transition:width 0.3s ease}
+.site-nav .nav-link:hover{background:rgba(31,61,122,0.08);color:var(--primary);transform:translateY(-2px)}
+.site-nav .nav-link:hover::before{width:100%}
+.site-nav .nav-link-highlight{background:linear-gradient(120deg,var(--primary),#224c94);color:#fff;border:2px solid var(--secondary);font-weight:700}
+.site-nav .nav-link-highlight:hover{background:linear-gradient(120deg,#224c94,var(--primary));transform:translateY(-2px);box-shadow:0 8px 20px rgba(31,61,122,0.28);border-color:var(--secondary)}
+.site-nav .nav-link-highlight::before{background:var(--secondary);bottom:0;height:2px;opacity:0}
 
 /* Botones */
-.btn{display:inline-flex;align-items:center;gap:.4rem;border:none;border-radius:10px;font-weight:600;text-decoration:none;cursor:pointer}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;border:none;border-radius:10px;font-weight:600;text-decoration:none;cursor:pointer}
 .btn-primary{background:linear-gradient(120deg,var(--primary),#224c94);color:#fff;padding:.75rem 1.35rem}
 .btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(31,61,122,0.28)}
 .btn-secondary{background:#fff;color:var(--primary);padding:.65rem 1.25rem;box-shadow:0 5px 14px rgba(29,29,43,0.08)}
 .btn-card{display:inline-block;margin-top:.6rem;background:var(--secondary);color:#fff;padding:.55rem .95rem;border-radius:8px;font-size:.95rem;text-decoration:none}
+.btn-full{width:100%}
 
 /* Hero básico (complementado en home.css) */
 .hero{position:relative;display:flex;align-items:center;color:#fff}
@@ -33,9 +39,39 @@
 .footer-grid{display:grid;gap:1.4rem;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid rgba(255,255,255,0.16);padding-bottom:1.2rem}
 .footer-bottom{text-align:center;margin-top:.8rem;font-size:.9rem;color:#bfc9e4}
 
-/* Forms & helpers for auth pages */
-.login-page{min-height:100vh;background:linear-gradient(180deg,#edf2f8 0%,#dce6f5 100%);display:flex;flex-direction:column;align-items:center;padding:1.5rem}
-.login-box{width:min(440px,100%);margin:0 auto;background:#fff;border-radius:14px;padding:2rem;box-shadow:0 14px 28px rgba(13,38,92,0.08)}
+/* Auth pages */
+.login-page{min-height:100vh;background:radial-gradient(circle at top left,rgba(31,61,122,0.16),transparent 34%),linear-gradient(180deg,#edf2f8 0%,#dce6f5 100%);display:flex;flex-direction:column;align-items:stretch;padding:1.5rem;overflow-y:auto}
+.login-header{margin-bottom:1.35rem}
+.login-header-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.brand-login{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--primary);font-weight:800;font-size:1.2rem}
+.auth-shell{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,440px);gap:1.4rem;align-items:stretch;flex:1}
+.auth-hero{display:flex;flex-direction:column;justify-content:center;gap:1rem;background:linear-gradient(135deg,#0f2f63,#224c94 55%,#4f76c3);color:#fff;border-radius:22px;padding:2.2rem;box-shadow:0 24px 48px rgba(13,38,92,0.22)}
+.auth-kicker{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:700;color:rgba(255,255,255,0.78)}
+.auth-hero h1,.login-box h2{margin:0}
+.auth-hero p{margin:0;max-width:32rem;color:rgba(255,255,255,0.92);line-height:1.65}
+.auth-pills{display:flex;flex-wrap:wrap;gap:.7rem}
+.auth-pills span{padding:.5rem .8rem;border-radius:999px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.18);backdrop-filter:blur(6px);font-size:.92rem}
+.login-box{align-self:center;width:100%;margin:0 auto;background:#fff;border-radius:22px;padding:2rem;box-shadow:0 14px 28px rgba(13,38,92,0.08)}
+.login-box p{color:#52607a;line-height:1.6}
+.login-box form{display:grid;gap:1rem;margin-top:1rem}
+.form-group{display:grid;gap:.45rem}
+.form-group label{font-weight:600;color:#22324d}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.92rem 1rem;border:1px solid #cad6ea;border-radius:12px;background:#f9fbff;color:#0f172a;font:inherit;transition:border-color .18s,box-shadow .18s,background .18s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--secondary);box-shadow:0 0 0 4px rgba(46,125,255,0.12);background:#fff}
+.form-hint{min-height:1.2rem;margin:0;color:var(--secondary);font-size:.94rem}
+.forgot-text{margin:1rem 0 0;text-align:center}
+.forgot-text a{color:var(--secondary);font-weight:600;text-decoration:none}
+.forgot-text a:hover,.forgot-text a:focus-visible{text-decoration:underline}
+.login-footer-text{margin:1rem 0 0;text-align:center;color:#5c6880;font-size:.95rem}
 
-@media (max-width:900px){.cards-grid{grid-template-columns:repeat(2,1fr)}.site-nav{flex-wrap:wrap;justify-content:center}}
-@media (max-width:720px){.cards-grid{grid-template-columns:1fr}.hero{min-height:48vh}}
+@media (max-width:900px){.cards-grid{grid-template-columns:repeat(2,1fr)}.site-nav{justify-content:center}.auth-shell{grid-template-columns:1fr}.auth-hero{padding:1.6rem}.login-box{padding:1.6rem}}
+@media (max-width:720px){.cards-grid{grid-template-columns:1fr}.hero{min-height:48vh}.login-page{padding:1rem}.login-header-inner{justify-content:center;text-align:center}.auth-pills{justify-content:center}}
+
+/* Pestañas de auth (login / signup) */
+.auth-tabs{display:flex;gap:0.5rem;margin-bottom:1rem;align-items:center}
+.auth-tabs .tab{background:transparent;border:1px solid var(--border);padding:0.45rem 0.9rem;border-radius:999px;cursor:pointer;font-weight:700;color:var(--muted);transition:all 0.18s ease}
+.auth-tabs .tab:hover{transform:translateY(-1px);border-color:var(--primary);color:var(--primary)}
+.auth-tabs .tab.active{background:linear-gradient(120deg,var(--primary),var(--primary-light));color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(31,61,122,0.18)}
+.auth-forms{display:block}
+.auth-pane.hidden{display:none}
+.auth-pane{margin-top:0.4rem}

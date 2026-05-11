@@ -7,82 +7,52 @@
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/components.css" />
   </head>
-  <body class="login-page">
+  <body class="login-page recuperar">
     <header class="login-header">
-      <div class="container">
+      <div class="container login-header-inner">
         <a class="brand-login" href="/index.html">Flux Inmobiliaria</a>
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="/index.html">Inicio</a>
+          <a href="/login/login.html">Login</a>
+          <a href="/propiedades/listado.html">Propiedades</a>
+          <a href="/RegistroPropietario/propietario.html">Registro Propietario</a>
+          <a href="/RegistroPropietario/gestor.html">Registro Gestor</a>
+        </nav>
       </div>
     </header>
 
-    <main class="container">
-      <div class="login-box">
-        <h1>Recuperar contraseña</h1>
+    <main class="container auth-shell" aria-labelledby="recuperar-title">
+      <section class="auth-hero" aria-hidden="true">
+        <span class="auth-kicker">Recuperación segura</span>
+        <h1 id="recuperar-title">Recuperar contraseña</h1>
+        <p>Te enviaremos un enlace para restablecer el acceso sin perder tu información.</p>
+        <div class="auth-pills">
+          <span>Correo validado</span>
+          <span>Enlace temporal</span>
+          <span>Acceso protegido</span>
+        </div>
+      </section>
+
+      <section class="login-box" aria-label="Formulario de recuperación de contraseña">
+        <h2>Solicita el enlace</h2>
         <p>Ingresa el correo asociado a tu cuenta y te enviaremos instrucciones.</p>
 
         <form id="recoverForm" novalidate>
           <div class="form-group">
-            <label for="recoverEmail">Correo</label>
-            <input id="recoverEmail" type="email" placeholder="correo@dominio.cl" required />
-          </div>
-          <button class="btn btn-primary" type="submit">Enviar instrucciones</button>
-        </form>
-      </div>
-    </main>
-
-    <script src="/js/auth.js" defer></script>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flux Inmobiliaria | Recuperar contraseña</title>
-  <link rel="stylesheet" href="../css/styles.css" />
-</head>
-<body>
-  <div class="login-page recuperar">
-    <header class="login-header">
-<<<<<<< HEAD
-      <a href="index.html" class="brand-login" aria-label="Volver al inicio">Flux Inmobiliaria</a>
-=======
-      <a href="index.html" class="brand-login" aria-label="Volver al inicio">
-        <span class="brand-logo" aria-hidden="true">🟦</span>
-        <span class="brand-text">Flux Inmobiliaria</span>
-      </a>
-      <nav class="site-nav" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
-        <a href="login.html">Login</a>
-        <a href="../RegistroPropietario/propietario.html">Registro Propietario</a>
-        <a href="../RegistroPropietario/gestorinmobiliario.html">Registro Gestor</a>
-        <a href="../propiedades/listado.html">Propiedades</a>
-      </nav>
->>>>>>> ec64c52 (Site: versión inicial)
-    </header>
-
-    <main class="login-main" aria-labelledby="recuperar-title">
-      <section class="login-box" aria-label="Formulario de recuperación de contraseña">
-        <h1 id="recuperar-title">Recuperar contraseña</h1>
-        <p>Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.</p>
-
-        <form action="#" method="post" novalidate>
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input id="email" name="email" type="email" placeholder="nombre@ejemplo.cl" required autocomplete="email" />
+            <label for="recoverEmail">Correo electrónico</label>
+            <input id="recoverEmail" name="email" type="email" placeholder="nombre@ejemplo.cl" required autocomplete="email" />
           </div>
 
-          <button type="submit" class="btn btn-primary btn-full">Enviar</button>
+          <button type="submit" class="btn btn-primary btn-full">Enviar instrucciones</button>
+          <p id="recoverFormFeedback" class="form-hint" aria-live="polite"></p>
         </form>
 
-        <p class="forgot-text">
-          <a href="login.html">Volver al inicio de sesión</a>
-        </p>
+        <p class="forgot-text"><a href="/login/login.html">Volver al inicio de sesión</a></p>
       </section>
     </main>
 
-    <footer class="login-footer">
-      <p>© 2026 Flux Inmobiliaria</p>
-    </footer>
-  </div>
-</body>
+    <p class="login-footer-text">¿No recibiste el correo? Revisa tu carpeta de spam o vuelve a intentarlo.</p>
+
+    <script src="/js/auth.js" defer></script>
+  </body>
 </html>

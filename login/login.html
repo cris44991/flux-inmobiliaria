@@ -9,127 +9,122 @@
   </head>
   <body class="login-page">
     <header class="login-header">
-      <div class="container">
+      <div class="container login-header-inner">
         <a class="brand-login" href="/index.html">Flux Inmobiliaria</a>
-        <nav class="site-nav">
-          <a href="/RegistroPropietario/propietario.html">Registrar Propietario</a>
-          <a href="/RegistroPropietario/gestor.html">Registrar Gestor</a>
+        <nav class="site-nav" aria-label="Navegación principal">
+          <a href="/index.html" class="nav-link">Inicio</a>
+          <a href="/propiedades/listado.html" class="nav-link">Propiedades</a>
+          <a href="/RegistroPropietario/propietario.html" class="nav-link">Registrar Propietario</a>
+          <a href="/RegistroPropietario/gestorinmobiliario.html" class="nav-link">Registrar Gestor</a>
+          <a href="#contacto" class="nav-link">Contacto</a>
         </nav>
       </div>
     </header>
 
-    <main class="container">
-      <div class="login-box" role="main" aria-labelledby="login-title">
+    <main class="container auth-shell" aria-labelledby="login-title">
+      <section class="auth-hero" aria-hidden="true">
+        <span class="auth-kicker">Acceso profesional</span>
         <h1 id="login-title">Inicia sesión</h1>
-        <p>Accede a tu cuenta para administrar propiedades y publicaciones.</p>
+        <p>Administra propiedades, sigue consultas y centraliza tu operación desde un solo panel.</p>
+        <div class="auth-pills">
+          <span>Control de publicaciones</span>
+          <span>Acceso seguro</span>
+          <span>Seguimiento de clientes</span>
+        </div>
+      </section>
 
-        <form id="loginForm" novalidate>
-          <div class="form-group">
-            <label for="loginEmail">Correo</label>
-            <input id="loginEmail" type="email" placeholder="correo@dominio.cl" required />
-          </div>
-          <div class="form-group">
-            <label for="loginPass">Contraseña</label>
-            <input id="loginPass" type="password" minlength="8" required />
-          </div>
-
-          <div class="forgot-text"><a href="/login/recuperar.html">¿Olvidaste tu contraseña?</a></div>
-          <div style="margin-top:1rem"><button class="btn btn-full btn-primary" type="submit">Entrar</button></div>
-        </form>
-      </div>
-    </main>
-
-    <script src="/js/auth.js" defer></script>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flux Inmobiliaria | Iniciar Sesión</title>
-  <link rel="stylesheet" href="../css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-</head>
-<body>
-  <div class="login-page">
-    <header class="login-header">
-<<<<<<< HEAD
-      <a href="../index.html" class="brand-login" aria-label="Volver al inicio">Flux Inmobiliaria</a>
-    </header>
-    <main class="login-main" aria-labelledby="login-title">
-      <section class="login-box" role="form" aria-label="Formulario de inicio de sesión">
-        <h1 id="login-title">Iniciar Sesión</h1>
-        <p>Accede a tu cuenta para gestionar tus propiedades y clientes.</p>
-        <form action="#" method="post" novalidate>
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input id="email" name="email" type="email" placeholder="nombre@ejemplo.cl" required autocomplete="email" />
-          </div>
-          <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input id="password" name="password" type="password" placeholder="********" required autocomplete="current-password" />
-          </div>
-          <button type="submit" class="btn btn-primary btn-full">Iniciar Sesión</button>
-          <p class="forgot-text">
-            <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
-          </p>
-        </form>
-=======
-      <a href="index.html" class="brand-login" aria-label="Volver al inicio">
-        <span class="brand-logo" aria-hidden="true">🟦</span>
-        <span class="brand-text">Flux Inmobiliaria</span>
-      </a>
-      <nav class="site-nav" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
-        <a href="login.html">Login</a>
-        <a href="../RegistroPropietario/propietario.html">Registro Propietario</a>
-        <a href="../RegistroPropietario/gestorinmobiliario.html">Registro Gestor</a>
-        <a href="../propiedades/listado.html">Propiedades</a>
-      </nav>
-    </header>
-    <main class="login-main" aria-labelledby="login-title">
-      <section class="login-hero">
-        <div class="login-copy">
-          <span class="login-eyebrow">Acceso profesional</span>
-          <h1 id="login-title">Iniciar Sesión</h1>
-          <p>
-            Entra al panel de Flux para administrar propiedades, responder clientes y mantener tu cartera al día.
-          </p>
-          <div class="login-points" aria-hidden="true">
-            <span>Control de publicaciones</span>
-            <span>Acceso seguro</span>
-            <span>Seguimiento de clientes</span>
-          </div>
+      <section class="login-box" role="form" aria-label="Formulario de inicio de sesión y registro">
+        <div class="auth-tabs">
+          <button id="tabLogin" class="tab active" type="button">Iniciar sesión</button>
+          <button id="tabSignup" class="tab" type="button">Crear cuenta</button>
         </div>
 
-        <section class="login-box" role="form" aria-label="Formulario de inicio de sesión">
-          <h2>Bienvenido de vuelta</h2>
-          <p>Ingresa tus credenciales para continuar.</p>
-          <form action="#" method="post" novalidate>
-            <div class="form-group">
-              <label for="email">Correo electrónico</label>
-              <input id="email" name="email" type="email" placeholder="nombre@ejemplo.cl" required autocomplete="email" />
-            </div>
-            <div class="form-group">
-              <label for="password">Contraseña</label>
-              <input id="password" name="password" type="password" placeholder="********" required autocomplete="current-password" />
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">Iniciar Sesión</button>
-            <p class="forgot-text">
-              <a href="recuperar.html">¿Olvidaste tu contraseña?</a>
-            </p>
-          </form>
-        </section>
->>>>>>> ec64c52 (Site: versión inicial)
+        <div class="auth-forms">
+          <div id="loginPane" class="auth-pane">
+            <h2>Bienvenido de vuelta</h2>
+            <p>Ingresa tus credenciales para continuar.</p>
+
+            <form id="loginForm" novalidate>
+              <div class="form-group">
+                <label for="loginEmail">Correo electrónico</label>
+                <input id="loginEmail" name="email" type="email" placeholder="nombre@ejemplo.cl" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="loginPass">Contraseña</label>
+                <input id="loginPass" name="password" type="password" placeholder="********" required autocomplete="current-password" />
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">Iniciar Sesión</button>
+              <p id="loginFormFeedback" class="form-hint" aria-live="polite"></p>
+            </form>
+
+            <p class="forgot-text"><a href="/login/recuperar.html">¿Olvidaste tu contraseña?</a></p>
+          </div>
+
+          <div id="signupPane" class="auth-pane hidden">
+            <h2>Crear cuenta</h2>
+            <p>Regístrate para acceder como usuario y comenzar a explorar propiedades.</p>
+
+            <form id="signupForm" novalidate>
+              <div class="form-group">
+                <label for="signupName">Nombre completo</label>
+                <input id="signupName" name="nombre" type="text" placeholder="Nombre y Apellido" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="signupEmail">Correo electrónico</label>
+                <input id="signupEmail" name="email" type="email" placeholder="nombre@ejemplo.cl" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="signupPass">Contraseña</label>
+                <input id="signupPass" name="password" type="password" placeholder="Mínimo 8 caracteres" required minlength="8" autocomplete="new-password" />
+              </div>
+              <div class="form-group">
+                <label for="signupPhone">Teléfono (opcional)</label>
+                <input id="signupPhone" name="telefono" type="tel" placeholder="+56 9 0000 0000" />
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full">Crear cuenta</button>
+              <p id="signupFormFeedback" class="form-hint" aria-live="polite"></p>
+            </form>
+
+            <p class="forgot-text">Si eres propietario o gestor usa los formularios dedicados: <a href="/RegistroPropietario/propietario.html">Propietario</a> · <a href="/RegistroPropietario/gestorinmobiliario.html">Gestor</a></p>
+          </div>
+        </div>
       </section>
     </main>
-    <footer class="login-footer">
-      <p>¿Aún no tienes cuenta? <a href="../RegistroPropietario/propietario.html">Regístrate aquí</a></p>
-      <p>© 2026 Flux Inmobiliaria</p>
-    </footer>
-  </div>
-</body>
+
+    <p class="login-footer-text">¿Necesitas acceso? Contacta al equipo de Flux.</p>
+
+    <script>
+      // Pestañas simples para login / signup y número de contacto aleatorio
+      document.addEventListener('DOMContentLoaded', function () {
+        const tabLogin = document.getElementById('tabLogin');
+        const tabSignup = document.getElementById('tabSignup');
+        const loginPane = document.getElementById('loginPane');
+        const signupPane = document.getElementById('signupPane');
+        function showLogin() {
+          tabLogin.classList.add('active'); tabSignup.classList.remove('active');
+          loginPane.classList.remove('hidden'); signupPane.classList.add('hidden');
+        }
+        function showSignup() {
+          tabSignup.classList.add('active'); tabLogin.classList.remove('active');
+          signupPane.classList.remove('hidden'); loginPane.classList.add('hidden');
+        }
+        if (tabLogin) tabLogin.addEventListener('click', showLogin);
+        if (tabSignup) tabSignup.addEventListener('click', showSignup);
+
+        // Generar número chileno móvil aleatorio: +56 9 XXXX XXXX
+        function randomPhone() {
+          const n = Math.floor(Math.random() * 90000000) + 10000000; // 8 dígitos
+          const s = String(n).padStart(8,'0');
+          return `+56 9 ${s.slice(0,4)} ${s.slice(4)}`;
+        }
+        const footer = document.querySelector('.login-footer-text');
+        if (footer) {
+          const phone = randomPhone();
+          footer.textContent = footer.textContent.trim() + ' · Tel: ' + phone;
+        }
+      });
+    </script>
+    <script src="/js/auth.js" defer></script>
+  </body>
 </html>
