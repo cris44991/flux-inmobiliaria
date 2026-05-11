@@ -4,8 +4,8 @@
   const yearEl = document.getElementById('year');
 
   const defaultProperties = [
-    {id:1,title:'Departamento céntrico',tipo:'Departamento',priceCLP:'165.000.000',priceUF:4500,bed:3,bath:2,area:85,location:'Las Condes, Santiago',img:'../img/propiedades/casalascondes.jpg',desc:'Departamento moderno, luminoso y cercano a servicios.'},
-    {id:2,title:'Casa con jardín',tipo:'Casa',priceCLP:'285.000.000',priceUF:7800,bed:4,bath:3,area:200,location:'Viña del Mar, Valparaíso',img:'../img/propiedades/departamentoviñadelmar.jpg',desc:'Amplia casa familiar con patio.'}
+    {id:1,title:'Departamento céntrico',tipo:'Departamento',priceCLP:'165.000.000',priceUF:4500,bed:3,bath:2,area:85,location:'Las Condes, Santiago',img:'../img/propiedades/depa.jpg',desc:'Departamento moderno, luminoso y cercano a servicios.'},
+    {id:2,title:'Casa con jardín',tipo:'Casa',priceCLP:'285.000.000',priceUF:7800,bed:4,bath:3,area:200,location:'Viña del Mar, Valparaíso',img:'../img/propiedades/viña2.jpg',desc:'Amplia casa familiar con patio.'}
   ];
 
   function loadProperties(){
