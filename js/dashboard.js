@@ -161,11 +161,11 @@
     const container = document.getElementById('dashboardProperties');
     if (!container) return;
 
-    // Demo properties
+    // Demo properties (usando imágenes reales)
     const properties = [
-      { id: 1, title: 'Casa en Viña del Mar', price: 'UF 2.500', image: '../img/propiedades/viña1.jpg' },
-      { id: 2, title: 'Departamento en Providencia', price: 'UF 3.000', image: '../img/propiedades/Casaprovidencia.jpg' },
-      { id: 3, title: 'Casa en Quilpué', price: 'UF 1.800', image: '../img/propiedades/casañuñoa.jpg' }
+      { id: 1, title: 'Casa en Las Condes', price: 'UF 7.200', image: '../img/propiedades/casalascondes.jpg' },
+      { id: 2, title: 'Departamento en Viña del Mar', price: 'UF 4.100', image: '../img/propiedades/departamentoviñadelmar.jpg' },
+      { id: 3, title: 'Terreno en Concepción', price: 'UF 2.400', image: '../img/propiedades/terreno.jpg' }
     ];
 
     container.innerHTML = properties.map(prop => `

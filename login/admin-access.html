@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Acceso Admin — Flux Inmobiliaria</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+    <style>
+      .dev-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 2rem;
+      }
+
+      .dev-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        padding: 2rem;
+        max-width: 500px;
+        width: 100%;
+      }
+
+      .dev-card h1 {
+        margin: 0 0 1rem;
+        font-size: 1.8rem;
+        color: #1a202c;
+        text-align: center;
+      }
+
+      .dev-card p {
+        color: #718096;
+        text-align: center;
+        margin: 0 0 2rem;
+        line-height: 1.6;
+      }
+
+      .dev-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .dev-btn {
+        padding: 0.9rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+      }
+
+      .dev-btn-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      .dev-btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      .dev-btn-secondary {
+        background: #e2e8f0;
+        color: #2d3748;
+        border: 2px solid #cbd5e1;
+      }
+
+      .dev-btn-secondary:hover {
+        background: #cbd5e1;
+      }
+
+      .dev-roles {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .dev-role {
+        padding: 1rem;
+        background: #f7fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .dev-role:hover {
+        border-color: #667eea;
+        background: #eef2ff;
+      }
+
+      .dev-role input {
+        display: none;
+      }
+
+      .dev-role input:checked + label {
+        color: #667eea;
+        font-weight: 700;
+      }
+
+      .dev-role label {
+        cursor: pointer;
+        display: block;
+        transition: all 0.2s ease;
+      }
+
+      .dev-code {
+        background: #2d3748;
+        color: #68d391;
+        padding: 1rem;
+        border-radius: 8px;
+        font-family: 'Courier New', monospace;
+        font-size: 0.9rem;
+        margin: 1rem 0;
+        word-break: break-all;
+        text-align: center;
+      }
+
+      .dev-footer {
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid #e2e8f0;
+        text-align: center;
+        font-size: 0.85rem;
+        color: #a0aec0;
+      }
+
+      .dev-footer a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .alert {
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .alert-info {
+        background: #e0f2fe;
+        color: #0c4a6e;
+        border: 1px solid #7dd3fc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dev-container">
+      <div class="dev-card">
+        <h1>🔐 Acceso Admin</h1>
+        <p>Selecciona un rol y entra al dashboard de Flux Inmobiliaria</p>
+
+        <div class="alert alert-info">
+          <strong>ℹ️ Modo Desarrollo:</strong> Esta página permite acceso rápido para pruebas
+        </div>
+
+        <div class="dev-roles">
+          <label class="dev-role">
+            <input type="radio" name="role" value="admin" checked />
+            <label>👨‍💼 Admin</label>
+          </label>
+          <label class="dev-role">
+            <input type="radio" name="role" value="owner" />
+            <label>🏠 Propietario</label>
+          </label>
+          <label class="dev-role">
+            <input type="radio" name="role" value="manager" />
+            <label>🔑 Gestor</label>
+          </label>
+          <label class="dev-role">
+            <input type="radio" name="role" value="user" />
+            <label>👤 Usuario</label>
+          </label>
+        </div>
+
+        <div class="dev-buttons">
+          <button class="dev-btn dev-btn-primary" id="accessBtn">Acceder al Dashboard</button>
+          <button class="dev-btn dev-btn-secondary" onclick="window.location.href='../login/login.html'">
+            ← Volver a Login
+          </button>
+          <button class="dev-btn dev-btn-secondary" onclick="window.location.href='../index.html'">
+            ← Ir a Home
+          </button>
+        </div>
+
+        <div class="dev-footer">
+          <p>💡 <strong>Consejo:</strong> También puedes usar la consola con: <code>setupAdminAccount()</code></p>
+          <p><a href="../index.html">Flux Inmobiliaria</a></p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('accessBtn').addEventListener('click', function () {
+        const role = document.querySelector('input[name="role"]:checked')?.value || 'admin';
+
+        const user = {
+          email: `${role}@fluxinmobiliaria.cl`,
+          nombre:
+            {
+              admin: 'Administrador',
+              owner: 'Propietario Flux',
+              manager: 'Gestor Inmobiliario',
+              user: 'Usuario Flux',
+            }[role] || 'Usuario',
+          role: role,
+          loggedAt: Date.now(),
+        };
+
+        localStorage.setItem('flux_session', JSON.stringify(user));
+
+        console.log('✅ Sesión iniciada:', user);
+
+        // Ir al dashboard
+        setTimeout(() => {
+          window.location.href = '../dashboard/dashboard.html';
+        }, 300);
+      });
+    </script>
+  </body>
+</html>

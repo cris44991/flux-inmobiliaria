@@ -44,17 +44,33 @@ document.addEventListener('DOMContentLoaded', function () {
       if (form.id === 'loginForm') {
         const email = form.email?.value || '';
         
+        // Determinar rol según el email
+        let role = 'user'; // rol por defecto
+        if (email === 'admin@fluxinmobiliaria.cl') {
+          role = 'admin';
+        } else if (email === 'gestor@fluxinmobiliaria.cl') {
+          role = 'manager';
+        } else if (email === 'propietario@fluxinmobiliaria.cl') {
+          role = 'owner';
+        }
+        
         // Guardar sesión activa
         localStorage.setItem('flux_session', JSON.stringify({
           email: email,
           nombre: email.split('@')[0],
-          role: 'user',
+          role: role,
           loggedAt: Date.now()
         }));
         
         if (feedbackEl) feedbackEl.textContent = 'Iniciando sesión...';
         setTimeout(() => {
-          window.location.href = '../dashboard/dashboard.html';
+          // Admin y usuario especial van directo a gestión de propiedades
+          if (role === 'admin' || email === 'usuario@fluxinmobiliaria.cl') {
+            window.location.href = '../dashboard/propiedades.html';
+          } else {
+            // Otros roles van al dashboard principal
+            window.location.href = '../dashboard/dashboard.html';
+          }
         }, 500);
         return;
       }

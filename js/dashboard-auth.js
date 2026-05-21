@@ -27,6 +27,7 @@
     if (userNameEl) userNameEl.textContent = user.nombre || user.email;
     if (userRoleEl) {
       const roleText = {
+        'admin': 'Administrador',
         'owner': 'Propietario',
         'manager': 'Gestor Inmobiliario',
         'user': 'Usuario'

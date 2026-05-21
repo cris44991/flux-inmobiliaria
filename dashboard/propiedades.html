@@ -40,20 +40,116 @@
           <section class="card" aria-label="Formulario de propiedad">
             <div class="card-body">
               <form id="propertyForm" novalidate>
-                <fieldset class="form-grid">
-                  <div class="form-group"><label for="propName">Nombre de la propiedad</label><input id="propName" name="propName" required /></div>
-                  <div class="form-group"><label for="propType">Tipo</label><select id="propType" name="propType" required><option value="">Selecciona</option><option>Casa</option><option>Departamento</option><option>Terreno</option><option>Oficina</option><option>Local comercial</option></select></div>
-                  <div class="form-group"><label for="propProvince">Provincia</label><select id="propProvince" name="propProvince" required><option value="">Selecciona</option><option value="santiago">Santiago</option><option value="valparaiso">Valparaíso</option><option value="biobio">Biobío</option></select></div>
-                  <div class="form-group"><label for="propComuna">Comuna</label><input id="propComuna" name="propComuna" required /></div>
-                  <div class="form-group"><label for="propSector">Sector</label><input id="propSector" name="propSector" /></div>
-                  <div class="form-group"><label for="propAddress">Dirección</label><input id="propAddress" name="propAddress" required /></div>
-                  <div class="form-group"><label for="propPrice">Precio</label><input id="propPrice" name="propPrice" type="number" min="0" required /></div>
-                  <div class="form-group"><label for="propStatus">Estado</label><select id="propStatus" name="propStatus" required><option value="">Selecciona</option><option>Disponible</option><option>Arrendada</option><option>Vendida</option></select></div>
-                  <div class="form-group" style="grid-column:1/-1"><label for="propDescription">Descripción</label><textarea id="propDescription" name="propDescription" rows="4" required></textarea></div>
+                <!-- SECCIÓN 1: INFORMACIÓN BÁSICA -->
+                <fieldset class="form-section">
+                  <legend>Información Básica</legend>
+                  <div class="form-grid">
+                    <div class="form-group"><label for="propName">Nombre de la propiedad</label><input id="propName" name="propName" required /></div>
+                    <div class="form-group"><label for="propType">Tipo de propiedad</label><select id="propType" name="propType" required><option value="">Selecciona</option><option value="casa">Casa</option><option value="departamento">Departamento</option><option value="terreno">Terreno</option><option value="oficina">Oficina</option><option value="local">Local comercial</option></select></div>
+                    <div class="form-group"><label for="propPublishDate">Fecha de publicación</label><input id="propPublishDate" name="propPublishDate" type="date" required /></div>
+                  </div>
                 </fieldset>
-                <div class="form-actions" style="margin-top:1rem;display:flex;justify-content:flex-end;gap:.75rem;flex-wrap:wrap">
+
+                <!-- SECCIÓN 2: UBICACIÓN -->
+                <fieldset class="form-section">
+                  <legend>Ubicación</legend>
+                  <div class="form-grid">
+                    <div class="form-group"><label for="propProvince">Provincia</label><select id="propProvince" name="propProvince" required><option value="">Selecciona</option><option value="santiago">Santiago</option><option value="valparaiso">Valparaíso</option><option value="biobio">Biobío</option><option value="araucania">Araucanía</option><option value="loslagos">Los Lagos</option></select></div>
+                    <div class="form-group"><label for="propComuna">Comuna</label><input id="propComuna" name="propComuna" required /></div>
+                    <div class="form-group"><label for="propSector">Sector</label><input id="propSector" name="propSector" /></div>
+                    <div class="form-group" style="grid-column:1/-1"><label for="propAddress">Dirección completa</label><input id="propAddress" name="propAddress" required /></div>
+                  </div>
+                </fieldset>
+
+                <!-- SECCIÓN 3: CARACTERÍSTICAS FÍSICAS -->
+                <fieldset class="form-section">
+                  <legend>Características Físicas</legend>
+                  <div class="form-grid">
+                    <div class="form-group"><label for="propBedrooms">Cantidad de dormitorios</label><input id="propBedrooms" name="propBedrooms" type="number" min="0" max="10" /></div>
+                    <div class="form-group"><label for="propBathrooms">Cantidad de baños</label><input id="propBathrooms" name="propBathrooms" type="number" min="0" max="10" step="0.5" /></div>
+                    <div class="form-group"><label for="propLandArea">Área terreno (m²)</label><input id="propLandArea" name="propLandArea" type="number" min="0" step="0.01" /></div>
+                    <div class="form-group"><label for="propBuiltArea">Área construida (m²)</label><input id="propBuiltArea" name="propBuiltArea" type="number" min="0" step="0.01" /></div>
+                  </div>
+                </fieldset>
+
+                <!-- SECCIÓN 4: PRECIOS -->
+                <fieldset class="form-section">
+                  <legend>Precios</legend>
+                  <div class="form-grid">
+                    <div class="form-group"><label for="propPriceClp">Precio CLP</label><input id="propPriceClp" name="propPriceClp" type="number" min="0" required /></div>
+                    <div class="form-group"><label for="propPriceUf">Precio UF (aproximado)</label><input id="propPriceUf" name="propPriceUf" type="number" min="0" step="0.01" /></div>
+                    <div class="form-group"><label for="propStatus">Estado</label><select id="propStatus" name="propStatus" required><option value="">Selecciona</option><option value="disponible">Disponible</option><option value="arrendada">Arrendada</option><option value="vendida">Vendida</option></select></div>
+                  </div>
+                </fieldset>
+
+                <!-- SECCIÓN 5: OPCIONES Y CARACTERÍSTICAS -->
+                <fieldset class="form-section">
+                  <legend>Opciones y Características Adicionales</legend>
+                  <div class="features-checklist">
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="feature" value="solicitar-visita" />
+                      <span>Solicitar visita</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="feature" value="bodega" />
+                      <span>Bodega</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="feature" value="estacionamiento" />
+                      <span>Estacionamiento</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="feature" value="logia" />
+                      <span>Logia</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="feature" value="cocina-amoblada" />
+                      <span>Cocina amoblada</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="feature" value="antejardi" />
+                      <span>Antejardín</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="feature" value="patio-trasero" />
+                      <span>Patio trasero</span>
+                    </label>
+                    <label class="checkbox-item">
+                      <input type="checkbox" name="feature" value="piscina" />
+                      <span>Piscina</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <!-- SECCIÓN 6: IMÁGENES -->
+                <fieldset class="form-section">
+                  <legend>Imágenes de la Propiedad</legend>
+                  <div class="image-upload-section">
+                    <div class="form-group" style="grid-column:1/-1">
+                      <label for="propImages">Subir imágenes (máximo 10)</label>
+                      <input id="propImages" name="propImages" type="file" accept="image/*" multiple aria-describedby="imageHelp" />
+                      <p id="imageHelp" class="form-hint">Puedes seleccionar múltiples imágenes. Formatos: JPG, PNG, GIF</p>
+                    </div>
+                  </div>
+                  <div class="image-preview-grid" id="imagePreviewGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:0.75rem;margin-top:1rem">
+                    <!-- Preview de imágenes se agrega aquí dinámicamente -->
+                  </div>
+                </fieldset>
+
+                <!-- SECCIÓN 7: DESCRIPCIÓN -->
+                <fieldset class="form-section">
+                  <legend>Descripción</legend>
+                  <div class="form-grid">
+                    <div class="form-group" style="grid-column:1/-1">
+                      <label for="propDescription">Descripción de la propiedad</label>
+                      <textarea id="propDescription" name="propDescription" rows="4" placeholder="Describe las características principales, estado, renovaciones, etc." required></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <div class="form-actions" style="margin-top:1.5rem;display:flex;justify-content:flex-end;gap:.75rem;flex-wrap:wrap">
                   <button type="reset" class="btn">Limpiar</button>
-                  <button type="submit" class="btn btn-primary btn-full">Guardar propiedad</button>
+                  <button type="submit" class="btn btn-primary">Guardar propiedad</button>
                 </div>
               </form>
             </div>
@@ -67,5 +163,7 @@
         </main>
       </div>
     </div>
+
+    <script src="../js/dashboard-properties-form.js" defer></script>
   </body>
 </html>
