@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
           name: file.name,
           data: event.target.result,
         });
-
+        console.log('✅ Imagen cargada:', file.name, 'Total:', selectedImages.length);
         renderPreview();
       };
 
@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
    * Renderizar vista previa de imágenes
    */
   function renderPreview() {
+    console.log('📸 Renderizando previsualizacion. Total imágenes:', selectedImages.length);
     previewGrid.innerHTML = '';
 
     selectedImages.forEach((image, index) => {
@@ -54,12 +55,12 @@ document.addEventListener('DOMContentLoaded', () => {
       previewItem.className = 'image-preview-item';
       previewItem.innerHTML = `
         <div class="preview-image-wrapper">
-          <img src="${image.data}" alt="Preview ${index + 1}" />
+          <img src="${image.data}" alt="Preview ${index + 1}" loading="lazy" />
           <button type="button" class="remove-image-btn" title="Eliminar imagen" data-index="${index}">
             ✕
           </button>
         </div>
-        <p class="preview-filename">${image.name}</p>
+        <p class="preview-filename" title="${image.name}">${image.name}</p>
       `;
 
       previewGrid.appendChild(previewItem);
@@ -70,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
         const index = parseInt(btn.getAttribute('data-index'));
+        console.log('🗑️ Eliminando imagen:', selectedImages[index].name);
         selectedImages.splice(index, 1);
         renderPreview();
       });
@@ -77,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Mostrar/ocultar grid según haya imágenes
     previewGrid.style.display = selectedImages.length > 0 ? 'grid' : 'none';
+    console.log('✅ Preview renderizado. Display:', previewGrid.style.display);
   }
 
   /**

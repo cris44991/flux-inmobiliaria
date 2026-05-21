@@ -522,6 +522,9 @@
 /* Image Preview Grid */
 .image-preview-grid {
   display: none;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 
 .image-preview-item {
@@ -540,9 +543,10 @@
 .preview-image-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 100%;
+  aspect-ratio: 1;
   overflow: hidden;
   background-color: #f1f5f9;
+  border-radius: 6px;
 }
 
 .preview-image-wrapper img {
@@ -584,10 +588,15 @@
 }
 
 .preview-filename {
-  padding: 0.5rem;
-  font-size: 0.75rem;
+  padding: 0.5rem 0.4rem;
+  font-size: 0.7rem;
   color: var(--text-secondary);
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  line-height: 1.2;
+}
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
